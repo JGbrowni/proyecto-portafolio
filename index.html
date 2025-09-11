@@ -4,22 +4,33 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="stylesheet" href="styles/landing.css">
-<title>Landing Page Animada</title>
+<title>Landing animada Sozoria</title>
 </head>
 <body>
 
-<div class="clouds-container animate-clouds">
+<!-- Contenedor de nubes -->
+<div class="clouds-container clouds-moving" id="clouds">
   <div class="cloud cloud1"></div>
   <div class="cloud cloud2"></div>
   <div class="cloud cloud3"></div>
 </div>
 
+<!-- Imagen de fondo que sube -->
+<div class="landing-bg" id="landingBg"></div>
+
+<!-- Contenido (Titulo + boton), oculto al inicio -->
 <div class="content" id="content">
-  <h1>Bienvenido a Mi Página</h1>
+  <div class="container">
+    <span class="letter">S</span>
+    <span class="letter">O</span>
+    <span class="letter">Z</span>
+    <span class="letter">O</span>
+    <span class="letter">R</span>
+    <span class="letter">I</span>
+    <span class="letter">A</span>
+  </div>
   <button class="btn">Comenzar</button>
 </div>
-
-
 
 <script src="js/landing.js"></script>
 </body>
