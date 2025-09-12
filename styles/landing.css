@@ -75,16 +75,16 @@
 }
 
 .clouds-moving .cloud1 {
-  animation: moveCloudsUp 6s linear forwards;
+  animation: moveCloudsUp 4s linear forwards;
 }
 
 .clouds-moving .cloud2 {
-  animation: moveCloudsUp 4s linear forwards;
+  animation: moveCloudsUp 2s linear forwards;
   animation-delay: 1.5s; /* sale después */
 }
 
 .clouds-moving .cloud3 {
-  animation: moveCloudsUp 2s linear forwards;
+  animation: moveCloudsUp 1s linear forwards;
   animation-delay: 2.4s; /* sale después de la segunda */
 }
 
@@ -149,6 +149,11 @@
     }
   }
 
+  button a{
+    text-decoration: none;
+    color: #222;
+  }
+
   /*  letras animacion  */
 
   .container {
@@ -165,7 +170,7 @@
 .letter {
     opacity: 0;
     transform: translateY(-100px);
-    animation: drop 1s forwards;
+    animation: drop 0.6s forwards;
   }
   /* Animación caída */
   @keyframes drop {
@@ -176,25 +181,25 @@
   }
   /* Delayed animation for each letter */
   .letter:nth-child(1) {
-    animation-delay: 6s;
+    animation-delay: 5s;
   }
   .letter:nth-child(2) {
-    animation-delay: 6.3s;
+    animation-delay: 5.3s;
   }
   .letter:nth-child(3) {
-    animation-delay: 6.5s;
+    animation-delay: 5.5s;
   }
   .letter:nth-child(4) {
-    animation-delay: 6.7s;
+    animation-delay: 5.7s;
   }
   .letter:nth-child(5) {
-    animation-delay: 6.9s;
+    animation-delay: 5.9s;
   }
   .letter:nth-child(6) {
-    animation-delay: 7.1s;
+    animation-delay: 6.1s;
   }
   .letter:nth-child(7) {
-    animation-delay: 7.3s;
+    animation-delay: 6.3s;
   }
 
   /* --- Ajustes responsivos --- */
@@ -202,7 +207,7 @@
 /* Móviles: texto más pequeño */
 @media (max-width: 576px) {
   .container {
-    font-size: 3rem;
+    font-size: 2.7rem;
   }
   .btn {
     font-size: 2rem;
