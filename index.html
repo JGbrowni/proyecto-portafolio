@@ -3,8 +3,13 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="stylesheet" href="styles/landing.css">
 <title>Landing animada Sozoria</title>
+
+<!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Tus estilos -->
+<link rel="stylesheet" href="styles/landing.css">
 </head>
 <body>
 
@@ -15,23 +20,42 @@
   <div class="cloud cloud3"></div>
 </div>
 
-<!-- Imagen de fondo que sube -->
+<!-- Imagen de fondo -->
 <div class="landing-bg" id="landingBg"></div>
 
-<!-- Contenido (Titulo + boton), oculto al inicio -->
-<div class="content" id="content">
+<!-- Contenido -->
+<div class="content text-center" id="content">
   <div class="container">
-    <span class="letter">S</span>
-    <span class="letter">O</span>
-    <span class="letter">Z</span>
-    <span class="letter">O</span>
-    <span class="letter">R</span>
-    <span class="letter">I</span>
-    <span class="letter">A</span>
+    <div class="row justify-content-center">
+      <div class="col-12">
+        
+        <!-- Título animado (solo en pantallas grandes) -->
+        <div class="title-animated d-none d-lg-flex justify-content-center">
+          <span class="letter">S</span>
+          <span class="letter">O</span>
+          <span class="letter">Z</span>
+          <span class="letter">O</span>
+          <span class="letter">R</span>
+          <span class="letter">I</span>
+          <span class="letter">A</span>
+        </div>
+
+        <!-- Título estático (solo en móviles/tablets) -->
+        <h1 class="title-static d-block d-lg-none">SOZORIA</h1>
+
+      </div>
+      <div class="col-12 mt-4">
+        <button class="btn btn-lg">Comenzar</button>
+      </div>
+    </div>
   </div>
-  <button class="btn">Comenzar</button>
 </div>
 
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Tu JS -->
 <script src="js/landing.js"></script>
 </body>
 </html>
+

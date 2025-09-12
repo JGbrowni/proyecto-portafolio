@@ -30,58 +30,63 @@
     opacity: 1;
   }
 
-  /* Contenedor de nubes */
-  .clouds-container {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    height: 100%;
-    overflow: visible;
-    pointer-events: none;
-    z-index: 10;
-  }
+/* --- Contenedor de nubes --- */
+.clouds-container {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  pointer-events: none;
+  z-index: 10;
+}
 
-  .cloud {
-    position: absolute;
-    bottom: -100px;
-    background: #eee;
-    border-radius: 50%;
+.cloud {
+  position: absolute;
+  bottom: -120px;
+  background: #eee;
+  border-radius: 50%;
+  filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.1));
+  opacity: 0.9;
+}
 
-    filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.1));
-    opacity: 0.8;
-  }
-  /* diferentes tamaños y posiciones para las nubes */
-  .cloud1 {
-    width: 150px;
-    height: 90px;
-    left: 20%;
-  }
-  .cloud2 {
-    width: 110px;
-    height: 70px;
-    left: 50%;
-  }
-  .cloud3 {
-    width: 130px;
-    height: 80px;
-    left: 75%;
-  }
+/* Diferentes tamaños y posiciones */
+.cloud1 {
+  width: 140px;
+  height: 85px;
+  left: 20%;
+}
+.cloud2 {
+  width: 160px;
+  height: 95px;
+  left: 50%;
+  transform: scale(1.2); /* más grande */
+}
+.cloud3 {
+  width: 130px;
+  height: 80px;
+  left: 75%;
+}
 
-  
+/* --- Animación de subida de nubes --- */
+@keyframes moveCloudsUp {
+  from { bottom: -120px; opacity: 0; }
+  to { bottom: 110vh; opacity: 1; }
+}
 
-  /* Animacion de subida de nubes */
-  @keyframes moveCloudsUp {
-    from {
-      bottom: -100px;
-    }
-    to {
-      bottom: 110vh; /* sale por arriba */
-    }
-  }
+.clouds-moving .cloud1 {
+  animation: moveCloudsUp 6s linear forwards;
+}
 
-  .clouds-moving .cloud {
-    animation: moveCloudsUp 6s linear forwards; /* dura 6 segundos */
-  }
+.clouds-moving .cloud2 {
+  animation: moveCloudsUp 4s linear forwards;
+  animation-delay: 1.5s; /* sale después */
+}
+
+.clouds-moving .cloud3 {
+  animation: moveCloudsUp 2s linear forwards;
+  animation-delay: 2.4s; /* sale después de la segunda */
+}
 
   /* Contenedor de titulo y boton */
   .content {
@@ -131,6 +136,8 @@
 
   .btn:hover {
     transform: scale(1.1);
+    background-color: #f4b43f;
+    color: #000;
   }
 
   @keyframes pulse {
@@ -150,6 +157,9 @@
     font-weight: bold;
     color: #f0ad4e;
     font-family: 'Arial Black', Arial, sans-serif;
+    justify-content: center;
+    gap: 10px; /* espacio uniforme entre letras */
+    flex-wrap: nowrap; /* 🔴 evita que bajen a otra línea */
   }
 
 .letter {
@@ -186,3 +196,42 @@
   .letter:nth-child(7) {
     animation-delay: 7.3s;
   }
+
+  /* --- Ajustes responsivos --- */
+
+/* Móviles: texto más pequeño */
+@media (max-width: 576px) {
+  .container {
+    font-size: 3rem;
+  }
+  .btn {
+    font-size: 2rem;
+  }
+}
+
+/* Tablets: tamaño intermedio */
+@media (min-width: 577px) and (max-width: 992px) {
+  .container {
+    font-size: 5rem;
+  }
+  .btn {
+    font-size: 2rem;
+  }
+}
+
+
+/* Ajustes responsivos */
+@media (min-width: 577px) and (max-width: 991px) {
+  .title-static {
+    font-size: 6rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .title-static {
+    font-size: 4rem;
+  }
+}
+
+
+/* Escritorio: ya usas font-size grande por defecto */
