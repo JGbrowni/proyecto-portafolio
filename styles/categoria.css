@@ -230,7 +230,10 @@ section {
     width: 400px;
   }
 
-
+ img.animacion{
+    position: absolute;
+    top: 20%;
+  }
 
 
 
