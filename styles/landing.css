@@ -155,15 +155,9 @@
     }
   }
 
-  button a{
-    text-decoration: none;
-    color: #222;
-    
-  }
-
   /*  letras animacion  */
 
-  .container {
+  .container1 {
     display: flex;
     font-size: 8rem;
     font-weight: bold;
@@ -232,7 +226,6 @@
 }
 
 
-/* Ajustes responsivos */
 @media (min-width: 577px) and (max-width: 991px) {
   .title-static {
     font-size: 6rem;
@@ -271,7 +264,7 @@
   height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: center;
   color: #fff;
   font-size: 3rem;
@@ -285,3 +278,99 @@
 
 /******  cards expansibles  *********/
 
+.seccion{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.cardd {
+    width: 220px;
+    height: 320px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    perspective: 150rem; 
+    color: #f0ad4e;
+}
+  
+.card__side {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 15rem;
+    height: 15rem;
+    backface-visibility: hidden;
+    transition: all .6s ease;
+    cursor: pointer;
+}
+  
+.cardd video{
+    display: none;
+}
+  
+  
+.card__side--front {
+    background-color: var(--marron); 
+}
+.card__side--back {
+    transform: rotateY(180deg); 
+}
+.card__side--back-1 {
+    background: var(--marron);
+}
+.cardd:hover .card__side--front {
+    transform: rotateY(-180deg); 
+}
+.cardd:hover .card__side--back {
+    transform: rotate(0); 
+}
+  
+.cardd:hover .card__side--back video{
+    transform: rotate(0); 
+    display: flex;
+}
+  
+.card1{
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card2{
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card1 img{
+    width: 20rem;
+    height: 20rem;
+    border-radius: 30px;
+}
+  
+.card2 img{
+    width: 20rem;
+    height: 20rem;
+    border-radius: 30px;
+}
+  
+.card2 a img{
+    width: 25rem;
+    height: 25rem;
+    border-radius: 30px;
+}
+  
+.card2 a video{
+    width: 25rem;
+    height: 25rem;
+    border-radius: 30px;
+}

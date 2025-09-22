@@ -51,3 +51,28 @@ cloud1.addEventListener('animationend', () => {
 });
 
 
+
+// ...existing code...
+// Agrega esto al final del archivo para los cards expansibles
+document.addEventListener('DOMContentLoaded', function() {
+  var tiles = document.querySelectorAll('.strips__strip');
+  tiles.forEach(function(tile) {
+    var content = tile.querySelector('.strip__content');
+    var closeBtn = tile.querySelector('.strip__close');
+    content.addEventListener('click', function() {
+      // Cierra cualquier otro expandido
+      document.querySelectorAll('.strips__strip--expanded').forEach(function(expanded) {
+        expanded.classList.remove('strips__strip--expanded');
+        expanded.querySelector('.strip__close').classList.remove('strip__close--show');
+      });
+      tile.classList.add('strips__strip--expanded');
+      closeBtn.classList.add('strip__close--show');
+    });
+    closeBtn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      tile.classList.remove('strips__strip--expanded');
+      closeBtn.classList.remove('strip__close--show');
+    });
+  });
+});
+
