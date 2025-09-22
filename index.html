@@ -15,9 +15,10 @@
 
 <!-- Contenedor de nubes -->
 <div class="clouds-container clouds-moving" id="clouds">
-  <div class="cloud cloud1"></div>
-  <div class="cloud cloud2"></div>
-  <div class="cloud cloud3"></div>
+  <img src="../imgs/nube1.webp" class="cloud cloud1" alt="Nube 1">
+  <img src="../imgs/nube2.webp" class="cloud cloud2" alt="Nube 2">
+  <img src="../imgs/nube3.webp" class="cloud cloud3" alt="Nube 3">
+  <img src="../imgs/nube1.webp" class="cloud cloud4" alt="Nube 4">
 </div>
 
 <!-- Imagen de fondo -->
@@ -30,7 +31,7 @@
       <div class="col-12">
         
         <!-- Título animado (solo en pantallas grandes) -->
-        <div class="title-animated d-none d-lg-flex justify-content-center">
+        <div class="title-animated d-none d-lg-flex justify-content-center" id="sozoria">
           <span class="letter">S</span>
           <span class="letter">O</span>
           <span class="letter">Z</span>
@@ -44,10 +45,8 @@
         <h1 class="title-static d-block d-lg-none">SOZORIA</h1>
 
       </div>
-      <div class="col-12 mt-4">
-        <button class="btn btn-lg">
-          <a href="secciones/categorias.html">Comenzar</a>
-        </button>
+      <div class="col-12 mt-4" id="botonComenzar">
+        <button class="btn btn-lg" id="btnComenzar">Comenzar</button>
       </div>
     </div>
   </div>
@@ -55,7 +54,7 @@
 
 <!-- Nueva sección que se mostrará después -->
 <div class="next-section" id="nextSection" style="display:none;">
-  <div class="container hero1">
+  <div class="hero1">
     <div class="seccion_titulo">
       <h2>Bienvenido a la siguiente sección</h2>
     </div>

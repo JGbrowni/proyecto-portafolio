@@ -43,35 +43,35 @@
 
 .cloud {
   position: absolute;
-  bottom: -120px;
-  background: #eee;
-  border-radius: 50%;
-  filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.1));
+  bottom: -1020px;
   opacity: 0.9;
+  pointer-events: none;
 }
 
-/* Diferentes tamaños y posiciones */
+/* Ajusta tamaños y posiciones para las imágenes */
 .cloud1 {
-  width: 140px;
-  height: 85px;
-  left: 20%;
+  width: 340px;
+  left: 10%;
 }
 .cloud2 {
-  width: 160px;
-  height: 95px;
+  width: 360px;
   left: 50%;
-  transform: scale(1.2); /* más grande */
+  transform: scale(1.2);
 }
 .cloud3 {
-  width: 130px;
-  height: 80px;
+  width: 230px;
   left: 75%;
 }
 
-/* --- Animación de subida de nubes --- */
+.cloud4 {
+  width: 300px;
+  left: 20%;
+}
+
+/* Animación de subida de nubes aplicada a las imágenes */
 @keyframes moveCloudsUp {
-  from { bottom: -120px; opacity: 0; }
-  to { bottom: 110vh; opacity: 1; }
+  from { bottom: -520px; opacity: 0; }
+  to { bottom: 210vh; opacity: 1; }
 }
 
 .clouds-moving .cloud1 {
@@ -79,13 +79,18 @@
 }
 
 .clouds-moving .cloud2 {
-  animation: moveCloudsUp 2s linear forwards;
-  animation-delay: 1.5s; /* sale después */
+  animation: moveCloudsUp 3s linear forwards;
+  animation-delay: 1.5s;
 }
 
 .clouds-moving .cloud3 {
-  animation: moveCloudsUp 1s linear forwards;
-  animation-delay: 2.4s; /* sale después de la segunda */
+  animation: moveCloudsUp 2.5s linear forwards;
+  animation-delay: 2.4s;
+}
+
+.clouds-moving .cloud4 {
+  animation: moveCloudsUp 2.6s linear forwards;
+  animation-delay: 2.6s;
 }
 
   /* Contenedor de titulo y boton */
@@ -98,10 +103,11 @@
     opacity: 0;
     z-index: 20;
     color: #f4b43f;
+    
   }
 
   .content.show {
-    animation: fadeInContent 2s forwards;
+    animation: fadeInContent 2.5s forwards;
   }
 
   @keyframes fadeInContent {
@@ -137,7 +143,7 @@
   .btn:hover {
     transform: scale(1.1);
     background-color: #f4b43f;
-    color: #000;
+    color: #222;
   }
 
   @keyframes pulse {
@@ -152,6 +158,7 @@
   button a{
     text-decoration: none;
     color: #222;
+    
   }
 
   /*  letras animacion  */
@@ -275,3 +282,6 @@
   opacity: 1;
   transform: translateY(0);
 }
+
+/******  cards expansibles  *********/
+
