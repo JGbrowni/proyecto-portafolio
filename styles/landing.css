@@ -277,6 +277,11 @@
 }
 
 /******  cards expansibles  *********/
+.row{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 .seccion{
     display: flex;
@@ -286,10 +291,9 @@
 }
 
 .cardd {
-    width: 220px;
-    height: 320px;
+    width: 235px;
+    height: 300px;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     position: relative;
@@ -338,39 +342,43 @@
 }
   
 .card1{
-    width: 40%;
+    width: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .card2{
-    width: 40%;
+    width: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .card1 img{
-    width: 20rem;
-    height: 20rem;
-    border-radius: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20rem;
+  height: 20rem;
 }
   
 .card2 img{
+  display: flex;
+  justify-content: center;
+  align-items: center;
     width: 20rem;
     height: 20rem;
-    border-radius: 30px;
 }
   
 .card2 a img{
     width: 25rem;
     height: 25rem;
-    border-radius: 30px;
 }
   
 .card2 a video{
     width: 25rem;
     height: 25rem;
-    border-radius: 30px;
 }
+
+
