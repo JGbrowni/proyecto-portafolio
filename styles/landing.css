@@ -1,4 +1,4 @@
- * {
+* {
     margin: 0; padding: 0; box-sizing: border-box;
   }
 
@@ -13,7 +13,7 @@
   /* Fondo animado que aparece hacia arriba */
   .landing-bg {
     position: fixed;
-    bottom: -1050px; /* se oculta abajo inicialmente */
+    bottom: -2050px; /* se oculta abajo inicialmente */
     left: 0;
     width: 100%;
     height: 100%;
@@ -240,3 +240,38 @@
 
 
 /* Escritorio: ya usas font-size grande por defecto */
+
+.move-up {
+  animation: moveUp 1.2s forwards;
+}
+
+@keyframes moveUp {
+  to {
+    transform: translateY(-120vh);
+    opacity: 0;
+  }
+}
+
+.next-section {
+  opacity: 0;
+  transform: translateY(60px);
+  transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+  /* Asegúrate de que esté por encima si lo necesitas */
+  z-index: 20;
+}
+
+.hero1 {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  color: #fff;
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.next-section.show {
+  opacity: 1;
+  transform: translateY(0);
+}
