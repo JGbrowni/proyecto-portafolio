@@ -1,3 +1,112 @@
+.poppins-thin {
+  font-family: "Poppins", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+}
+
+.poppins-extralight {
+  font-family: "Poppins", sans-serif;
+  font-weight: 200;
+  font-style: normal;
+}
+
+.poppins-light {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.poppins-regular {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.poppins-medium {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.poppins-semibold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.poppins-bold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.poppins-extrabold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 800;
+  font-style: normal;
+}
+
+.poppins-black {
+  font-family: "Poppins", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+}
+
+.poppins-thin-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 100;
+  font-style: italic;
+}
+
+.poppins-extralight-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 200;
+  font-style: italic;
+}
+
+.poppins-light-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.poppins-regular-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.poppins-medium-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: italic;
+}
+
+.poppins-semibold-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: italic;
+}
+
+.poppins-bold-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+.poppins-extrabold-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 800;
+  font-style: italic;
+}
+
+.poppins-black-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 900;
+  font-style: italic;
+}
+
+
 * {
     margin: 0; padding: 0; box-sizing: border-box;
   }
@@ -126,7 +235,7 @@
   }
 
   /* Boton animado */
-  .btn {
+  .boton {
     font-size: 1.5rem;
     font-weight: bold;
     padding: 15px 40px;
@@ -140,7 +249,7 @@
     animation: pulse 2s infinite;
   }
 
-  .btn:hover {
+  .boton:hover {
     transform: scale(1.1);
     background-color: #f4b43f;
     color: #222;
@@ -267,8 +376,12 @@
   justify-content: space-evenly;
   align-items: center;
   color: #fff;
-  font-size: 3rem;
-  font-weight: bold;
+  font-family: "Poppins", sans-serif;
+}
+
+.hero1 h2 {
+  font-size: 2.3rem;
+  font-weight: 700;
 }
 
 .next-section.show {
@@ -382,3 +495,260 @@
 }
 
 
+.lightbox-card{
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 99999;
+  justify-content: center;
+  align-items: center;
+  font-family: "Poppins", sans-serif;
+}
+
+.lightbox-card h2 {
+  font-weight: 700;
+  font-size: 2.5rem;
+}
+
+.lightbox-card p {
+  font-size: 1.2rem;
+}
+
+.lightbox-card1{
+  background: rgba(97, 63, 18, 0.8);
+}
+.lightbox-card2{
+  background: rgba(70, 49, 29, 0.8);
+}
+
+.lightbox-card3{
+  background: rgba(92, 16, 16, 0.8);
+}
+
+.lightbox-card4{
+  background: rgba(16, 78, 62, 0.8);
+}
+
+.lightbox-card.show {
+  display: flex;
+}
+
+/* Boton animado */
+  .botonf {
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 15px 40px;
+    border: none;
+    border-radius: 40px;
+    color: #222;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+
+  .botonf:hover {
+    transform: scale(1.1);
+    background-color: #f4b43f;
+    color: #222;
+  }
+
+    .botonb {
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 15px 40px;
+    border: none;
+    border-radius: 40px;
+    color: #222;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+
+  .botonb:hover {
+    transform: scale(1.1);
+    background-color: #f4b43f;
+    color: #222;
+  }
+
+
+    .botons {
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 15px 40px;
+    border: none;
+    border-radius: 40px;
+    color: #222;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+
+  .botons:hover {
+    transform: scale(1.1);
+    background-color: #f4b43f;
+    color: #222;
+  }
+
+
+    .botonm {
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 15px 40px;
+    border: none;
+    border-radius: 40px;
+    color: #222;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+
+  .botonm:hover {
+    transform: scale(1.1);
+    background-color: #f4b43f;
+    color: #222;
+  }
+
+
+.lightbox-card-content {
+  background: #fff;
+  color: #222;
+  border-radius: 18px;
+  padding: 40px 32px 32px 32px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+  min-width: 320px;
+  max-width: 90vw;
+  max-height: 90vh;
+  text-align: center;
+  position: relative;
+  animation: scaleIn 0.5s;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@keyframes scaleIn {
+  from { transform: scale(0.7); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.lightbox-card-close {
+  position: absolute;
+  top: 10px;
+  right: 22px;
+  font-size: 2rem;
+  color: #fff;
+  cursor: pointer;
+  z-index: 10001;
+}
+
+.ir-pagina {
+  margin-top: 24px;
+}
+
+/* ...existing code... */
+
+
+/* ...existing code... */
+
+/* Lightbox fondos diferentes */
+#lightboxCard1 .lightbox-card-content {
+  background: #eb9c36;
+  color: #fff;
+}
+#lightboxCard2 .lightbox-card-content {
+  background: #8c6239;
+  color: #fff;
+}
+#lightboxCard3 .lightbox-card-content {
+  background: #b72020;
+  color: #fff;
+}
+#lightboxCard4 .lightbox-card-content {
+  background: #1f9676;
+  color: #fff;
+}
+
+/* Botones personalizados para cada lightbox */
+#lightboxCard1 .ir-pagina {
+  background-color: #ffddaf;
+  color: #383838;
+  box-shadow: 0 0 10px #fdf3e1;
+}
+#lightboxCard1 .ir-pagina:active, #lightboxCard1 .ir-pagina.pulse {
+  animation: pulse-blue 0.4s infinite;
+}
+@keyframes pulse-blue {
+0%, 100% {
+      box-shadow: 0 0 30px #fdf3e1;
+    }
+    50% {
+      box-shadow: 0 0 60px #fdf3e1;
+    }
+}
+
+#lightboxCard2 .ir-pagina {
+  background-color: #c69c6d;
+  color: #fff;
+  box-shadow: 0 0 10px #ffdeb9;
+}
+#lightboxCard2 .ir-pagina:active, #lightboxCard2 .ir-pagina.pulse {
+  animation: pulse-cyan 0.4s infinite;
+}
+@keyframes pulse-cyan {
+0%, 100% {
+      box-shadow: 0 0 30px #ffdeb9;
+    }
+    50% {
+      box-shadow: 0 0 60px #ffdeb9;
+    }
+}
+
+#lightboxCard3 .ir-pagina {
+  background-color: #e96060;
+  color: #fff;
+  box-shadow: 0 0 10px #fdb7b7;
+}
+#lightboxCard3 .ir-pagina:active, #lightboxCard3 .ir-pagina.pulse {
+  animation: pulse-purple 0.4s infinite;
+}
+@keyframes pulse-purple {
+0%, 100% {
+      box-shadow: 0 0 30px #fdb7b7;
+    }
+    50% {
+      box-shadow: 0 0 60px #fdb7b7;
+    }
+}
+
+#lightboxCard4 .ir-pagina {
+  background-color: #77dfb3;
+  color: #383838;
+  box-shadow: 0 0 10px #cefce9;
+}
+#lightboxCard4 .ir-pagina:active, #lightboxCard4 .ir-pagina.pulse {
+  animation: pulse-yellow 0.4s infinite;
+}
+@keyframes pulse-yellow {
+0%, 100% {
+      box-shadow: 0 0 30px #cefce9;
+    }
+    50% {
+      box-shadow: 0 0 60px #cefce9;
+    }
+}
+
+/* Botón principal de la landing */
+#btnComenzar {
+  background-color: #F8BB44;
+  color: #222;
+  border: none;
+  box-shadow: 0 0 10px #F8BB44;
+  transition: box-shadow 0.2s;
+}
+#btnComenzar:active, #btnComenzar.pulse {
+  animation: pulse-main 0.4s;
+}
+@keyframes pulse-main {
+  0% { box-shadow: 0 0 0 0 #F8BB44; }
+  70% { box-shadow: 0 0 0 10px #F8BB4444; }
+  100% { box-shadow: 0 0 0 0 #F8BB44; }
+}

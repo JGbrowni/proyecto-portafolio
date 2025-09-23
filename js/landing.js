@@ -52,3 +52,47 @@ cloud1.addEventListener('animationend', () => {
 
 
 
+document.addEventListener('DOMContentLoaded', function() {
+  // Selecciona todos los cards
+  var cards = document.querySelectorAll('.cardd');
+  cards.forEach(function(card, idx) {
+    var lightbox = document.getElementById('lightboxCard' + (idx + 1));
+    var closeBtn = lightbox.querySelector('.lightbox-card-close');
+    var goBtn = lightbox.querySelector('.ir-pagina');
+
+    card.addEventListener('click', function(e) {
+      // Evita que se abra si se hace click en el lightbox, botón o la X
+      if (
+        e.target.classList.contains('lightbox-card-close') ||
+        e.target.classList.contains('ir-pagina') ||
+        lightbox.classList.contains('show')
+      ) return;
+      lightbox.classList.add('show');
+    });
+
+    closeBtn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      lightbox.classList.remove('show');
+    });
+
+    goBtn.addEventListener('click', function(e) {
+      e.stopPropagation();
+      window.location.href = goBtn.getAttribute('data-url');
+    });
+
+    // Opcional: cerrar al hacer click fuera del contenido
+    lightbox.addEventListener('click', function(e) {
+      if (e.target === lightbox) {
+        lightbox.classList.remove('show');
+      }
+    });
+  });
+});
+
+// Ejemplo para todos los botones .ir-pagina y el principal
+document.querySelectorAll('.ir-pagina, #btnComenzar').forEach(btn => {
+  btn.addEventListener('click', function() {
+    btn.classList.add('pulse');
+    setTimeout(() => btn.classList.remove('pulse'), 400);
+  });
+});
