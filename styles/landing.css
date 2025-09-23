@@ -268,7 +268,7 @@
 
   .container1 {
     display: flex;
-    font-size: 8rem;
+    font-size: 9rem;
     font-weight: bold;
     color: #f0ad4e;
     font-family: 'Arial Black', Arial, sans-serif;
@@ -370,7 +370,7 @@
 }
 
 .hero1 {
-  height: 100vh;
+  height: 90vh;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -390,7 +390,7 @@
 }
 
 /******  cards expansibles  *********/
-.row{
+.roww{
   display: flex;
   justify-content: center;
   align-items: center;
@@ -514,6 +514,15 @@
 
 .lightbox-card p {
   font-size: 1.2rem;
+}
+
+.lightbox-card p span {
+  font-weight: 800;
+}
+
+.nota{
+  font-weight: 800;
+  color: #ffd207;
 }
 
 .lightbox-card1{
@@ -644,11 +653,6 @@
   margin-top: 24px;
 }
 
-/* ...existing code... */
-
-
-/* ...existing code... */
-
 /* Lightbox fondos diferentes */
 #lightboxCard1 .lightbox-card-content {
   background: #eb9c36;
@@ -751,4 +755,73 @@
   0% { box-shadow: 0 0 0 0 #F8BB44; }
   70% { box-shadow: 0 0 0 10px #F8BB4444; }
   100% { box-shadow: 0 0 0 0 #F8BB44; }
+}
+
+/* Animación de fade in para bienvenida y sozoria */
+.fade-in-welcome {
+  opacity: 0;
+  animation: fadeInWelcome 1.2s ease forwards;
+  animation-delay: 0.5s;
+}
+
+@keyframes fadeInWelcome {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.fade-in-welcome{
+  font-family: "Poppins", sans-serif;
+  font-size: 2rem;
+}
+
+/* ...existing code... */
+
+.footer-sozoria {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100vw;
+  color: #fff;
+  z-index: 999999;
+  font-family: "Poppins", sans-serif;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 32px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.footer-left {
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.footer-right a {
+  color: #fff;
+  margin-left: 22px;
+  font-size: 1.6rem;
+  transition: color 0.2s;
+  text-decoration: none;
+}
+
+.footer-right a:hover {
+  color: #f7b127;
+}
+
+/* Responsive */
+@media (max-width: 576px) {
+  .footer-content {
+    flex-direction: column;
+    gap: 8px;
+    padding: 12px 10px;
+    text-align: center;
+  }
+  .footer-right a {
+    margin-left: 16px;
+    font-size: 1.3rem;
+  }
 }

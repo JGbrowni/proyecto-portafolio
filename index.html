@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Landing animada Sozoria</title>
+<title>Sozoria | Inicio</title>
 
 <!-- Bootstrap CSS -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -34,7 +34,11 @@
   <div class="container1">
     <div class="row justify-content-center">
       <div class="col-12">
-        
+        <!-- Texto arriba del título animado con animación -->
+        <div class="welcome-text mb-2 fade-in-welcome" id="WelcomeText">
+          Bienvenidos a mi portafolio:
+        </div>
+
         <!-- Título animado (solo en pantallas grandes) -->
         <div class="title-animated d-none d-lg-flex justify-content-center" id="sozoria">
           <span class="letter">S</span>
@@ -47,8 +51,7 @@
         </div>
 
         <!-- Título estático (solo en móviles/tablets) -->
-        <h1 class="title-static d-block d-lg-none">SOZORIA</h1>
-
+        <h1 class="title-static d-block d-lg-none fade-in-welcome">SOZORIA</h1>
       </div>
       <div class="col-12 mt-4" id="botonComenzar">
         <button class="btn btn-lg boton" id="btnComenzar">Comenzar</button>
@@ -64,7 +67,7 @@
       <h2>SELECCIONA LA CIUDAD QUE DESEAS VISITAR</h2>
     </div>
 <div class="container secciones">
-        <div class="row">
+        <div class="row roww">
 
             <div class="seccion col-12 col-md-6 col-xl-3 d-flex justify-content-center align-items-center h-100">
                 <div class="cardd">
@@ -138,37 +141,56 @@
   <div class="lightbox-card-content">
     <i class="fa fa-close lightbox-card-close"></i>
     <h2>Ciudad de la Ilustración</h2>
-    <p>Aquí habita Fancy Halley, un personaje rodeado de pinceles, lienzos y trazos en movimiento.  Donde los bocetos se transforman en mundos llenos de color. Esta área muestra mi talento en ilustraciones digitales, concept art y dibujos que cuentan historias.</p>
-    <button class="btn btn-primary ir-pagina botonf" data-url="secciones/fancy.html">Descubrir</button>
+    <p>Aquí habita <span>Fancy Halley</span>, un personaje rodeado de pinceles, lienzos y trazos en movimiento.  Donde los bocetos se transforman en mundos llenos de color. Esta área muestra mi talento en ilustraciones digitales, concept art y dibujos que cuentan historias.</p>
+    <button class="btn btn-primary ir-pagina botonf" data-url="secciones/seccion_prueba.html">Descubrir</button>
   </div>
 </div>
 <!-- Lightbox para card 2 -->
 <div class="lightbox-card lightbox-card2" id="lightboxCard2">
   <div class="lightbox-card-content">
     <i class="fa fa-close lightbox-card-close"></i>
-    <h2>Ciudad Brown</h2>
-    <p>Información detallada sobre la ciudad Brown.</p>
-    <button class="btn btn-primary ir-pagina botonb" data-url="secciones/papu.html">Ir a Papu</button>
+    <h2>Ciudad del Branding</h2>
+    <p>En esta ciudad encontrarás a <span>Oscar Brown</span>, un personaje elegante con herramientas de diseño y símbolos que flotan a su alrededor.  Esta área muestra mis proyectos de logotipos, identidades visuales y la construcción de marcas con personalidad propia.</p>
+    <button class="btn btn-primary ir-pagina botonb" data-url="secciones/papu.html">Descubrir</button>
   </div>
 </div>
 <!-- Lightbox para card 3 -->
 <div class="lightbox-card lightbox-card3" id="lightboxCard3">
   <div class="lightbox-card-content">
     <i class="fa fa-close lightbox-card-close"></i>
-    <h2>Ciudad Skatlet</h2>
-    <p>Información detallada sobre la ciudad Skatlet.</p>
-    <button class="btn btn-primary ir-pagina botons" data-url="secciones/skatlet.html">Ir a Skatlet</button>
+    <h2>Ciudad Multimedia</h2>
+    <p>El habitante de este lugar es <span>Skatlet Touko</span>, siempre acompañada de cámaras, ondas sonoras y pantallas que cobran vida. Se dedica a unir imagen, sonido y movimiento. Esta sección recopila mis trabajos de animación, videos, edición y todo lo relacionado con el mundo multimedia.</p>
+    <button class="btn btn-primary ir-pagina botons" data-url="secciones/skatlet.html">Descubrir</button>
   </div>
 </div>
 <!-- Lightbox para card 4 -->
 <div class="lightbox-card lightbox-card4" id="lightboxCard4">
   <div class="lightbox-card-content">
     <i class="fa fa-close lightbox-card-close"></i>
-    <h2>Ciudad Madelina</h2>
-    <p>Información detallada sobre la ciudad Madelina.</p>
-    <button class="btn btn-primary ir-pagina botonm" data-url="secciones/madelina.html">Ir a Madelina</button>
+    <h2>Ciudad Digital</h2>
+    <p>Aquí vive <span>Madelina Stella</span>, un personaje rodeado de pantallas y redes interconectadas como circuitos luminosos. Es la encargada de tender puentes entre el diseño y la tecnología. En esta área muestras mi trabajo en páginas web, diseño digital, redes sociales y todo lo que da vida al mundo online.</p>
+    <span></span>
+    <p class="nota">NOTA: VISITA LAS DEMÁS CIUDADES ANTES DE ENTRAR A LA SECCIÓN FINAL.</p>
+    <button class="btn btn-primary ir-pagina botonm" data-url="secciones/madelina.html">Descubrir</button>
   </div>
 </div>
+
+<!-- ...existing code... -->
+
+<footer class="footer-sozoria">
+  <div class="footer-content">
+    <div class="footer-left">
+      <span>© 2025 Osobrowni & Browni. Marca, personaje y contenidos creados por Oscar Flores.
+</span>
+    </div>
+    <div class="footer-right">
+      <a href="https://instagram.com/osobrowni" target="_blank" aria-label="Instagram"><i class="fa fa-instagram"></i></a>
+      <a href="https://x.com/" target="_blank" aria-label="X"><i class="fa fa-twitter"></i></a>
+      <a href="https://youtube.com/" target="_blank" aria-label="YouTube"><i class="fa fa-youtube-play"></i></a>
+      <a href="https://behance.net/" target="_blank" aria-label="Behance"><i class="fa fa-behance"></i></a>
+    </div>
+  </div>
+</footer>
 
 <!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>

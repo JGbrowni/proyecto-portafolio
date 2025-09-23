@@ -5,6 +5,7 @@ const content = document.getElementById('content');
 const nextSection = document.getElementById('nextSection');
 const sozoria = document.getElementById('sozoria');
 const botonComenzar = document.getElementById('botonComenzar');
+const WelcomeText = document.getElementById('WelcomeText');
 
 btnComenzar.addEventListener('click', function(e) {
   e.preventDefault();
@@ -13,6 +14,9 @@ btnComenzar.addEventListener('click', function(e) {
   content.classList.add('move-up');
   sozoria.classList.add('move-up');
   botonComenzar.classList.add('move-up');
+  WelcomeText.style.display = 'none';
+
+  
 
   // Espera la animación y muestra la siguiente sección
   setTimeout(() => {
@@ -21,6 +25,7 @@ btnComenzar.addEventListener('click', function(e) {
     content.style.display = 'none';
     sozoria.style.display = 'none';
     botonComenzar.style.display = 'none';
+    WelcomeText.style.display = 'none';
     nextSection.style.display = 'block';
     // Agrega la clase para animar la entrada
     setTimeout(() => {
