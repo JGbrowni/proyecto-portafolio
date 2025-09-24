@@ -125,7 +125,7 @@
       display: flex;
       flex-direction: row;
       height: 100vh;
-      width: 300vw; /* 3 secciones de 100vw cada una */
+      width: 400vw; /* 4 secciones de 100vw cada una */
       scroll-snap-type: x mandatory;
       overflow: hidden; /* Evita el scroll general */
       scroll-behavior: smooth;
@@ -208,6 +208,21 @@
     height: 100vh;
     justify-content: end;
     align-items: end;
+  }
+
+  .personajescorriendo{
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    justify-content: end;
+    align-items: end;
+  }
+
+  .suelo{
+    display: flex;
+    width: 100vw;
+    background-color: #f7b127;
+    height: 15vh;
   }
 
   /*** footer sozoria  ***/
