@@ -38,6 +38,54 @@
       });
     }
 
+
+    //Icono de menu
+    // Funcionalidad del menú hamburguesa
+const menuToggle = document.getElementById('menuToggle');
+const menuOverlay = document.getElementById('menuOverlay');
+const sideMenu = document.getElementById('sideMenu');
+const menuItems = document.querySelectorAll('.menu-item');
+
+// Toggle del menú
+function toggleMenu() {
+  menuToggle.classList.toggle('active');
+  menuOverlay.classList.toggle('active');
+  sideMenu.classList.toggle('active');
+  
+  // Prevenir scroll del body cuando el menú está abierto
+  document.body.style.overflow = sideMenu.classList.contains('active') ? 'hidden' : 'auto';
+}
+
+// Event listeners
+menuToggle.addEventListener('click', toggleMenu);
+menuOverlay.addEventListener('click', toggleMenu);
+
+// Navegación del menú
+menuItems.forEach(item => {
+  item.addEventListener('click', (e) => {
+    const href = item.getAttribute('href');
+    
+    // Si es un enlace a otra página, permitir navegación normal
+    if (href && (href.endsWith('.html') || href.startsWith('http'))) {
+      // Cerrar el menú antes de navegar
+      toggleMenu();
+      // No prevenir default para que navegue normalmente
+      return true;
+    }
+    
+    // Si no es un enlace válido, prevenir default
+    e.preventDefault();
+  });
+});
+
+// Cerrar menú con tecla ESC
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && sideMenu.classList.contains('active')) {
+    toggleMenu();
+  }
+});
+
+
     document.addEventListener('DOMContentLoaded', () => {
             const background = document.getElementById('background-silhouette');
 
