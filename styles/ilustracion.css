@@ -125,7 +125,7 @@
       display: flex;
       flex-direction: row;
       height: 100vh;
-      width: 400vw; /* 4 secciones de 100vw cada una */
+      width: 500vw; /* 5 secciones de 100vw cada una */
       scroll-snap-type: x mandatory;
       overflow: hidden; /* Evita el scroll general */
       scroll-behavior: smooth;
@@ -165,7 +165,7 @@
     .character-card {
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       cursor: pointer;
-      background-color: #2c2f33;
+      background-color: #292929;
       border-radius: 0.5rem;
       overflow: hidden;
       color: white;
@@ -190,6 +190,13 @@
     color: #fff;
     margin-bottom: 1rem;
   }
+
+  .intro p{
+    font-family: "Poppins", sans-serif;
+    font-size: 1.4rem;
+    color: #fff;
+  }
+
   .plecas{
     font-family: "Poppins", sans-serif;
     font-size: 1.2rem;
@@ -221,9 +228,48 @@
   .suelo{
     display: flex;
     width: 100vw;
-    background-color: #f7b127;
-    height: 15vh;
+    background-color: #e09600;
+    height: 14vh;
   }
+  /****** color botones *****/
+  #prevBtn{
+    color: #f7b127;
+  }
+
+  #nextBtn{
+    color: #f7b127;
+  }
+
+
+/******  Animacion personajes   *******/
+ .element-1 {
+            animation: float1 3s ease-in-out infinite;
+  }
+
+  .element-2 {
+            animation: float1 3.2s ease-in-out infinite;
+  }
+
+ @keyframes float1 {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+  }
+
+  @keyframes float1 {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+  }
+
+
+
 
   /*** footer sozoria  ***/
 
@@ -233,7 +279,7 @@
   bottom: 0;
   width: 100vw;
   color: #fff;
-  background-color: #000;
+  background-color: #292929;
   z-index: 1000;
   font-family: "Poppins", sans-serif;
 }
