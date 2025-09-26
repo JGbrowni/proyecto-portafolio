@@ -381,6 +381,10 @@
       padding: 100px 0 20px 0;
     }
   }
+
+
+
+
     /* Ajustes para hero */
     .hero-bg {
       background-size: cover;
@@ -471,6 +475,94 @@
     color: #f7b127;
   }
 
+/* Móviles: texto más pequeño */
+@media (max-width: 576px) {
+  .imagenintro{
+    height: 44vh;
+    justify-content: center;
+  }
+
+  .imagenintro img{
+    width: 30rem;
+
+  }
+  .intro{
+    padding: 0;
+    margin: 0;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+  .intro h1{
+    font-family: "Poppins", sans-serif;
+    font-size: 2.5rem;
+  }
+
+  .intro p{
+    font-family: "Poppins", sans-serif;
+    font-size: 1.1rem;
+    color: #fff;
+    text-align: center;
+  }
+
+  .plecas{
+    font-size: 1rem;
+    margin-right: 1rem;
+    border-radius: 0.5rem;
+
+  }
+}
+/* Tablets: tamaño intermedio */
+@media (min-width: 577px) and (max-width: 991px) {
+.imagenintro{
+    height: 50vh;
+    justify-content: center;
+  }
+
+  .imagenintro img{
+    width: 35rem;
+
+  }
+  .intro{
+    height: 40vh;
+    padding: 0;
+    margin: 0;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .intro h1{
+    font-family: "Poppins", sans-serif;
+    font-size: 2.5rem;
+  }
+
+  .intro p{
+    font-family: "Poppins", sans-serif;
+    text-align: center;
+    font-size: 1.1rem;
+    color: #fff;
+  }
+
+  .hero-bg {
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+  }
+  .plecas{
+    font-size: 1rem;
+    color: #fff;
+    margin-right: 1rem;
+    border: 2px solid #fff;
+    padding: 0.2rem 0.5rem;
+    border-radius: 0.5rem;
+
+  }
+}
 
 /******  Animacion personajes   *******/
  .element-1 {
@@ -555,5 +647,26 @@
   }
 }
 
+@media (min-width: 577px) and (max-width: 992px) {
+  .footer-content {
+    flex-direction: column;
+    gap: 8px;
+    padding: 12px 10px;
+    text-align: center;
+  }
+  .footer-right a {
+    margin-left: 16px;
+    font-size: 1.3rem;
+  }
+}
+
 
 /*********** Responsive ***********/
+/* Móviles: texto más pequeño */
+@media (max-width: 576px) {
+
+}
+/* Tablets: tamaño intermedio */
+@media (min-width: 577px) and (max-width: 991px) {
+
+}

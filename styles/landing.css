@@ -349,7 +349,7 @@
 }
 
 /* Tablets: tamaño intermedio */
-@media (min-width: 577px) and (max-width: 992px) {
+@media (min-width: 577px) and (max-width: 991px) {
   .container1 {
     font-size: 5rem;
   }
