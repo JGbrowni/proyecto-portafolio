@@ -6,6 +6,7 @@ const nextSection = document.getElementById('nextSection');
 const sozoria = document.getElementById('sozoria');
 const botonComenzar = document.getElementById('botonComenzar');
 const WelcomeText = document.getElementById('WelcomeText');
+const TitleStatic = document.getElementById('TitleStatic');
 
 btnComenzar.addEventListener('click', function(e) {
   e.preventDefault();
@@ -15,6 +16,8 @@ btnComenzar.addEventListener('click', function(e) {
   sozoria.classList.add('move-up');
   botonComenzar.classList.add('move-up');
   WelcomeText.style.display = 'none';
+  TitleStatic.style.display = 'none';
+
 
   
 
@@ -26,6 +29,7 @@ btnComenzar.addEventListener('click', function(e) {
     sozoria.style.display = 'none';
     botonComenzar.style.display = 'none';
     WelcomeText.style.display = 'none';
+    TitleStatic.style.display = 'none';
     nextSection.style.display = 'block';
     // Agrega la clase para animar la entrada
     setTimeout(() => {

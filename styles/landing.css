@@ -277,6 +277,30 @@
     flex-wrap: nowrap; /* 🔴 evita que bajen a otra línea */
   }
 
+/* Móviles: texto más pequeño */
+@media (max-width: 576px) {
+      .welcome-text p{
+      font-size: 2.5rem;
+    }
+    
+    .col-12 h1{
+      font-size: 4rem;
+      text-align: center;
+    }
+}
+
+/* Tablets: tamaño intermedio */
+@media (min-width: 577px) and (max-width: 992px) {
+    .welcome-text p{
+      font-size: 3rem;
+    }
+    
+    .col-12 h1{
+      font-size: 6.4rem;
+      text-align: center;
+    }
+}
+
 .letter {
     opacity: 0;
     transform: translateY(-100px);
@@ -316,7 +340,7 @@
 
 /* Móviles: texto más pequeño */
 @media (max-width: 576px) {
-  .container {
+  .container1 {
     font-size: 2.7rem;
   }
   .btn {
@@ -326,7 +350,7 @@
 
 /* Tablets: tamaño intermedio */
 @media (min-width: 577px) and (max-width: 992px) {
-  .container {
+  .container1 {
     font-size: 5rem;
   }
   .btn {
@@ -625,6 +649,7 @@
   min-width: 320px;
   max-width: 90vw;
   max-height: 90vh;
+  z-index: 99999;
   text-align: center;
   position: relative;
   animation: scaleIn 0.5s;
@@ -757,6 +782,63 @@
   100% { box-shadow: 0 0 0 0 #F8BB44; }
 }
 
+
+/* Móviles: texto más pequeño */
+@media (max-width: 576px) {
+.card1{
+    width: 10%;
+}
+
+.card2{
+    width: 10%;
+}
+.card1 img{
+  width: 12rem;
+  height: 12rem;
+}
+  
+.card2 img{
+    width: 12rem;
+    height: 12rem;
+}
+.cardd {
+    width: 235px;
+    height: 250px;
+}
+
+.seccion_titulo{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.seccion_titulo h2{
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+}
+
+/* Tablets: tamaño intermedio */
+@media (min-width: 577px) and (max-width: 992px) {
+
+.seccion_titulo{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.seccion_titulo h2{
+  text-align: center;
+  font-size: 1.9rem;
+}
+}
+
+
+
+
+
+
+
+
 /* Animación de fade in para bienvenida y sozoria */
 .fade-in-welcome {
   opacity: 0;
@@ -782,7 +864,7 @@
   bottom: 0;
   width: 100vw;
   color: #fff;
-  z-index: 999999;
+  z-index: 9999;
   font-family: "Poppins", sans-serif;
 }
 
@@ -814,6 +896,20 @@
 
 /* Responsive */
 @media (max-width: 576px) {
+  .footer-content {
+    flex-direction: column;
+    gap: 8px;
+    padding: 12px 10px;
+    text-align: center;
+  }
+  .footer-right a {
+    margin-left: 16px;
+    font-size: 1.3rem;
+  }
+}
+
+/* Tablets: tamaño intermedio */
+@media (min-width: 577px) and (max-width: 992px) {
   .footer-content {
     flex-direction: column;
     gap: 8px;
