@@ -101,3 +101,36 @@ document.addEventListener('keydown', (e) => {
                 }
             });
         });
+
+
+//bloqueo horizontal
+function handleOrientationChange() {
+            const overlay = document.getElementById('orientationOverlay');
+            const mainContent = document.querySelector('.main-content');
+            
+            // Verificar si es un dispositivo móvil y está en horizontal
+            const isMobile = window.innerWidth <= 896;
+            const isLandscape = window.orientation === 90 || window.orientation === -90;
+            
+            if (isMobile && isLandscape) {
+                overlay.style.display = 'flex';
+                mainContent.style.display = 'none';
+                document.body.style.overflow = 'hidden';
+            } else {
+                overlay.style.display = 'none';
+                mainContent.style.display = 'block';
+                document.body.style.overflow = 'auto';
+            }
+        }
+
+        // Escuchar cambios de orientación
+        window.addEventListener('orientationchange', function() {
+            // Pequeño delay para esperar a que el cambio se complete
+            setTimeout(handleOrientationChange, 100);
+        });
+
+        // Escuchar cambios de tamaño de ventana (como respaldo)
+        window.addEventListener('resize', handleOrientationChange);
+
+        // Ejecutar al cargar la página
+        document.addEventListener('DOMContentLoaded', handleOrientationChange);
