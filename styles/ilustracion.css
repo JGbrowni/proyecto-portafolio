@@ -404,6 +404,7 @@
 
   .intro{
     display: flex;
+    height: 100vh;
     justify-content: center;
     flex-direction: column;
     text-align: start;
@@ -479,6 +480,7 @@
 
   }
   .intro{
+    height: 40vh;
     padding: 0;
     margin: 0;
     justify-content: center;
@@ -501,7 +503,57 @@
     font-size: 1rem;
     margin-right: 1rem;
     border-radius: 0.5rem;
+  }
 
+    /* Secciones de personajes */
+  #characters, 
+  #characters2,
+  .characters-section {
+    overflow-y: hidden; /* desactiva scroll vertical */
+    padding-bottom: 1rem;
+  }
+
+  /* Las filas se convierten en un grid */
+  #characters .row,
+  #characters2 .row,
+  .characters-section .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.8rem; /* espacio entre cards */
+  }
+
+  /* Cada card ocupa ~30% del ancho para que quepan 3 en fila */
+  #characters .col-12,
+  #characters2 .col-12,
+  .characters-section .col-12 {
+    flex: 0 0 30%;
+    max-width: 30%;
+  }
+
+  /* Ajustes de las cards */
+  .character-card {
+    width: 100%;
+    padding: 0.5rem;
+    margin: 0 auto;
+  }
+
+  .character-card img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 0.4rem;
+  }
+
+  /* Textos más pequeños */
+  .character-card h3 {
+    font-size: 0.9rem;
+    text-align: center;
+  }
+
+  .character-card p {
+    font-size: 0.75rem;
+    text-align: center;
   }
 }
 /* Tablets: tamaño intermedio */
@@ -516,7 +568,7 @@
 
   }
   .intro{
-    height: 40vh;
+    height: 45vh;
     padding: 0;
     margin: 0;
     justify-content: center;
@@ -567,7 +619,7 @@
 
   }
   .intro{
-    height: 40vh;
+    height: 50vh;
     padding: 0;
     margin: 0;
     justify-content: center;
@@ -604,6 +656,20 @@
     padding: 0.2rem 0.5rem;
     border-radius: 0.5rem;
 
+  }
+
+}
+
+@media (min-width: 1200px) and (max-width: 1600px) {
+.imagenintro{
+    justify-content: center;
+    display: flex;
+    justify-content: end;
+    align-items: end;
+  }
+
+  .imagenintro img{
+    width: 50rem;
   }
 
 }
@@ -723,12 +789,11 @@
             top: 0;
             left: 0;
             width: 100%;
-            height: 100%;
             background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
             display: none;
             justify-content: center;
             align-items: center;
-            z-index: 9999;
+            z-index: 99999;
             flex-direction: column;
             padding: 20px;
             text-align: center;
