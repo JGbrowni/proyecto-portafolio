@@ -108,11 +108,11 @@
 
 
 
-    * {
+* {
     margin: 0; padding: 0; box-sizing: border-box;
   }
 
-    html, body{
+html, body{
       margin: 0; padding: 0;
       overflow: hidden; /* Evita el scroll general */
       scroll-behavior: smooth;
@@ -120,8 +120,24 @@
       color: white;
     }
 
+/* Cuando el dispositivo esté en horizontal */
+@media screen and (max-width: 1024px) and (orientation: landscape) {
+  .desktop-design {
+    display: none; /* ocultar todo */
+  }
+  footer{
+    display: none;
+  }
+  .menu{
+    display: none;
+  }
+  .orientation-overlay {
+    display: flex !important;
+  }
+}
+
     /* Contenedor principal en fila horizontal */
-    #main-container {
+#main-container {
       display: flex;
       flex-direction: row;
       height: 100vh;
@@ -142,6 +158,26 @@
     will-change: transform; /* Ayuda al navegador a optimizar la animación */
     transform: scale(1.15); /* Asegura que no se vean los bordes al mover */
 }
+
+.mobile-responsive{
+  display: none;
+}
+
+/* Móviles: texto más pequeño */
+@media (max-width: 768px) {
+html, body{
+  overflow: scroll;
+  background-color: #34495e;
+}
+
+  .desktop-design{
+    display: none;
+  }
+  .mobile-responsive{
+    display: block;
+  }
+}
+
 
 /*********  Icono de Menu ************/
 /* Estilos para el menú hamburguesa */
@@ -470,40 +506,7 @@
 
 /* Móviles: texto más pequeño */
 @media (max-width: 576px) {
-  .imagenintro{
-    height: 44vh;
-    justify-content: center;
-  }
-
-  .imagenintro img{
-    width: 30rem;
-
-  }
-  .intro{
-    height: 40vh;
-    padding: 0;
-    margin: 0;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-  }
-  .intro h1{
-    font-family: "Poppins", sans-serif;
-    font-size: 2.5rem;
-  }
-
-  .intro p{
-    font-family: "Poppins", sans-serif;
-    font-size: 1.1rem;
-    color: #fff;
-    text-align: center;
-  }
-
-  .plecas{
-    font-size: 1rem;
-    margin-right: 1rem;
-    border-radius: 0.5rem;
-  }
+  
 
     /* Secciones de personajes */
   #characters, 
@@ -789,6 +792,7 @@
             top: 0;
             left: 0;
             width: 100%;
+            height: 100vh;
             background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
             display: none;
             justify-content: center;
@@ -803,7 +807,6 @@
             color: white;
             font-size: 18px;
             line-height: 1.6;
-            margin-top: 30px;
             max-width: 300px;
             font-weight: 500;
         }
@@ -942,3 +945,48 @@
                 transform: translateY(-3px);
             }
         }
+
+/* Móviles: apartado más pequeño ******************************************************************/
+
+@media (max-width: 576px) {
+  .imagenintro{
+    height: 44vh;
+    justify-content: center;
+  }
+
+  .imagenintro img{
+    width: 30rem;
+
+  }
+  .intro{
+    height: 40vh;
+    padding: 0;
+    margin: 0;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+  .intro h1{
+    font-family: "Poppins", sans-serif;
+    font-size: 2.5rem;
+  }
+
+  .intro p{
+    font-family: "Poppins", sans-serif;
+    font-size: 1.1rem;
+    color: #fff;
+    text-align: center;
+  }
+
+  .plecas{
+    font-size: 1rem;
+    margin-right: 1rem;
+    border-radius: 0.5rem;
+  
+  }
+  .seccionplecas-mobile{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+}
