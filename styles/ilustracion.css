@@ -163,7 +163,7 @@ html, body{
   display: none;
 }
 
-/* Móviles: texto más pequeño */
+/* Móviles *****************************/
 @media (max-width: 768px) {
 html, body{
   overflow: scroll;
