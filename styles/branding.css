@@ -1,0 +1,1027 @@
+.poppins-thin {
+  font-family: "Poppins", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+}
+
+.poppins-extralight {
+  font-family: "Poppins", sans-serif;
+  font-weight: 200;
+  font-style: normal;
+}
+
+.poppins-light {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.poppins-regular {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.poppins-medium {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.poppins-semibold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.poppins-bold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.poppins-extrabold {
+  font-family: "Poppins", sans-serif;
+  font-weight: 800;
+  font-style: normal;
+}
+
+.poppins-black {
+  font-family: "Poppins", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+}
+
+.poppins-thin-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 100;
+  font-style: italic;
+}
+
+.poppins-extralight-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 200;
+  font-style: italic;
+}
+
+.poppins-light-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.poppins-regular-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.poppins-medium-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-style: italic;
+}
+
+.poppins-semibold-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-style: italic;
+}
+
+.poppins-bold-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+.poppins-extrabold-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 800;
+  font-style: italic;
+}
+
+.poppins-black-italic {
+  font-family: "Poppins", sans-serif;
+  font-weight: 900;
+  font-style: italic;
+}
+
+
+
+* {
+    margin: 0; padding: 0; box-sizing: border-box;
+  }
+
+html, body{
+      margin: 0; padding: 0;
+      overflow: hidden; /* Evita el scroll general */
+      scroll-behavior: smooth;
+      font-family: "Poppins", sans-serif;
+      color: white;
+    }
+
+/* Cuando el dispositivo esté en horizontal */
+@media screen and (max-width: 1024px) and (orientation: landscape) {
+  .desktop-design {
+    display: none; /* ocultar todo */
+  }
+  footer{
+    display: none;
+  }
+  .menu{
+    display: none;
+  }
+  .orientation-overlay {
+    display: flex !important;
+  }
+}
+
+    /* Contenedor principal en fila horizontal */
+#main-container {
+      display: flex;
+      flex-direction: row;
+      height: 100vh;
+      width: 500vw; /* 5 secciones de 100vw cada una */
+      scroll-snap-type: x mandatory;
+      overflow: hidden; /* Evita el scroll general */
+      scroll-behavior: smooth;
+    }
+    /* Cada sección ocupa 100vw y 100vh y snap */
+    section {
+      flex: 0 0 100vw;
+      height: 100vh;
+      scroll-snap-align: start;
+      overflow: hidden; /* Evita el scroll general */
+    }
+    .parallax-bg {
+    transition: transform 0.1s linear; /* Transición suave para el parallax */
+    will-change: transform; /* Ayuda al navegador a optimizar la animación */
+    transform: scale(1.15); /* Asegura que no se vean los bordes al mover */
+}
+
+.mobile-responsive{
+  display: none;
+}
+
+/* Móviles *****************************/
+@media (max-width: 768px) {
+html, body{
+  overflow: scroll;
+  background-color: #3f2900;
+}
+
+  .desktop-design{
+    display: none;
+  }
+  .mobile-responsive{
+    display: block;
+  }
+}
+
+
+/*********  Icono de Menu ************/
+/* Estilos para el menú hamburguesa */
+  .menu-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1001;
+    background: rgba(247, 177, 39, 0.9);
+    border: none;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(10px);
+  }
+
+  .menu-toggle:hover {
+    background: rgba(247, 177, 39, 1);
+    transform: scale(1.1);
+    box-shadow: 0 5px 20px rgba(247, 177, 39, 0.4);
+  }
+
+  /* Animación del ícono hamburguesa */
+  .hamburger {
+    width: 25px;
+    height: 20px;
+    position: relative;
+    transform: rotate(0deg);
+    transition: 0.3s ease-in-out;
+  }
+
+  .hamburger span {
+    display: block;
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    background: white;
+    border-radius: 2px;
+    opacity: 1;
+    left: 0;
+    transform: rotate(0deg);
+    transition: 0.3s ease-in-out;
+  }
+
+  .hamburger span:nth-child(1) {
+    top: 0px;
+  }
+
+  .hamburger span:nth-child(2) {
+    top: 8px;
+  }
+
+  .hamburger span:nth-child(3) {
+    top: 16px;
+  }
+
+  /* Animación cuando está activo */
+  .menu-toggle.active .hamburger span:nth-child(1) {
+    top: 8px;
+    transform: rotate(135deg);
+  }
+
+  .menu-toggle.active .hamburger span:nth-child(2) {
+    opacity: 0;
+    left: -60px;
+  }
+
+  .menu-toggle.active .hamburger span:nth-child(3) {
+    top: 8px;
+    transform: rotate(-135deg);
+  }
+
+  /* Overlay oscuro */
+  .menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+  }
+
+  .menu-overlay.active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  /* Menú lateral - DESKTOP (laptops y pantallas grandes) */
+  .side-menu {
+    position: fixed;
+    top: 0;
+    right: -450px;
+    width: 450px;
+    height: 100vh;
+    background: linear-gradient(135deg, #292929 0%, #1a1a1a 100%);
+    z-index: 1000;
+    transition: right 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    padding: 100px 0 20px 0;
+    box-shadow: -5px 0 25px rgba(0, 0, 0, 0.4);
+    transform: translateX(100%);
+  }
+
+  .side-menu.active {
+    right: 0;
+    transform: translateX(0);
+  }
+
+  .menu-item {
+    display: block;
+    padding: 25px 50px;
+    color: white;
+    text-decoration: none;
+    font-family: "Poppins", sans-serif;
+    font-size: 1.3rem;
+    font-weight: 500;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    transform: translateX(100px);
+    opacity: 0;
+  }
+
+  .menu-item:hover {
+    background: rgba(247, 177, 39, 0.1);
+    color: #f7b127;
+    padding-left: 60px;
+    text-decoration: none;
+  }
+
+  /* Animación de entrada de los items del menú */
+  .side-menu.active .menu-item {
+    transform: translateX(0);
+    opacity: 1;
+    transition: all 0.4s cubic-bezier(0.25);
+  }
+
+  .side-menu.active .menu-item:nth-child(1) { transition-delay: 0.1s; }
+  .side-menu.active .menu-item:nth-child(2) { transition-delay: 0.15s; }
+  .side-menu.active .menu-item:nth-child(3) { transition-delay: 0.2s; }
+  .side-menu.active .menu-item:nth-child(4) { transition-delay: 0.25s; }
+  .side-menu.active .menu-item:nth-child(5) { transition-delay: 0.3s; }
+  .side-menu.active .menu-item:nth-child(6) { transition-delay: 0.35s; }
+  .side-menu.active .menu-item:nth-child(7) { transition-delay: 0.4s; }
+
+  /* TABLET (768px - 1024px) */
+  @media (max-width: 1024px) and (min-width: 769px) {
+    .side-menu {
+      width: 380px;
+      right: -380px;
+      padding: 90px 0 20px 0;
+    }
+    
+    .menu-item {
+      padding: 22px 40px;
+      font-size: 1.2rem;
+    }
+
+    .menu-item:hover {
+      padding-left: 50px;
+    }
+  }
+
+  /* MOBILE (hasta 768px) - Menú desde arriba */
+  @media (max-width: 768px) {
+    .side-menu {
+      top: -100vh;
+      right: 0;
+      width: 100vw;
+      height: 100vh;
+      padding: 120px 0 20px 0;
+      transition: top 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      transform: translateY(-100%);
+      box-shadow: 0 5px 25px rgba(0, 0, 0, 0.4);
+      background: linear-gradient(180deg, #292929 0%, #1a1a1a 100%);
+    }
+    
+    .side-menu.active {
+      top: 0;
+      right: 0;
+      transform: translateY(0);
+    }
+
+    .menu-item {
+      padding: 20px 30px;
+      font-size: 1.4rem;
+      text-align: center;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+      transform: translateY(-50px);
+    }
+
+    .menu-item:hover {
+      padding-left: 30px;
+      background: rgba(247, 177, 39, 0.15);
+    }
+
+    .side-menu.active .menu-item {
+      transform: translateY(0);
+    }
+  }
+
+  /* MOBILE PEQUEÑO (hasta 480px) */
+  @media (max-width: 480px) {
+    .menu-toggle {
+      width: 55px;
+      height: 55px;
+      top: 15px;
+      right: 15px;
+    }
+
+    .hamburger {
+      width: 22px;
+      height: 18px;
+    }
+
+    .menu-item {
+      padding: 18px 25px;
+      font-size: 1.3rem;
+    }
+
+    .side-menu {
+      padding: 100px 0 20px 0;
+    }
+  }
+
+
+
+
+    /* Ajustes para hero */
+    .hero-bg {
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem;
+    }
+
+    .character-card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+      background-color: #292929;
+      border-radius: 0.5rem;
+      overflow: hidden;
+      color: white;
+    }
+    .character-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    }
+
+  .intro{
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    flex-direction: column;
+    text-align: start;
+    padding-left: 10rem;
+  }
+
+  .intro h1{
+    font-family: "Poppins", sans-serif;
+    font-size: 4rem;
+    font-weight: 900;
+    color: #fff;
+    margin-bottom: 1rem;
+  }
+
+  .intro p{
+    font-family: "Poppins", sans-serif;
+    font-size: 1.4rem;
+    color: #fff;
+  }
+
+  .plecas{
+    font-family: "Poppins", sans-serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #fff;
+    margin-right: 1rem;
+    border: 2px solid #fff;
+    padding: 0.2rem 0.5rem;
+    border-radius: 0.5rem;
+    display: inline-block;
+    margin-top: 0.5rem;
+  }
+
+  .imagenintro{
+    display: flex;
+    height: 100vh;
+    justify-content: end;
+    align-items: end;
+  }
+
+  .personajescorriendo{
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    justify-content: end;
+    align-items: end;
+  }
+
+  .suelo{
+    display: flex;
+    width: 100vw;
+    background-color: #7e673a;
+    height: 14vh;
+  }
+  /****** color botones *****/
+  #prevBtn{
+    color: #7c5300;
+  }
+
+  #nextBtn{
+    color: #7c5300;
+  }
+
+/* Móviles: texto más pequeño */
+@media (max-width: 576px) {
+  
+
+    /* Secciones de personajes */
+  #characters, 
+  #characters2,
+  .characters-section {
+    overflow-y: hidden; /* desactiva scroll vertical */
+    padding-bottom: 1rem;
+  }
+
+  /* Las filas se convierten en un grid */
+  #characters .row,
+  #characters2 .row,
+  .characters-section .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.8rem; /* espacio entre cards */
+  }
+
+  /* Cada card ocupa ~30% del ancho para que quepan 3 en fila */
+  #characters .col-12,
+  #characters2 .col-12,
+  .characters-section .col-12 {
+    flex: 0 0 30%;
+    max-width: 30%;
+  }
+
+  /* Ajustes de las cards */
+  .character-card {
+    width: 100%;
+    padding: 0.5rem;
+    margin: 0 auto;
+  }
+
+  .character-card img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 0.4rem;
+  }
+
+  /* Textos más pequeños */
+  .character-card h3 {
+    font-size: 0.9rem;
+    text-align: center;
+  }
+
+  .character-card p {
+    font-size: 0.75rem;
+    text-align: center;
+  }
+}
+/* Tablets: tamaño intermedio */
+@media (min-width: 577px) and (max-width: 900px) {
+.imagenintro{
+    height: 50vh;
+    justify-content: center;
+  }
+
+  .imagenintro img{
+    width: 35rem;
+
+  }
+  .intro{
+    height: 45vh;
+    padding: 0;
+    margin: 0;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .intro h1{
+    font-family: "Poppins", sans-serif;
+    font-size: 2.5rem;
+  }
+
+  .intro p{
+    font-family: "Poppins", sans-serif;
+    text-align: center;
+    font-size: 1.1rem;
+    color: #fff;
+  }
+
+  .hero-bg {
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+  }
+  .plecas{
+    font-size: 1rem;
+    color: #fff;
+    margin-right: 1rem;
+    border: 2px solid #fff;
+    padding: 0.2rem 0.5rem;
+    border-radius: 0.5rem;
+
+  }
+}
+
+@media (min-width: 901px) and (max-width: 1200px) {
+.imagenintro{
+    height: 50vh;
+    justify-content: center;
+  }
+
+  .imagenintro img{
+    width: 45rem;
+
+  }
+  .intro{
+    height: 50vh;
+    padding: 0;
+    margin: 0;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .intro h1{
+    font-family: "Poppins", sans-serif;
+    font-size: 4rem;
+  }
+
+  .intro p{
+    font-family: "Poppins", sans-serif;
+    text-align: center;
+    font-size: 1.7rem;
+    color: #fff;
+  }
+
+  .hero-bg {
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+  }
+  .plecas{
+    font-size: 1.5rem;
+    color: #fff;
+    margin-right: 1rem;
+    border: 2px solid #fff;
+    padding: 0.2rem 0.5rem;
+    border-radius: 0.5rem;
+
+  }
+
+}
+
+@media (min-width: 1200px) and (max-width: 1600px) {
+.imagenintro{
+    justify-content: center;
+    display: flex;
+    justify-content: end;
+    align-items: end;
+  }
+
+  .imagenintro img{
+    width: 50rem;
+  }
+
+}
+
+/******  Animacion personajes   *******/
+ .element-1 {
+            animation: float1 3s ease-in-out infinite;
+  }
+
+  .element-2 {
+            animation: float1 3.2s ease-in-out infinite;
+  }
+  .element-3 {
+            animation: float1 3.5s ease-in-out infinite;
+  }
+
+ @keyframes float1 {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+  }
+
+
+
+
+  /*** footer sozoria  ***/
+
+.footer-sozoria {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100vw;
+  color: #fff;
+  background-color: #292929;
+  z-index: 1000;
+  font-family: "Poppins", sans-serif;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 32px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.footer-left {
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.footer-right a {
+  color: #fff;
+  margin-left: 22px;
+  font-size: 1.6rem;
+  transition: color 0.2s;
+  text-decoration: none;
+}
+
+.footer-right a:hover {
+  color: #f7b127;
+}
+
+/* Responsive */
+@media (max-width: 576px) {
+  .footer-content {
+    flex-direction: column;
+    gap: 8px;
+    padding: 12px 10px;
+    text-align: center;
+  }
+  .footer-right a {
+    margin-left: 16px;
+    font-size: 1.3rem;
+  }
+}
+
+@media (min-width: 577px) and (max-width: 992px) {
+  .footer-content {
+    flex-direction: column;
+    gap: 8px;
+    padding: 12px 10px;
+    text-align: center;
+  }
+  .footer-right a {
+    margin-left: 16px;
+    font-size: 1.3rem;
+  }
+}
+
+
+/*********** Responsive ***********/
+/* Móviles: texto más pequeño */
+@media (max-width: 576px) {
+
+}
+/* Tablets: tamaño intermedio */
+@media (min-width: 577px) and (max-width: 991px) {
+
+}
+
+
+/************* Bloqueo de dispositivo *************/
+ /* Overlay de orientación */
+        .orientation-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 99999;
+            flex-direction: column;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .orientation-message {
+            color: white;
+            font-size: 18px;
+            line-height: 1.6;
+            max-width: 300px;
+            font-weight: 500;
+        }
+
+        /* Icono del dispositivo con animación */
+        .device-icon {
+            width: 120px;
+            height: 200px;
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .phone-container {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            animation: rotateDevice 2s ease-in-out infinite;
+        }
+
+        .phone {
+            width: 60px;
+            height: 100px;
+            background: #34495e;
+            border-radius: 12px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            border: 2px solid #2c3e50;
+        }
+
+        .phone::before {
+            content: '';
+            width: 40px;
+            height: 70px;
+            background: #3498db;
+            border-radius: 4px;
+            position: absolute;
+            top: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .phone::after {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background: #95a5a6;
+            border-radius: 50%;
+            position: absolute;
+            bottom: 8px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        /* Animación de rotación */
+        @keyframes rotateDevice {
+            0% {
+                transform: rotate(0deg);
+            }
+            25% {
+                transform: rotate(90deg);
+            }
+            50% {
+                transform: rotate(90deg);
+            }
+            75% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(0deg);
+            }
+        }
+
+        /* Efecto de pulso en el texto */
+        .pulse {
+            animation: pulse 1.5s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.7;
+            }
+        }
+
+        /* Media query para detectar orientación horizontal en móviles */
+        @media screen and (orientation: landscape) and (max-width: 896px) {
+            .orientation-overlay {
+                display: flex !important;
+            }
+            
+            .main-content {
+                display: none;
+            }
+        }
+
+        /* Estilos responsivos para el contenido principal */
+        @media (max-width: 768px) {
+            .main-content {
+                padding: 15px;
+            }
+            
+            .header h1 {
+                font-size: 24px;
+            }
+        }
+
+        /* Indicador adicional */
+        .rotate-indicator {
+            margin-top: 20px;
+            color: #3498db;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+        }
+
+        .arrow-rotate {
+            display: inline-block;
+            margin-left: 8px;
+            animation: bounce 1s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-5px);
+            }
+            60% {
+                transform: translateY(-3px);
+            }
+        }
+
+/* Móviles: apartado más pequeño ******************************************************************/
+
+@media (max-width: 768px) {
+  .hero-bg{
+      height: 100vh;
+      background-color: #241800;
+      padding: 0%;
+      margin: 0%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+  }
+
+  .imagen-movil{
+    display: block;
+    height: 30vh;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  .imagen-movil img{
+    width: 30rem;
+  }
+
+  .intro{
+    height: 40vh;
+    padding: 2rem;
+    margin: 0;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+  .intro h1{
+    font-family: "Poppins", sans-serif;
+    font-size: 2.5rem;
+  }
+
+  .intro p{
+    font-family: "Poppins", sans-serif;
+    font-size: 1.1rem;
+    color: #fff;
+    text-align: center;
+  }
+
+  .plecas{
+    font-size: 1rem;
+    margin-right: 1rem;
+    border-radius: 0.5rem;
+  
+  }
+  .seccionplecas-mobile{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  .personajescorriendo{
+    display: flex;
+    width: 100%;
+    height: 50vh;
+    flex-direction: row;
+    justify-content: end;
+    align-items: end;
+  }
+  .hero-bg2{
+      height: 70vh;
+      background-color: #241800;
+      padding: 0%;
+      margin: 0%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+  }
+    .suelo{
+    display: block;
+    width: 200%;
+    height: 5vh;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+  }
+}
