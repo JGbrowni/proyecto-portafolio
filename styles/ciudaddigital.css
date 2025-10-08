@@ -167,7 +167,7 @@ html, body{
 @media (max-width: 768px) {
 html, body{
   overflow: scroll;
-  background-color: #e09600;
+  background-color: #009468;
 }
 
   .desktop-design{
@@ -492,16 +492,16 @@ html, body{
   .suelo{
     display: flex;
     width: 100vw;
-    background-color: #e09600;
+    background-color: #20f8b7;
     height: 14vh;
   }
   /****** color botones *****/
   #prevBtn{
-    color: #f7b127;
+    color: #00a171;
   }
 
   #nextBtn{
-    color: #f7b127;
+    color: #00a171;
   }
 
 /* Móviles: texto más pequeño */
@@ -686,6 +686,17 @@ html, body{
             animation: float1 3.2s ease-in-out infinite;
   }
 
+  .element-3 {
+            animation: float1 3.5s ease-in-out infinite;
+  }
+
+  .element-4 {
+            animation: float1 3.4s ease-in-out infinite;
+  }
+  .element-5 {
+            animation: float1 3.7s ease-in-out infinite;
+  }
+
  @keyframes float1 {
             0%, 100% {
                 transform: translateY(0px);
@@ -694,16 +705,6 @@ html, body{
                 transform: translateY(-20px);
             }
   }
-
-  @keyframes float1 {
-            0%, 100% {
-                transform: translateY(0px);
-            }
-            50% {
-                transform: translateY(-20px);
-            }
-  }
-
 
 
 
@@ -951,7 +952,7 @@ html, body{
 @media (max-width: 768px) {
   .hero-bg{
       height: 100vh;
-      background-color: #8f5d00;
+      background-color: #024934;
       padding: 0%;
       margin: 0%;
       display: flex;
@@ -974,7 +975,7 @@ html, body{
   }
 
   .intro{
-    height: 40vh;
+    height: 50vh;
     padding: 2rem;
     margin: 0;
     justify-content: center;
@@ -1014,7 +1015,7 @@ html, body{
   }
   .hero-bg2{
       height: 70vh;
-      background-color: #8f5d00;
+      background-color: #024934;
       padding: 0%;
       margin: 0%;
       display: flex;
