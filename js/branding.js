@@ -66,7 +66,8 @@ menuItems.forEach(item => {
     const href = item.getAttribute('href');
     
     // Si es un enlace a otra página, permitir navegación normal
-    if (href && (href.endsWith('.html') || href.startsWith('http'))) {
+    if (href && (!href.startsWith('#') || href.startsWith('http'))) {
+
       // Cerrar el menú antes de navegar
       toggleMenu();
       // No prevenir default para que navegue normalmente
