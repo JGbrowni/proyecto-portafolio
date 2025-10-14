@@ -504,6 +504,14 @@ html, body{
     color: #7c5300;
   }
 
+  .linkb{
+    padding: 0;
+    margin: 0;
+    color: #f7b127;
+    text-decoration: none;
+    font-weight: 700;
+  }
+
 /* Móviles: texto más pequeño */
 @media (max-width: 576px) {
   
@@ -550,12 +558,12 @@ html, body{
 
   /* Textos más pequeños */
   .character-card h3 {
-    font-size: 0.9rem;
+    font-size: 1.5rem;
     text-align: center;
   }
 
   .character-card p {
-    font-size: 0.75rem;
+    font-size: 1.2rem;
     text-align: center;
   }
 }
@@ -678,6 +686,7 @@ html, body{
 }
 
 /******  Animacion personajes   *******/
+
  .element-1 {
             animation: float1 3s ease-in-out infinite;
   }
@@ -687,6 +696,14 @@ html, body{
   }
   .element-3 {
             animation: float1 3.5s ease-in-out infinite;
+  }
+
+  .logo_b{
+     animation: float1 3.5s ease-in-out infinite;
+  }
+
+  #metztli{
+    width: 90%;
   }
 
  @keyframes float1 {
