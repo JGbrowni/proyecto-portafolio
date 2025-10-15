@@ -698,6 +698,8 @@ html, body{
             animation: float1 3.5s ease-in-out infinite;
   }
 
+
+  /**************** logo animado********************/
   .logo_b{
      animation: float1 3.5s ease-in-out infinite;
   }
@@ -713,6 +715,21 @@ html, body{
             50% {
                 transform: translateY(-20px);
             }
+  }
+
+  .logoinfo{
+    display: flex;
+    flex-direction: column;
+    font-weight: 500;
+    font-size: 1.3rem;
+    gap: 1rem;
+  }
+
+  .logoinfo p{
+    background-color: #3f2900;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    color: #ffffff;
   }
 
 
@@ -1040,5 +1057,11 @@ html, body{
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
+  }
+    .logoinfo p{
+    background-color: #7c5300;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    color: #ffffff;
   }
 }
