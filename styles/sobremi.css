@@ -106,21 +106,19 @@
   font-style: italic;
 }
 
-
+/**************** Generales *******************/
 * {
-    margin: 0; padding: 0; box-sizing: border-box;
-  }
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-html, body {
-      margin: 0;
-      padding: 0;
-      width: 100%;
-      height: 100%;
-      overflow: hidden;
-      background: #272727;
-    }
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #f5f5f5;
+}
 
-
+/********************* Navegador **************************/
 /*********  Icono de Menu ************/
 /* Estilos para el menú hamburguesa */
   .menu-toggle {
@@ -353,326 +351,538 @@ html, body {
   }
 
 
+/****************** Contenido *******************/
 
-    /* Imagen del oso animada */
-    .bear-logo {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 120px;
-      height: 120px;
-      transform: translate(-50%, -50%) scale(0);
-      opacity: 0;
-      animation: appear 0.6s 0.2s ease-out forwards,
-                 moveDown 1s 0.8s cubic-bezier(0.6, -0.28, 0.735, 0.045) forwards,
-                 moveUp 1s 1.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards,
-                 fadeOut 0.5s 2.5s ease-out forwards;
-      z-index: 3;
+.sobremi-section {
+    width: 95%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    margin: 0 auto;
+}
+
+.sobremi-wrapper {
+    height: 75vh;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+/* Versión Escritorio */
+.sobremi-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 45rem;
+}
+
+.sobremi-photo-area {
+    background: #7a6f61;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sobremi-circle {
+    width: 35rem;
+    border-radius: 50%;
+    background-color: #995c16;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 1.2rem;
+}
+
+.sobremi-info-area {
+    background: #f39c12;
+    position: relative;
+    padding: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sobremi-carousel-box {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sobremi-slides-wrapper {
+    width: 80%;
+    overflow: hidden;
+}
+
+.sobremi-slide {
+    display: none;
+    animation: sobremiSlideIn 0.5s;
+}
+
+.sobremi-slide.sobremi-slide-active {
+    display: block;
+}
+
+@keyframes sobremiSlideIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.sobremi-slide h2 {
+    color: #fff;
+    margin-bottom: 20px;
+    font-size: 2rem;
+}
+
+.sobremi-slide p {
+    color: #fff;
+    line-height: 1.8;
+    font-size: 1.1rem;
+}
+
+.sobremi-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.9);
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: #f39c12;
+    transition: all 0.3s;
+    z-index: 10;
+}
+
+.sobremi-arrow:hover {
+    background: #fff;
+    transform: translateY(-50%) scale(1.1);
+}
+
+.sobremi-arrow-prev {
+    left: 0px;
+}
+
+.sobremi-arrow-next {
+    right: 0px;
+}
+
+/* Versión Móvil */
+@media (max-width: 1024px) {
+
+.sobremi-layout {
+    min-height: 400px;
+}
+
+    .sobremi-title {
+        font-size: 2rem;
+        margin-bottom: 20px;
     }
 
-    @keyframes appear {
-      0% {
-        transform: translate(-50%, -50%) scale(0);
-        opacity: 0;
-      }
-      100% {
-        transform: translate(-50%, -50%) scale(1);
-        opacity: 1;
-      }
+    .sobremi-layout {
+        grid-template-columns: 1fr;
     }
 
-    @keyframes moveDown {
-      0% { top: 50%; }
-      50% { top: 40%; }
-      100% { top: 100%; }
+    .sobremi-photo-area {
+        padding: 30px;
+        min-height: 300px;
     }
 
-    @keyframes moveUp {
-      0% { top: 100%; }
-      50% { top: 40%; }
-      100% { top: 50%; }
+    .sobremi-circle {
+        width: 200px;
+        height: 200px;
     }
 
-    @keyframes fadeOut {
-      0% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
-      100% { opacity: 0; transform: translate(-50%, -50%) scale(2); }
+    .sobremi-info-area {
+        max-height: 500px;
+        overflow-y: auto;
+        padding: 30px;
+        display: block;
     }
 
-    /* Máscara gris (queda como fondo) */
-    .mask {
-      position: absolute;
-      inset: 0;
-      background-color: #8a540e;
-      clip-path: circle(0% at 50% 100%);
-      animation: none;
-      z-index: 2;
-      will-change: clip-path;
+    .sobremi-arrow {
+        display: none !important;
     }
 
-    /* Expansión circular desde abajo */
-    @keyframes revealMask {
-      0% {
-        clip-path: circle(0% at 50% 100%);
-      }
-      100% {
-        clip-path: circle(150% at 50% 100%);
-      }
+    .sobremi-carousel-box {
+        position: static;
+        display: block;
+        height: auto;
     }
 
-    /* Contenido principal */
-    .main-content {
-      opacity: 0;
-      display: none;
-      position: relative;
-      z-index: 4;
-      animation: fadeIn 1.5s ease-out forwards;
+    .sobremi-slides-wrapper {
+        overflow: visible;
+        height: auto;
     }
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(50px); }
-      to { opacity: 1; transform: translateY(0); }
+    .sobremi-slide {
+        display: block !important;
+        opacity: 1 !important;
+        animation: none !important;
+        margin-bottom: 30px;
+        padding-bottom: 30px;
+        border-bottom: 2px solid rgba(255,255,255,0.3);
     }
 
-    h1 {
-      color: white;
-      text-align: center;
-      margin-top: 40vh;
-      font-family: 'Arial', sans-serif;
-      font-weight: 400;
-      letter-spacing: 1px;
+    .sobremi-slide.sobremi-slide-active,
+    .sobremi-slide:not(.sobremi-slide-active) {
+        display: block !important;
     }
 
-.hero-bg {
-      width: 100%;
-      height: 100vh;
-      background-size: cover;
-      background-position: center;
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 2rem;
+    .sobremi-slide:last-child {
+        border-bottom: none;
+        margin-bottom: 0;
+        padding-bottom: 0;
     }
 
-/***************    Contenido foto carrusel    ******************/
+    .sobremi-slide h2 {
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+    }
+
+    .sobremi-slide p {
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+
+    .sobremi-info-area::-webkit-scrollbar {
+        width: 8px;
+    }
+
+    .sobremi-info-area::-webkit-scrollbar-track {
+        background: rgba(255,255,255,0.1);
+        border-radius: 4px;
+    }
+
+    .sobremi-info-area::-webkit-scrollbar-thumb {
+        background: rgba(255,255,255,0.5);
+        border-radius: 4px;
+    }
+
+    .sobremi-info-area::-webkit-scrollbar-thumb:hover {
+        background: rgba(255,255,255,0.7);
+    }
+}
+
+
+.quiensoy2{
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+.quiensoy2 h2{
+    font-weight: 700;
+}
+
+.dropping-texts {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    width: 100%;
+    text-align: left;
+    height: 36px;
+    font-weight: 700;
+}
+  
+  .dropping-texts > div {
+    font-size:0px;
+    opacity:0;
+    margin-left:-30px;
+    position:absolute;
+    font-weight:700;   
+  }
+  
+  .dropping-texts > div:nth-child(1) {
+    animation: roll 5s linear infinite 0s;
+  }
+  .dropping-texts > div:nth-child(2) {
+    animation: roll 5s linear infinite 1s;
+  }
+  .dropping-texts > div:nth-child(3) {
+    animation: roll 5s linear infinite 2s;
+  }
+  .dropping-texts > div:nth-child(4) {
+    animation: roll2 5s linear infinite 3s;
+  }
+  
+  @keyframes roll {
+    0% {
+      font-size:0px;
+      opacity:0;
+      margin-left:-30px;
+      margin-top:0px;
+      transform: rotate(-25deg);
+    }
+    3% {
+      opacity:1;
+      transform: rotate(0deg);
+    }
+    5% {
+      font-size:2rem;
+      opacity:1;
+      margin-left:0px;
+      margin-top:0px;
+    }
+    20% {
+      font-size:2rem;
+      opacity:1;
+      margin-left:0px;
+      margin-top:0px;
+      transform: rotate(0deg);
+    }
+    27% {
+      font-size:0px;
+      opacity:0.5;
+      margin-left:20px;
+      margin-top:0px;
+    }
+    
+    100% {
+      font-size:0px;
+      opacity:0;
+      margin-left:0px;
+      margin-top:0px;
+      transform: rotate(15deg);
+    }
+  }
+
+  @keyframes roll2 {
+    0% {
+      font-size:0px;
+      opacity:0;
+      margin-left:-30px;
+      margin-top:0px;
+      transform: rotate(-25deg);
+    }
+    3% {
+      opacity:1;
+      transform: rotate(0deg);
+    }
+    5% {
+      font-size:2rem;
+      opacity:1;
+      margin-left:0px;
+      margin-top:0px;
+    }
+    30% {
+      font-size:2rem;
+      opacity:1;
+      margin-left:0px;
+      margin-top:0px;
+      transform: rotate(0deg);
+    }
+    37% {
+      font-size:0px;
+      opacity:0;
+      margin-left:0px;
+      margin-top:-0px;
+    }
+    100% {
+      font-size:0px;
+      opacity:0;
+      margin-left:0px;
+      margin-top:0px;
+      transform: rotate(15deg);
+    }
+}
 
 
 
-.content-wrapper {
-            background: white;
-            border: 3px solid #333;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        }
 
-        /* Versión Escritorio */
-        .desktop-layout {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            min-height: 400px;
-        }
 
-        .photo-section {
-            background: #7a6f61;
-            display: flex;
-            align-items: center;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/************* Bloqueo de dispositivo *************/
+ /* Overlay de orientación */
+        .orientation-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            display: none;
             justify-content: center;
-            padding: 40px;
-        }
-
-        .photo-circle {
-            width: 250px;
-            height: 250px;
-            border-radius: 50%;
-            background: #5a5147;
-            border: 5px solid #fff;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
-            overflow: hidden;
-            display: flex;
             align-items: center;
-            justify-content: center;
-            color: #fff;
-            font-size: 1.2rem;
+            z-index: 99999;
+            flex-direction: column;
+            padding: 20px;
+            text-align: center;
         }
 
-        .info-section {
-            background: #f39c12;
+        .orientation-message {
+            color: white;
+            font-size: 18px;
+            line-height: 1.6;
+            max-width: 300px;
+            font-weight: 500;
+        }
+
+        /* Icono del dispositivo con animación */
+        .device-icon {
+            width: 120px;
+            height: 200px;
             position: relative;
-            padding: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            margin-bottom: 20px;
         }
 
-        .carousel-container {
-            position: relative;
+        .phone-container {
             width: 100%;
             height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            position: relative;
+            animation: rotateDevice 2s ease-in-out infinite;
         }
 
-        .carousel-content {
-            width: 100%;
-            overflow: hidden;
-        }
-
-        .carousel-item {
-            display: none;
-            animation: fadeIn 0.5s;
-        }
-
-        .carousel-item.active {
-            display: block;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        .carousel-item h2 {
-            color: #fff;
-            margin-bottom: 20px;
-            font-size: 2rem;
-        }
-
-        .carousel-item p {
-            color: #fff;
-            line-height: 1.8;
-            font-size: 1.1rem;
-        }
-
-        .carousel-btn {
+        .phone {
+            width: 60px;
+            height: 100px;
+            background: #34495e;
+            border-radius: 12px;
             position: absolute;
             top: 50%;
-            transform: translateY(-50%);
-            width: 50px;
-            height: 50px;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            border: 2px solid #2c3e50;
+        }
+
+        .phone::before {
+            content: '';
+            width: 40px;
+            height: 70px;
+            background: #3498db;
+            border-radius: 4px;
+            position: absolute;
+            top: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .phone::after {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background: #95a5a6;
             border-radius: 50%;
-            background: rgba(255,255,255,0.9);
-            border: none;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            color: #f39c12;
-            transition: all 0.3s;
-            z-index: 10;
+            position: absolute;
+            bottom: 8px;
+            left: 50%;
+            transform: translateX(-50%);
         }
 
-        .carousel-btn:hover {
-            background: #fff;
-            transform: translateY(-50%) scale(1.1);
+        /* Animación de rotación */
+        @keyframes rotateDevice {
+            0% {
+                transform: rotate(0deg);
+            }
+            25% {
+                transform: rotate(90deg);
+            }
+            50% {
+                transform: rotate(90deg);
+            }
+            75% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(0deg);
+            }
         }
 
-        .carousel-btn.prev {
-            left: 10px;
+        /* Efecto de pulso en el texto */
+        .pulse {
+            animation: pulse 1.5s ease-in-out infinite;
         }
 
-        .carousel-btn.next {
-            right: 10px;
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.7;
+            }
         }
 
-        .carousel-indicators {
-            text-align: center;
-            margin-top: 20px;
+        /* Media query para detectar orientación horizontal en móviles */
+        @media screen and (orientation: landscape) and (max-width: 896px) {
+            .orientation-overlay {
+                display: flex !important;
+            }
+            
+            .main-content {
+                display: none;
+            }
         }
 
-        .indicator {
-            display: inline-block;
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background: rgba(255,255,255,0.5);
-            margin: 0 5px;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-
-        .indicator.active {
-            background: #fff;
-            transform: scale(1.2);
-        }
-
-        /* Versión Móvil */
+        /* Estilos responsivos para el contenido principal */
         @media (max-width: 768px) {
-            h1 {
-                font-size: 2rem;
-                margin-bottom: 20px;
+            .main-content {
+                padding: 15px;
             }
-
-            .desktop-layout {
-                grid-template-columns: 1fr;
-            }
-
-            .photo-section {
-                padding: 30px;
-                min-height: 300px;
-            }
-
-            .photo-circle {
-                width: 200px;
-                height: 200px;
-            }
-
-            .info-section {
-                max-height: 400px;
-                overflow-y: auto;
-                padding: 30px;
-            }
-
-            .carousel-btn {
-                display: none;
-            }
-
-            .carousel-container {
-                display: block;
-            }
-
-            .carousel-item {
-                display: block !important;
-                margin-bottom: 30px;
-                padding-bottom: 30px;
-                border-bottom: 2px solid rgba(255,255,255,0.3);
-            }
-
-            .carousel-item:last-child {
-                border-bottom: none;
-            }
-
-            .carousel-item h2 {
-                font-size: 1.5rem;
-            }
-
-            .carousel-item p {
-                font-size: 1rem;
-            }
-
-            .carousel-indicators {
-                display: none;
-            }
-
-            .info-section::-webkit-scrollbar {
-                width: 8px;
-            }
-
-            .info-section::-webkit-scrollbar-track {
-                background: rgba(255,255,255,0.1);
-            }
-
-            .info-section::-webkit-scrollbar-thumb {
-                background: rgba(255,255,255,0.5);
-                border-radius: 4px;
+            
+            .header h1 {
+                font-size: 24px;
             }
         }
 
+        /* Indicador adicional */
+        .rotate-indicator {
+            margin-top: 20px;
+            color: #3498db;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+        }
 
-/*** footer sozoria  ***/
+        .arrow-rotate {
+            display: inline-block;
+            margin-left: 8px;
+            animation: bounce 1s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-5px);
+            }
+            60% {
+                transform: translateY(-3px);
+            }
+        }
+
+/**************** Footer ******************/
+  /*** footer sozoria  ***/
 
 .footer-sozoria {
   position: fixed;

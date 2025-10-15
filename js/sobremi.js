@@ -1,25 +1,22 @@
-    const bear = document.querySelector('.bear-logo');
-    const mask = document.getElementById('mask');
-    const main = document.getElementById('mainContent');
+let currentSlide = 0;
+const items = document.querySelectorAll('.sobremi-slide');
+const totalSlides = items.length;
 
-    // Activar máscara gris cuando el oso toca el suelo
-    setTimeout(() => {
-      mask.style.animation = "revealMask 1s ease-out forwards";
-      setTimeout(() => {
-        main.style.display = 'block';
-        main.style.animation = 'fadeIn 1.5s ease-out forwards';
-      }, 900);
-    }, 1700);
+function showSlide(n) {
+    items.forEach(item => item.classList.remove('sobremi-slide-active'));
+    
+    currentSlide = (n + totalSlides) % totalSlides;
+    
+    items[currentSlide].classList.add('sobremi-slide-active');
+}
 
-    // Al final de la animación, ocultar el oso
-    bear.addEventListener('animationend', (e) => {
-      if (e.animationName === 'fadeOut') {
-        bear.style.display = 'none';
-      }
-    });
+function moveSlide(direction) {
+    showSlide(currentSlide + direction);
+}
 
+// Auto-play opcional (descomenta si lo deseas)
+// setInterval(() => moveSlide(1), 5000);
 
-    // Navegación del menú
 //Icono de menu
     // Funcionalidad del menú hamburguesa
 const menuToggle = document.getElementById('menuToggle');
@@ -37,10 +34,11 @@ function toggleMenu() {
   document.body.style.overflow = sideMenu.classList.contains('active') ? 'hidden' : 'auto';
 }
 
-
+// Event listeners
 menuToggle.addEventListener('click', toggleMenu);
 menuOverlay.addEventListener('click', toggleMenu);
 
+// Navegación del menú
 menuItems.forEach(item => {
   item.addEventListener('click', (e) => {
     const href = item.getAttribute('href');
@@ -66,25 +64,36 @@ document.addEventListener('keydown', (e) => {
   }
 });
 
- let currentSlide = 0;
-        const items = document.querySelectorAll('.carousel-item');
-        const indicators = document.querySelectorAll('.indicator');
-        const totalSlides = items.length;
 
-        function showSlide(n) {
-            items.forEach(item => item.classList.remove('active'));
-            indicators.forEach(ind => ind.classList.remove('active'));
+//Bloqueador de dispositivos
+//bloqueo horizontal
+function handleOrientationChange() {
+            const overlay = document.getElementById('orientationOverlay');
+            const mainContent = document.querySelector('.main-content');
             
-            currentSlide = (n + totalSlides) % totalSlides;
+            // Verificar si es un dispositivo móvil y está en horizontal
+            const isMobile = window.innerWidth <= 896;
+            const isLandscape = window.orientation === 90 || window.orientation === -90;
             
-            items[currentSlide].classList.add('active');
-            indicators[currentSlide].classList.add('active');
+            if (isMobile && isLandscape) {
+                overlay.style.display = 'flex';
+                mainContent.style.display = 'none';
+                document.body.style.overflow = 'hidden';
+            } else {
+                overlay.style.display = 'none';
+                mainContent.style.display = 'block';
+                document.body.style.overflow = 'auto';
+            }
         }
 
-        function moveSlide(direction) {
-            showSlide(currentSlide + direction);
-        }
+        // Escuchar cambios de orientación
+        window.addEventListener('orientationchange', function() {
+            // Pequeño delay para esperar a que el cambio se complete
+            setTimeout(handleOrientationChange, 100);
+        });
 
-        function goToSlide(n) {
-            showSlide(n);
-        }
+        // Escuchar cambios de tamaño de ventana (como respaldo)
+        window.addEventListener('resize', handleOrientationChange);
+
+        // Ejecutar al cargar la página
+        document.addEventListener('DOMContentLoaded', handleOrientationChange);
