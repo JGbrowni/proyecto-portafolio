@@ -504,6 +504,13 @@ html, body{
     color: #d41212;
   }
 
+  .linkb{
+    padding: 0;
+    margin: 0;
+    color: #f7b127;
+    text-decoration: none;
+    font-weight: 700;
+  }
 /* Móviles: texto más pequeño */
 @media (max-width: 576px) {
   
