@@ -438,6 +438,80 @@ html, body{
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
     }
 
+    .imagenes-card{
+      display: flex;
+      flex-direction: row;
+      margin: 1rem;
+    }
+
+    .imagenes-card a{
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      width: 100%;
+      margin: 0.5rem;
+    }
+
+    .imagenes-card a:hover{
+      transform: scale(1.03);
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+      
+    }
+
+  .linkb{
+    padding: 0;
+    margin: 0.5rem;
+    color: #f7b127;
+    text-decoration: none;
+    font-weight: 700;
+  }
+
+  .info-card{
+    width: 100%;
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  
+
+/*********************************  contenido ********************************************/
+  .logo_b{
+     animation: float1 3.5s ease-in-out infinite;
+  }
+
+  #metztli{
+    width: 90%;
+  }
+
+  #cadejo{
+    width: 95%;
+  }
+
+ @keyframes float1 {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+  }
+
+  .logoinfo{
+    display: flex;
+    flex-direction: column;
+    font-weight: 500;
+    font-size: 1.3rem;
+    gap: 1rem;
+  }
+
+  .logoinfo p{
+    background-color: #3f2900;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    color: #ffffff;
+  }
+
   .intro{
     display: flex;
     height: 100vh;
