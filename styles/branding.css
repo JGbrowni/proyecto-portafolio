@@ -141,7 +141,7 @@ html, body{
       display: flex;
       flex-direction: row;
       height: 100vh;
-      width: 500vw; /* 5 secciones de 100vw cada una */
+      width: 600vw; /* 5 secciones de 100vw cada una */
       scroll-snap-type: x mandatory;
       overflow: hidden; /* Evita el scroll general */
       scroll-behavior: smooth;
