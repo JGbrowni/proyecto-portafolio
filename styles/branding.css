@@ -141,7 +141,7 @@ html, body{
       display: flex;
       flex-direction: row;
       height: 100vh;
-      width: 600vw; /* 5 secciones de 100vw cada una */
+      width: 700vw; /* 7 secciones de 100vw cada una */
       scroll-snap-type: x mandatory;
       overflow: hidden; /* Evita el scroll general */
       scroll-behavior: smooth;
@@ -506,11 +506,24 @@ html, body{
 
   .linkb{
     padding: 0;
-    margin: 0;
-    color: #f7b127;
+    margin: 0.1rem;
     text-decoration: none;
-    font-weight: 700;
+    font-weight: 600;
   }
+
+  .linkb p{
+    transition: transform 0.3s ease;
+    background-color: #a8742f;
+    color: #ffffff;
+    border-radius: 2rem;
+    padding: 0.370rem;
+    text-align: center;
+
+  }
+
+  .linkb p:hover {
+      transform: scale(1.03);
+    }
 
 /* Móviles: texto más pequeño */
 @media (max-width: 576px) {
@@ -726,7 +739,7 @@ html, body{
   }
 
   .logoinfo p{
-    background-color: #3f2900;
+    background-color: #292929;
     border-radius: 0.5rem;
     padding: 0.5rem;
     color: #ffffff;

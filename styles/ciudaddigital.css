@@ -475,22 +475,27 @@ html, body{
       box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
     }
 
-  .linkb-responsive{
-    padding: 0;
-    margin: 0.5rem;
-    color: #f7b127;
-    text-decoration: none;
-    font-weight: 700;
-
-  }
-
   .linkb{
+    width: 25rem;
     padding: 0;
-    margin: 0.5rem;
-    color: #f7b127;
+    margin: 1rem;
     text-decoration: none;
-    font-weight: 700;
+    font-weight: 600;
   }
+
+  .linkb p{
+    transition: transform 0.3s ease;
+    background-color: #00a171;
+    color: #ffffff;
+    border-radius: 2rem;
+    padding: 0.5rem;
+    text-align: center;
+
+  }
+
+  .linkb p:hover {
+      transform: scale(1.03);
+    }
 
   .info-card{
     width: 100%;
@@ -605,6 +610,7 @@ html, body{
   #nextBtn{
     color: #00a171;
   }
+  
 
 /* Móviles: texto más pequeño */
 @media (max-width: 576px) {
