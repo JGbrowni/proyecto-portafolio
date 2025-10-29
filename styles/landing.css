@@ -432,6 +432,7 @@
 }
 
 .seccion{
+
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -796,6 +797,24 @@
 
 /* Móviles: texto más pequeño */
 @media (max-width: 576px) {
+  .seccion{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+  }
+
+
+  .cardd{
+    width: 2rem;
+    height: 2rem;
+  }
+
+.card__side{
+  width: 8rem;
+  height: 8rem;
+}
+
 .card1{
     width: 10%;
 }
@@ -804,17 +823,17 @@
     width: 10%;
 }
 .card1 img{
-  width: 12rem;
-  height: 12rem;
+  width: 10rem;
+  height: 10rem;
 }
   
 .card2 img{
-    width: 12rem;
-    height: 12rem;
+    width: 10rem;
+    height: 10rem;
 }
 .cardd {
-    width: 235px;
-    height: 250px;
+    width: 135px;
+    height: 150px;
 }
 
 .seccion_titulo{
@@ -862,10 +881,6 @@
 }
 
 }
-
-
-
-
 
 
 
