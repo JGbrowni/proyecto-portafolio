@@ -576,11 +576,11 @@ body {
 }
 
 .sobremi-arrow-prev {
-    left: 0px;
+    left: -10px;
 }
 
 .sobremi-arrow-next {
-    right: 0px;
+    right: -10px;
 }
 
 /* ========== TABLET (768px - 1024px) ========== */
