@@ -780,7 +780,140 @@ hr{
     height: 1rem;
 }
 
+/* ========== BARRAS DE PORCENTAJE SOFTWARES ========== */
+/* REEMPLAZAR la sección antigua de .bar-main-container en tu CSS con esto: */
 
+.bar-main-container {
+  margin: 15px auto;
+  width: 100%;
+  max-width: 500px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: normal;
+  font-size: 0.9em;
+  color: #FFF;
+}
+
+.wrap { 
+  padding: 8px 0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  position: relative;
+}
+
+.software-name {
+  min-width: 110px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-align: left;
+}
+
+.bar-percentage {
+  background: rgba(0,0,0,0.2);
+  border-radius: 4px;
+  padding: 6px 12px;
+  min-width: 50px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.bar-container {
+  flex: 1;
+  border-radius: 10px;
+  height: 12px;
+  background: rgba(0,0,0,0.2);
+  overflow: hidden;
+  position: relative;
+}
+
+.bar {
+  height: 100%;
+  background: linear-gradient(90deg, #fff 0%, #f0f0f0 100%);
+  border-radius: 10px 0px 0px 10px;
+  width: 0%;
+  transition: width 2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  box-shadow: 0 2px 8px rgba(255,255,255,0.3);
+}
+
+.bar.animated {
+  /* Esta clase se añade cuando la animación debe iniciar */
+}
+
+/* ======= RESPONSIVE BARRAS ======= */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .bar-main-container {
+    max-width: 600px;
+    margin: 12px auto;
+  }
+
+  .software-name {
+    min-width: 100px;
+    font-size: 0.9rem;
+  }
+
+  .bar-percentage {
+    min-width: 48px;
+    padding: 5px 10px;
+    font-size: 0.85rem;
+  }
+
+  .bar-container {
+    height: 11px;
+  }
+}
+
+@media (max-width: 768px) {
+  .bar-main-container {
+    max-width: 100%;
+    margin: 10px auto;
+  }
+
+  .wrap {
+    gap: 10px;
+  }
+
+  .software-name {
+    min-width: 90px;
+    font-size: 0.85rem;
+  }
+
+  .bar-percentage {
+    min-width: 45px;
+    padding: 4px 8px;
+    font-size: 0.8rem;
+  }
+
+  .bar-container {
+    height: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .bar-main-container {
+    margin: 8px auto;
+    font-size: 0.8em;
+  }
+
+  .wrap {
+    gap: 8px;
+  }
+
+  .software-name {
+    min-width: 75px;
+    font-size: 0.75rem;
+  }
+
+  .bar-percentage {
+    min-width: 42px;
+    padding: 4px 6px;
+    font-size: 0.75rem;
+  }
+
+  .bar-container {
+    height: 9px;
+  }
+}
 
 
 
