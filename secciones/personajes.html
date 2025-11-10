@@ -92,50 +92,45 @@
         <!-- Contenido principal - Galería de personajes -->
         <div class="gallery-container">
             <!-- OPCIÓN 1: Imágenes locales (cambia las rutas según tu estructura) -->
-            <div class="box box-1" style="--img: url(../imgs/personaje1.jpg);" data-text="Renji" 
-                 data-character="Renji"
-                 data-profile="../imgs/personaje1.jpg"
+            <div class="box box-1" style="--img: url(../imgs/cuadroboinet.webp);" data-text="Boinet" 
+                 data-character="Boinet"
+                 data-profile="../imgs/infoboinet.webp"
                  data-sheet="../imgs/sheet1.jpg"
-                 data-age="25 años"
-                 data-height="1.80m"
-                 data-role="Guerrero"
-                 data-description="Un valiente guerrero con un pasado misterioso. Protector de su pueblo y maestro en el arte de la espada."></div>
+                 data-birthday="08-10"
+                 data-height="1.25m"
+                 data-description="El oso más adorable y amigable que puede existir, Siempre lleva su boina marrón y una taza de café en mano, listo para compartir una sonrisa y una semita con quien lo necesite."></div>
             
-            <div class="box box-2" style="--img: url(../imgs/personaje2.jpg);" data-text="Sora"
-                 data-character="Sora"
-                 data-profile="../imgs/personaje2.jpg"
-                 data-sheet="../imgs/sheet2.jpg"
-                 data-age="22 años"
+            <div class="box box-2" style="--img: url(../imgs/cuadrobrown.webp);" data-text="Oscar Brown"
+                 data-character="Oscar Brown"
+                 data-profile="../imgs/infobrown.webp"
+                 data-sheet="../imgs/brownsheet.png"
+                 data-birthday="15-03"
                  data-height="1.75m"
-                 data-role="Mago"
-                 data-description="Experto en magia elemental. Su sabiduría y poder lo hacen un aliado invaluable en cualquier batalla."></div>
+                 data-description="El chico de la boina eterna. Aventurero, amante del café e inspiración del mismísimo oso Boinet. Un reflejo del creador, pero con un toque más guapo y eternamente joven."></div>
             
-            <div class="box box-3" style="--img: url(../imgs/personaje3.jpg);" data-text="Kaito"
-                 data-character="Kaito"
-                 data-profile="../imgs/personaje3.jpg"
-                 data-sheet="../imgs/sheet3.jpg"
-                 data-age="28 años"
-                 data-height="1.85m"
-                 data-role="Asesino"
-                 data-description="Sigiloso y letal. Un maestro del sigilo que se mueve en las sombras con precisión mortal."></div>
+            <div class="box box-3" style="--img: url(../imgs/cuadrofancy.webp);" data-text="Fancy Halley"
+                 data-character="Fancy Halley"
+                 data-profile="../imgs/infofancy.webp"
+                 data-sheet="../imgs/fancysheet.png"
+                 data-birthday="01-10"
+                 data-height="1.70m"
+                 data-description="Una chica alegre y creativa del mundo de Sozoria. Su carisma inspira a seguir adelante, mientras su talento artístico y su empatía la convierten en el corazón del grupo."></div>
             
-            <div class="box box-4" style="--img: url(../imgs/personaje4.jpg);" data-text="Tsuki"
-                 data-character="Tsuki"
-                 data-profile="../imgs/personaje4.jpg"
-                 data-sheet="../imgs/sheet4.jpg"
-                 data-age="20 años"
+            <div class="box box-4" style="--img: url(../imgs/cuadroskatlet.webp);" data-text="Skatlet Touko"
+                 data-character="Skatlet Touko"
+                 data-profile="../imgs/infoskatlet.webp"
+                 data-sheet="../imgs/skatletsheet.png"
+                 data-birthday="04-03"
                  data-height="1.65m"
-                 data-role="Arquera"
-                 data-description="Precisión perfecta a larga distancia. Sus flechas nunca fallan el objetivo y su agilidad es inigualable."></div>
+                 data-description="Maestra del ritmo y la edición de videos de Sozoria. Aunque suele mostrarse seria, posee un gran corazón. Ama y odia a los gatos a partes iguales… y guarda silencio sobre su misteriosa hermana."></div>
             
-            <div class="box box-5" style="--img: url(../imgs/personaje5.jpg);" data-text="Mitsui"
-                 data-character="Mitsui"
-                 data-profile="../imgs/personaje5.jpg"
-                 data-sheet="../imgs/sheet5.jpg"
-                 data-age="30 años"
+            <div class="box box-5" style="--img: url(../imgs/cuadromadelina.webp);" data-text="Madelina Stella"
+                 data-character="Madelina Stella"
+                 data-profile="../imgs/infomadelina.webp"
+                 data-sheet="../imgs/madelinasheet.png"
+                 data-birthday="11-11"
                  data-height="1.78m"
-                 data-role="Sanador"
-                 data-description="Guardian de la vida. Posee el don de curación y conocimientos ancestrales de medicina y alquimia."></div>
+                 data-description="Una brillante inventora del centro del universo, desterrada y enviada a la Tierra en Sozoria. Con su talento en programación avanzada, puede crear maravillas incluso con un pedazo de aluminio. Ama las noches estrelladas y el cheesecake."></div>
             
             <!-- OPCIÓN 2: URLs de internet (comentado)
             <div class="box box-1" style="--img: url(https://i.postimg.cc/sgBkfbtx/img-1.jpg);" data-text="Renji"></div>
@@ -167,18 +162,13 @@
                     <div class="character-stats">
                         <div class="stat-item">
                             <i class="fa fa-birthday-cake"></i>
-                            <span class="stat-label">Edad:</span>
-                            <span class="stat-value" id="characterAge">25 años</span>
+                            <span class="stat-label">Fecha de cumpleaños:</span>
+                            <span class="stat-value" id="characterBirthday">25 años</span>
                         </div>
                         <div class="stat-item">
                             <i class="fa fa-arrows-v"></i>
                             <span class="stat-label">Altura:</span>
                             <span class="stat-value" id="characterHeight">1.80m</span>
-                        </div>
-                        <div class="stat-item">
-                            <i class="fa fa-star"></i>
-                            <span class="stat-label">Rol:</span>
-                            <span class="stat-value" id="characterRole">Guerrero</span>
                         </div>
                     </div>
                     

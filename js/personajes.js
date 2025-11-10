@@ -99,18 +99,14 @@ function handleOrientationChange() {
         document.addEventListener('DOMContentLoaded', handleOrientationChange);
 
 
-// LIGHTBOX SISTEMA
-// ============================================
-
 // Elementos del DOM
 const boxes = document.querySelectorAll('.box');
 const lightboxOverlay = document.getElementById('lightboxOverlay');
 const closeLightbox = document.getElementById('closeLightbox');
 const lightboxImage = document.getElementById('lightboxImage');
 const characterName = document.getElementById('characterName');
-const characterAge = document.getElementById('characterAge');
+const characterBirthday = document.getElementById('characterBirthday');
 const characterHeight = document.getElementById('characterHeight');
-const characterRole = document.getElementById('characterRole');
 const characterDescription = document.getElementById('characterDescription');
 const openCharacterSheet = document.getElementById('openCharacterSheet');
 
@@ -130,17 +126,15 @@ boxes.forEach(box => {
         const character = box.getAttribute('data-character');
         const profileImg = box.getAttribute('data-profile');
         const sheetImg = box.getAttribute('data-sheet');
-        const age = box.getAttribute('data-age');
-        const height = box.getAttribute('data-height');
-        const role = box.getAttribute('data-role');
-        const description = box.getAttribute('data-description');
+    const birthday = box.getAttribute('data-birthday');
+    const height = box.getAttribute('data-height');
+    const description = box.getAttribute('data-description');
 
-        // Actualizar información en el lightbox
+    // Actualizar información en el lightbox
         characterName.textContent = character;
         lightboxImage.src = profileImg;
-        characterAge.textContent = age;
+    characterBirthday.textContent = birthday;
         characterHeight.textContent = height;
-        characterRole.textContent = role;
         characterDescription.textContent = description;
         
         // Guardar URL de la hoja de personaje
@@ -149,22 +143,30 @@ boxes.forEach(box => {
         // Mostrar lightbox con animación
         lightboxOverlay.classList.add('active');
         document.body.style.overflow = 'hidden';
+        
+        // Scroll al inicio del lightbox en móviles
+        lightboxOverlay.scrollTop = 0;
     });
 });
 
 // ============================================
 // CERRAR LIGHTBOX PRINCIPAL
 // ============================================
-closeLightbox.addEventListener('click', () => {
+function closeLightboxMain() {
     lightboxOverlay.classList.remove('active');
     document.body.style.overflow = 'auto';
-});
+    // Pequeño delay para que la animación se vea bien
+    setTimeout(() => {
+        lightboxOverlay.scrollTop = 0;
+    }, 300);
+}
 
-// Cerrar al hacer click fuera del contenido
+closeLightbox.addEventListener('click', closeLightboxMain);
+
+// Cerrar al hacer click en el overlay (solo en el fondo oscuro)
 lightboxOverlay.addEventListener('click', (e) => {
     if (e.target === lightboxOverlay) {
-        lightboxOverlay.classList.remove('active');
-        document.body.style.overflow = 'auto';
+        closeLightboxMain();
     }
 });
 
@@ -175,21 +177,26 @@ openCharacterSheet.addEventListener('click', () => {
     if (currentSheetUrl) {
         sheetImage.src = currentSheetUrl;
         lightboxSheet.classList.add('active');
-        // Mantener el body bloqueado
+        lightboxSheet.scrollTop = 0;
     }
 });
 
 // ============================================
 // CERRAR LIGHTBOX DE HOJA DE PERSONAJE
 // ============================================
-closeSheet.addEventListener('click', () => {
+function closeSheetLightbox() {
     lightboxSheet.classList.remove('active');
-});
+    setTimeout(() => {
+        lightboxSheet.scrollTop = 0;
+    }, 300);
+}
+
+closeSheet.addEventListener('click', closeSheetLightbox);
 
 // Cerrar al hacer click fuera de la imagen
 lightboxSheet.addEventListener('click', (e) => {
     if (e.target === lightboxSheet) {
-        lightboxSheet.classList.remove('active');
+        closeSheetLightbox();
     }
 });
 
@@ -199,16 +206,29 @@ lightboxSheet.addEventListener('click', (e) => {
 document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
         if (lightboxSheet.classList.contains('active')) {
-            lightboxSheet.classList.remove('active');
+            closeSheetLightbox();
         } else if (lightboxOverlay.classList.contains('active')) {
-            lightboxOverlay.classList.remove('active');
-            document.body.style.overflow = 'auto';
+            closeLightboxMain();
         }
     }
 });
 
 // ============================================
-// PREVENIR SCROLL EN LIGHTBOX SHEET
+// PREVENIR ZOOM EN DOBLE TAP EN MÓVILES (LIGHTBOX)
 // ============================================
-lightboxSheet.addEventListener('wheel', (e) => {
-    e.preventDefault();}, { passive: false });
+let lastTouchEnd = 0;
+lightboxOverlay.addEventListener('touchend', (e) => {
+    const now = Date.now();
+    if (now - lastTouchEnd <= 300) {
+        e.preventDefault();
+    }
+    lastTouchEnd = now;
+}, { passive: false });
+
+lightboxSheet.addEventListener('touchend', (e) => {
+    const now = Date.now();
+    if (now - lastTouchEnd <= 300) {
+        e.preventDefault();
+    }
+    lastTouchEnd = now;
+}, { passive: false });
