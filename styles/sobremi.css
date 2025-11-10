@@ -61,7 +61,23 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    background: #292929;
+    background: linear-gradient(-45deg, #1f1f1f, #25231f, #44301d, #41290f);
+    background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+	height: 100vh;
+}
+
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
 }
 
 /********************* Navegador **************************/
@@ -1087,7 +1103,6 @@ hr{
     bottom: 0;
     width: 100vw;
     color: #fff;
-    background-color: #292929;
     z-index: 1000;
     font-family: "Poppins", sans-serif;
 }
