@@ -185,23 +185,25 @@ function setupScrollAnimation() {
     
     if (!isResponsive) return;
     
-    const softwareSlide = document.querySelector('.sobremi-slide:nth-child(4)');
-    
-    if (!softwareSlide) return;
-    
+    // Selecciona ambos slides: software (4) y habilidades en programación (5)
+    const slidesToObserve = [
+        document.querySelector('.sobremi-slide:nth-child(4)'),
+        document.querySelector('.sobremi-slide:nth-child(5)')
+    ];
+
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting && entry.intersectionRatio > 0.5) {
-                // El slide de software está visible
+                // El slide está visible
                 const bars = entry.target.querySelectorAll('.bar[data-bar]');
                 const hasAnimated = entry.target.getAttribute('data-animated');
-                
+
                 if (!hasAnimated) {
                     // Reset barras
                     bars.forEach(bar => bar.style.width = '0%');
                     const percentages = entry.target.querySelectorAll('.bar-percentage');
                     percentages.forEach(p => p.textContent = '0%');
-                    
+
                     // Animar
                     setTimeout(() => {
                         animateBarsInSlide(entry.target);
@@ -213,10 +215,10 @@ function setupScrollAnimation() {
     }, {
         threshold: [0.5] // Activar cuando el 50% del elemento es visible
     });
-    
-    if (softwareSlide) {
-        observer.observe(softwareSlide);
-    }
+
+    slidesToObserve.forEach(slide => {
+        if (slide) observer.observe(slide);
+    });
 }
 
 // Reiniciar observer cuando cambie el tamaño de ventana

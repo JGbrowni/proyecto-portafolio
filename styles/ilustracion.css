@@ -704,6 +704,15 @@ html, body{
             }
   }
 
+  .letreros p{
+    font-family: "Poppins", sans-serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #fff;
+    margin: -20px;
+    padding: 0.2rem 0.5rem;
+    border-radius: 0.5rem;
+  }
 
 
 
