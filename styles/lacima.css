@@ -130,7 +130,7 @@ font-weight: 700;
     top: 20px;
     right: 20px;
     z-index: 1001;
-    background: rgba(247, 177, 39, 0.9);
+    background: rgba(39, 247, 202, 0.9);
     border: none;
     border-radius: 50%;
     width: 60px;
@@ -160,7 +160,7 @@ font-weight: 700;
   }
 
   .menu-toggle:hover {
-    background: rgba(247, 177, 39, 1);
+    background:  rgba(39, 247, 202, 0.9);
     transform: scale(1.1);
     animation: none; /* Detener el pulso al hacer hover */
     box-shadow: 0 5px 20px rgba(247, 177, 39, 0.4);
