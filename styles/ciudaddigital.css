@@ -175,6 +175,7 @@ html, body{
   }
   .mobile-responsive{
     display: block;
+    
   }
 }
 
@@ -1194,5 +1195,12 @@ html, body{
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
+  }
+}
+
+@media (max-width: 400px) {
+  .hero-bg2{
+    height: 85vh;
+    width: 100%;
   }
 }
