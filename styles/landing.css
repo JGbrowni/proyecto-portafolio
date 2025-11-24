@@ -4,54 +4,77 @@
   font-style: normal;
 }
 
-.poppins-extralight {
-  font-family: "Poppins", sans-serif;
-  font-weight: 200;
-  font-style: normal;
-}
+.logos{
+    position: relative;
+    width: 100%;
+    height: 130px; /* contenedor para centrar los logos */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: visible;
+    z-index: 20;
+  }
 
-.poppins-light {
-  font-family: "Poppins", sans-serif;
-  font-weight: 300;
-  font-style: normal;
-}
+  /* Posicionamos los logos encima uno del otro y alternamos su visibilidad */
+  .logos img{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(0.95);
+    opacity: 0;
+    width: auto;
+    height: 90px;
+    max-width: 80%;
+    object-fit: contain;
+    display: block;
+    animation: logoCycle 6s infinite;
+    animation-timing-function: ease-in-out;
+  }
 
-.poppins-regular {
-  font-family: "Poppins", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-}
+  /* Alterna el inicio para cada logo (medio ciclo de separación) */
+  .logos img:nth-of-type(1){
+    animation-delay: 0s;
+  }
+  .logos img:nth-of-type(2){
+    animation-delay: 3s;
+  }
 
-.poppins-medium {
-  font-family: "Poppins", sans-serif;
-  font-weight: 500;
-  font-style: normal;
-}
+  @keyframes logoCycle{
+    0% { opacity: 0; transform: translate(-50%, -50%) scale(0.85); }
+    10% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+    45% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+    55% { opacity: 0; transform: translate(-50%, -50%) scale(0.95); }
+    100% { opacity: 0; transform: translate(-50%, -50%) scale(0.95); }
+  }
 
-.poppins-semibold {
-  font-family: "Poppins", sans-serif;
-  font-weight: 600;
-  font-style: normal;
-}
+  /* Ajustes responsivos */
+  @media (max-width: 576px) {
+    .logos{
+      height: 90px;
+    }
+    .logos img{
+      height: 56px;
+    }
+  }
 
-.poppins-bold {
-  font-family: "Poppins", sans-serif;
-  font-weight: 700;
-  font-style: normal;
-}
+  @media (min-width: 577px) and (max-width: 991px) {
+    .logos{
+      height: 100px;
+    }
+    .logos img{
+      height: 64px;
+    }
+  }
 
-.poppins-extrabold {
-  font-family: "Poppins", sans-serif;
-  font-weight: 800;
-  font-style: normal;
-}
-
-.poppins-black {
-  font-family: "Poppins", sans-serif;
-  font-weight: 900;
-  font-style: normal;
-}
-
+  @media (min-width: 992px) {
+    .logos{
+      height: 140px;
+    }
+    .logos img{
+      height: 96px;
+      max-width: 260px;
+    }
+  }
 .poppins-thin-italic {
   font-family: "Poppins", sans-serif;
   font-weight: 100;
@@ -423,6 +446,8 @@
   opacity: 1;
   transform: translateY(0);
 }
+
+/* Previous horizontal .logos block removed (now handled above with animation) */
 
 /******  cards expansibles  *********/
 .roww{
