@@ -494,7 +494,7 @@ html, body{
     display: flex;
     width: 100vw;
     background-color: #e09600;
-    height: 24vh;
+    height: 14vh;
   }
   /****** color botones *****/
   #prevBtn{
@@ -670,8 +670,15 @@ html, body{
     margin-bottom: 17%;
     height: 68%;
     width: 55rem;
+    
   }
 
+    .suelo{
+    display: flex;
+    width: 100vw;
+    background-color: #e09600;
+    height: 24vh;
+  }
 }
 
 /******  Animacion personajes   *******/

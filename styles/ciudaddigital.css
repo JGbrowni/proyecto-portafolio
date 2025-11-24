@@ -772,29 +772,22 @@ html, body{
 
 }
 
-@media (min-width: 1401px) and (max-width: 1450px) {
-  .intro{
-    margin-top: 6%;
-  }
-
-  .imagenintro img{
-    height: 77%;
-    width: 55rem;
-  }
-
-}
-
 @media (min-width: 1300px) and (max-width: 1400px) {
-  .intro{
-    margin-top: 8%;
-  }
-
   .imagenintro img{
-    height: 67%;
+    margin-bottom: 17%;
+    height: 68%;
     width: 55rem;
+    
   }
 
+    .suelo{
+    display: flex;
+    width: 100vw;
+    background-color: #e09600;
+    height: 24vh;
+  }
 }
+
 /******  Animacion personajes   *******/
  .element-1 {
             animation: float1 3s ease-in-out infinite;
