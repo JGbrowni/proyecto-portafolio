@@ -494,7 +494,7 @@ html, body{
     display: flex;
     width: 100vw;
     background-color: #e09600;
-    height: 14vh;
+    height: 20vh;
   }
   /****** color botones *****/
   #prevBtn{
@@ -663,17 +663,7 @@ html, body{
   }
 
 }
-@media (min-width: 1401px) and (max-width: 1450px) {
-  .intro{
-    margin-top: 6%;
-  }
 
-  .imagenintro img{
-    height: 77%;
-    width: 55rem;
-  }
-
-}
 
 @media (min-width: 1300px) and (max-width: 1400px) {
   .imagenintro img{
@@ -712,9 +702,9 @@ html, body{
   }
 
   .letreros p{
-    width: 60%;
+    width: 70%;
     font-family: "Poppins", sans-serif;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     font-weight: 600;
     color: #fff;
     margin: -20px;
