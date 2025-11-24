@@ -481,6 +481,7 @@ html, body{
     align-items: end;
   }
 
+
   .personajescorriendo{
     display: flex;
     width: 100%;
@@ -662,17 +663,26 @@ html, body{
   }
 
 }
-
-@media (min-width: 1200px) and (max-width: 1600px) {
-.imagenintro{
-    justify-content: center;
-    display: flex;
-    justify-content: end;
-    align-items: end;
+@media (min-width: 1401px) and (max-width: 1450px) {
+  .intro{
+    margin-top: 6%;
   }
 
   .imagenintro img{
-    width: 50rem;
+    height: 77%;
+    width: 55rem;
+  }
+
+}
+
+@media (min-width: 1300px) and (max-width: 1400px) {
+  .intro{
+    margin-top: 8%;
+  }
+
+  .imagenintro img{
+    height: 67%;
+    width: 55rem;
   }
 
 }
