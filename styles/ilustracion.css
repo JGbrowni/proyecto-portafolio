@@ -676,11 +676,8 @@ html, body{
 }
 
 @media (min-width: 1300px) and (max-width: 1400px) {
-  .intro{
-    margin-top: 8%;
-  }
-
   .imagenintro img{
+    margin-bottom: 8%;
     height: 67%;
     width: 55rem;
   }
