@@ -7,6 +7,8 @@ const sozoria = document.getElementById('sozoria');
 const botonComenzar = document.getElementById('botonComenzar');
 const WelcomeText = document.getElementById('WelcomeText');
 const TitleStatic = document.getElementById('TitleStatic');
+const Logos = document.getElementById('Logos');
+
 
 btnComenzar.addEventListener('click', function(e) {
   e.preventDefault();
@@ -15,6 +17,7 @@ btnComenzar.addEventListener('click', function(e) {
   content.classList.add('move-up');
   sozoria.classList.add('move-up');
   botonComenzar.classList.add('move-up');
+  Logos.classList.add('move-up');
   WelcomeText.style.display = 'none';
   TitleStatic.style.display = 'none';
 
