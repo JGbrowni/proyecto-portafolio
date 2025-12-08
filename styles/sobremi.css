@@ -1133,6 +1133,120 @@ hr {
   }
 }
 
+/* ========== HABILIDADES DE PROGRAMACIÓN (TEXTO) ========== */
+.skill-item {
+  margin: 18px auto;
+  width: 100%;
+  max-width: 500px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.skill-header {
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.05);
+  border-left: 4px solid #f4b43f;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.skill-header:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateX(4px);
+}
+
+.skill-name {
+  font-weight: 600;
+  font-size: 1rem;
+  color: #fff;
+}
+
+.skill-level {
+  background: #ffffff;
+  border: none;
+  color: #222;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-weight: 700;
+  font-size: 0.85rem;
+  box-shadow: 0 2px 8px rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+.skill-level:hover {
+  background: #f4b43f;
+  color: #222;
+  transform: scale(1.05);
+}
+
+/* ======= RESPONSIVE SKILL ITEMS ======= */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .skill-item {
+    max-width: 600px;
+    margin: 14px auto;
+  }
+
+  .skill-header {
+    padding: 14px;
+    font-size: 0.95rem;
+  }
+
+  .skill-name {
+    font-size: 0.95rem;
+  }
+
+  .skill-level {
+    font-size: 0.8rem;
+    padding: 7px 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  .skill-item {
+    max-width: 100%;
+    margin: 12px auto;
+  }
+
+  .skill-header {
+    padding: 12px;
+    gap: 10px;
+  }
+
+  .skill-name {
+    font-size: 0.9rem;
+  }
+
+  .skill-level {
+    font-size: 0.75rem;
+    padding: 6px 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .skill-item {
+    margin: 10px auto;
+  }
+
+  .skill-header {
+    padding: 10px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .skill-name {
+    font-size: 0.8rem;
+  }
+
+  .skill-level {
+    font-size: 0.7rem;
+    padding: 4px 8px;
+    align-self: flex-end;
+  }
+}
+
 /************* Slide 6: Contacto *************/
 .contact-services {
   display: flex;
