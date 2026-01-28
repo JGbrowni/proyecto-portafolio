@@ -1133,3 +1133,27 @@ html, body{
     color: #ffffff;
   }
 }
+
+/* Estilo para la instrucción de tocar imágenes */
+.instruccion-imagenes {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.5rem;
+  color: #f4b43f;
+  text-align: center;
+  margin-top: 30px;
+  font-weight: 500;
+  border: 2px solid white;
+  border-radius: 15px;
+  padding: 8px;
+  animation: borderGlow 3s infinite ease-in-out;
+}
+
+@keyframes borderGlow {
+  0% { box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); }
+  50% { box-shadow: 0 0 20px rgba(255, 255, 255, 0.8); }
+  100% { box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); }
+}
