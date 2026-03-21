@@ -120,3 +120,5 @@ document.querySelectorAll('.ir-pagina, #btnComenzar').forEach(btn => {
     setTimeout(() => btn.classList.remove('pulse'), 400);
   });
 });
+
+document.getElementById("current-year").textContent = new Date().getFullYear();
