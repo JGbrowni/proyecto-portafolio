@@ -34,6 +34,8 @@ btnComenzar.addEventListener('click', function(e) {
     WelcomeText.style.display = 'none';
     TitleStatic.style.display = 'none';
     nextSection.style.display = 'block';
+    document.body.style.overflow = 'auto';
+    document.documentElement.style.overflow = 'auto';
     // Agrega la clase para animar la entrada
     setTimeout(() => {
       nextSection.classList.add('show');
@@ -65,6 +67,16 @@ cloud1.addEventListener('animationend', () => {
 
 
 document.addEventListener('DOMContentLoaded', function() {
+
+  // Barras móviles → abren el mismo lightbox que las cards
+  document.querySelectorAll('.mobile-bar').forEach(function(bar) {
+    bar.addEventListener('click', function() {
+      var idx = bar.getAttribute('data-lightbox');
+      var lightbox = document.getElementById('lightboxCard' + idx);
+      if (lightbox) lightbox.classList.add('show');
+    });
+  });
+
   // Selecciona todos los cards
   var cards = document.querySelectorAll('.cardd');
   cards.forEach(function(card, idx) {
