@@ -1352,7 +1352,7 @@ html, body{
 
 .cosmic-btn:hover .cosmic-text {
   color: #fff;
-  text-shadow: 0 0 20px rgba(247, 177, 39, 1);
+  text-shadow: 0 0 20px rgb(255, 255, 255);
 }
 
 .cosmic-btn:hover::before {
