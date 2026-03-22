@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Archivos de Sozoria - Osobrowni</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!-- Estilos -->
+<link rel="stylesheet" href="../styles/ilustracion.css">
+<link rel="stylesheet" href="../lightbox.css">
+<!-- Font -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="orientation-overlay" id="orientationOverlay">
+    <div class="device-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+            <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+            <line x1="12" y1="18" x2="12" y2="18"></line>
+        </svg>
+    </div>
+    <div class="orientation-message pulse">
+        <p>Por favor, gira tu dispositivo</p>
+    </div>
+    <div class="rotate-indicator">
+        <div class="rotate-icon"></div>
+    </div>
+</div>
+
+<div class="container-fluid menu">
+    <!-- Botón del menú hamburguesa -->
+    <button class="menu-toggle" id="menuToggle">
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </button>
+
+    <!-- Overlay oscuro -->
+    <div class="menu-overlay" id="menuOverlay"></div>
+
+    <!-- Menú lateral -->
+    <nav class="side-menu" id="sideMenu">
+        <a href="../index.html" class="menu-item">Inicio</a>
+        <a href="ilustracion.html" class="menu-item">Ilustración</a>
+        <a href="branding.html" class="menu-item">Branding</a>
+        <a href="multimedia.html" class="menu-item">Multimedia</a>
+        <a href="ciudaddigital.html" class="menu-item">Ciudad Digital</a>
+        <a href="sobremi.html" class="menu-item">Sobre mí</a>
+        <a href="personajes.html" class="menu-item">Personajes</a>
+    </nav>
+</div>
+
+<div class="desktop-design">
+    <div id="background-silhouette" class="parallax-bg">
+        <img src="../imgs/fondo-1.jpg" class="w-full h-full object-cover" alt="">
+    </div>
+
+    <div id="main-container">
+        <!-- Hero Section -->
+        <section id="hero" class="hero-bg container-fluid">
+            <div class="row">
+                <div class="intro col-12 col-xl-6">
+                    <h1>Archivos de Sozoria</h1>
+                    <p>Explora la colección completa de trabajos, proyectos y creaciones desde el universo de Sozoria. Un catálogo exhaustivo de todo lo que hemos creado a lo largo del tiempo.</p>
+                    <div class="seccionplecas">
+                        <span class="plecas">ARCHIVO</span>
+                        <span class="plecas">COLECCIÓN</span>
+                        <span class="plecas">PROYECTO</span>
+                        <span class="plecas">SOZORIA</span>
+                        <span class="plecas">TEMPORAL</span>
+                    </div>
+                </div>
+                <div class="imagenintro col-12 col-xl-6">
+                    <img src="../imgs/fancyanimated.webp" alt="Archivos de Sozoria" width="850">
+                </div>
+            </div>
+        </section>
+
+        <!-- Characters Section -->
+        <section id="characters" class="py-5">
+            <div class="container-lg px-3 px-md-4">
+                <p class="instruccion-imagenes">Selecciona una carpeta para explorar</p>
+                <div class="row g-4">
+                    <!-- Placeholder para contenido -->
+                    <div class="col-12 text-center">
+                        <p style="color: white; font-size: 1.2rem; margin-top: 3rem;">
+                            Esta sección está en desarrollo. Los archivos de Sozoria se mostrarán aquí.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección inferior con animación -->
+        <section id="hero2" class="hero-bg2 container-fluid">
+            <div class="row">
+                <div class="personajescorriendo col-12">
+                    <div class="element-1">
+                        <img src="../imgs/fancy corriendo.webp" alt="" width="200">
+                    </div>
+                    <div class="element-2">
+                        <img src="../imgs/oso corriendo.webp" alt="" width="150">
+                    </div>
+                    <div class="letreros">
+                        <p>Presiona para avanzar</p>
+                        <a href="ilustracion.html">
+                            <img src="../imgs/letrero browni.webp" alt="" width="350">
+                        </a>
+                    </div>
+                </div>
+                <div class="suelo col-12">
+                    <span></span>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer class="footer-sozoria">
+    <div class="footer-content">
+        <div class="footer-left">
+            <span>©2025 Osobrowni & Browni. Marca, personajes y contenidos creados por Oscar Flores.</span>
+        </div>
+        <div class="footer-right">
+            <a href="https://instagram.com/osobrowni" target="_blank" aria-label="Instagram"><i class="fa fa-instagram"></i></a>
+            <a href="https://x.com/osobrowni" target="_blank" aria-label="X"><i class="fa fa-twitter"></i></a>
+            <a href="https://www.youtube.com/@Osobrowni" target="_blank" aria-label="YouTube"><i class="fa fa-youtube-play"></i></a>
+            <a href="https://www.behance.net/browni_designer" target="_blank" aria-label="Behance"><i class="fa fa-behance"></i></a>
+        </div>
+    </div>
+</footer>
+
+<!-- Bootstrap JS Bundle -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="../js/ilustracion.js"></script>
+<script src="../lightbox-plus-jquery.js"></script>
+</body>
+</html>
