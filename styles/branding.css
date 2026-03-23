@@ -452,6 +452,7 @@ html, body{
       .logoinfo{
     display: flex;
     flex-direction: column;
+    justify-content: center;
     font-weight: 500;
     font-size: 1.3rem;
     gap: 1rem;
