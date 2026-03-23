@@ -1645,8 +1645,12 @@ hr {
 }
 
 .footer-left {
-    font-size: 1rem;
-    font-weight: 400;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.footer-left p{
+  margin: 0;
 }
 
 .footer-right a {
