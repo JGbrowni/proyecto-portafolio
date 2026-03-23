@@ -1414,7 +1414,7 @@ html, body{
   margin: 0 auto;
   width: 120%;           /* ← Aumenta este valor para más ancho relativo */
   max-width: 700px;      /* ← Aumenta este valor para permitir más ancho máximo */
-  background: linear-gradient(135deg, #0a0e27 0%, #16213e 50%, #0f3460 100%);
+  background: linear-gradient(135deg, #27140a 0%, #3e1f16 50%, #60320f 100%);
   border: 2px solid #e19e55;
   border-radius: 20px;
   color: white;
@@ -1436,7 +1436,7 @@ html, body{
   left: -50%;
   width: 200%;
   height: 200%;
-  background: radial-gradient(circle, rgba(247, 177, 39, 0.2) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(247, 105, 39, 0.2) 0%, transparent 70%);
   animation: cosmicGlow 4s ease-in-out infinite;
   z-index: 0;
 }
@@ -1520,10 +1520,10 @@ html, body{
 }
 
 .cosmic-btn:hover {
-  background: linear-gradient(135deg, #0f3460 0%, #16213e 50%, #0a0e27 100%);
+  background: linear-gradient(135deg, #60290f 0%, #3e2116 50%, #27150a 100%);
   border-color: #fff;
-  box-shadow: 0 0 50px rgba(247, 177, 39, 0.6),
-              inset 0 0 50px rgba(247, 177, 39, 0.2);
+  box-shadow: 0 0 50px rgba(247, 119, 39, 0.6),
+              inset 0 0 50px rgba(247, 133, 39, 0.2);
   transform: scale(1.05);
 }
 

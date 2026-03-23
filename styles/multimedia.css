@@ -114,7 +114,8 @@
 
 html, body{
       margin: 0; padding: 0;
-      overflow: hidden; /* Evita el scroll general */
+      overflow-x: hidden;
+      overflow-y: auto;
       scroll-behavior: smooth;
       font-family: "Poppins", sans-serif;
       color: white;
@@ -136,46 +137,56 @@ html, body{
   }
 }
 
-    /* Contenedor principal en fila horizontal */
+    /* Contenedor principal - scroll vertical */
 #main-container {
-      display: flex;
-      flex-direction: row;
-      height: 100vh;
-      width: 600vw; /* 5 secciones de 100vw cada una */
-      scroll-snap-type: x mandatory;
-      overflow: hidden; /* Evita el scroll general */
-      scroll-behavior: smooth;
+      display: block;
+      width: 100vw;
+      overflow: visible;
     }
-    /* Cada sección ocupa 100vw y 100vh y snap */
-    section {
-      flex: 0 0 100vw;
-      height: 100vh;
-      scroll-snap-align: start;
-      overflow: hidden; /* Evita el scroll general */
+
+    /* Hero section ocupa exactamente 100vh */
+    #hero.hero-bg {
+      height: 90vh;
+      overflow: hidden;
+    }
+
+    #hero2.hero-bg2 {
+      height: 90vh;
+
+    }
+
+    /* Secciones de personajes: scroll vertical natural */
+    section:not(#hero) {
+      width: 100vw;
+      min-height: auto;
+      overflow: visible;
     }
     .parallax-bg {
-    transition: transform 0.1s linear; /* Transición suave para el parallax */
-    will-change: transform; /* Ayuda al navegador a optimizar la animación */
-    transform: scale(1.15); /* Asegura que no se vean los bordes al mover */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+    will-change: transform;
+    transform: scale(1.08);
+    transition: transform 0.08s linear;
 }
 
-.mobile-responsive{
-  display: none;
+/* Asegurar que el desktop-design no cree un nuevo contexto de stacking */
+.desktop-design {
+    position: relative;
+    z-index: 0;
 }
 
-/* Móviles *****************************/
+
+
+/* Móviles: scroll vertical habilitado */
 @media (max-width: 768px) {
 html, body{
-  overflow: scroll;
-  background-color: #c5120c;
+  overflow-y: auto;
+  background-color: #1a1a1a;
 }
-
-  .desktop-design{
-    display: none;
-  }
-  .mobile-responsive{
-    display: block;
-  }
 }
 
 
@@ -423,6 +434,55 @@ html, body{
       justify-content: center;
       text-align: center;
       padding: 2rem;
+      z-index: 1;
+    }
+
+      .hero-bg2 {
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      display: flex;
+      align-items: end;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem;
+      z-index: 1;
+    }
+
+     .linkb{
+    padding: 0;
+    margin: 0.1rem;
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+    .linkb p{
+    transition: transform 0.3s ease;
+    background-color: #d41212;
+    color: #ffffff;
+    border-radius: 2rem;
+    padding: 0.5rem;
+    text-align: center;
+
+  }
+
+  .linkb p:hover {
+      transform: scale(1.03);
+    }
+
+  .p-2{
+    margin: 0.8rem;
+
+  }
+
+    /* Secciones characters con fondo semitransparente sobre el parallax */
+    #characters,
+    #characters2,
+    [id^="characters"] {
+      background: rgba(18, 18, 18, 0.88);
+      backdrop-filter: blur(10px);
+      padding-top: 3rem;
+      padding-bottom: 3rem;
     }
 
     .character-card {
@@ -481,10 +541,10 @@ html, body{
     align-items: end;
   }
 
+
   .personajescorriendo{
     display: flex;
     width: 100%;
-    height: 100vh;
     justify-content: end;
     align-items: end;
   }
@@ -492,91 +552,27 @@ html, body{
   .suelo{
     display: flex;
     width: 100vw;
-    background-color: #ff312a;
-    height: 14vh;
-  }
-  /****** color botones *****/
-  #prevBtn{
-    color: #d41212;
+    background-color: #292929;
+    height: 3vh;
   }
 
-  #nextBtn{
-    color: #d41212;
-  }
-
-  .linkb{
-    padding: 0;
-    margin: 0.1rem;
-    text-decoration: none;
-    font-weight: 600;
-  }
-
-    .linkb p{
-    transition: transform 0.3s ease;
-    background-color: #d41212;
-    color: #ffffff;
-    border-radius: 2rem;
-    padding: 0.5rem;
-    text-align: center;
-
-  }
-
-  .linkb p:hover {
-      transform: scale(1.03);
-    }
-/* Móviles: texto más pequeño */
+/* Móviles: 1 card por fila */
 @media (max-width: 576px) {
-  
-
-    /* Secciones de personajes */
-  #characters, 
-  #characters2,
-  .characters-section {
-    overflow-y: hidden; /* desactiva scroll vertical */
-    padding-bottom: 1rem;
-  }
-
-  /* Las filas se convierten en un grid */
-  #characters .row,
-  #characters2 .row,
-  .characters-section .row {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 0.8rem; /* espacio entre cards */
-  }
-
-  /* Cada card ocupa ~30% del ancho para que quepan 3 en fila */
-  #characters .col-12,
-  #characters2 .col-12,
-  .characters-section .col-12 {
-    flex: 0 0 30%;
-    max-width: 30%;
-  }
-
-  /* Ajustes de las cards */
-  .character-card {
-    width: 100%;
-    padding: 0.5rem;
-    margin: 0 auto;
+  #characters .col-12 {
+    flex: 0 0 100%;
+    max-width: 100%;
   }
 
   .character-card img {
     width: 100%;
     height: auto;
     object-fit: cover;
-    border-radius: 0.4rem;
   }
 
-  /* Textos más pequeños */
-  .character-card h3 {
-    font-size: 0.9rem;
+.p-2{
     text-align: center;
-  }
+    margin: 0.5rem;
 
-  .character-card p {
-    font-size: 0.75rem;
-    text-align: center;
   }
 }
 /* Tablets: tamaño intermedio */
@@ -619,6 +615,8 @@ html, body{
       align-items: center;
       justify-content: center;
       text-align: center;
+      padding: 2rem;
+      z-index: 1; 
   }
   .plecas{
     font-size: 1rem;
@@ -629,6 +627,7 @@ html, body{
     border-radius: 0.5rem;
 
   }
+
 }
 
 @media (min-width: 901px) and (max-width: 1200px) {
@@ -670,6 +669,8 @@ html, body{
       align-items: center;
       justify-content: center;
       text-align: center;
+      padding: 2rem;
+      z-index: 1; 
   }
   .plecas{
     font-size: 1.5rem;
@@ -683,22 +684,37 @@ html, body{
 
 }
 
+
 @media (min-width: 1300px) and (max-width: 1400px) {
-  .imagenintro img{
-    margin-bottom: 17%;
-    height: 68%;
-    width: 55rem;
-    
+  #hero.hero-bg{
+    height: 80vh;
   }
+
+  .imagenintro{
+    display: flex;
+    height: 90vh;
+    justify-content: end;
+  }
+
+      .hero-bg {
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem;
+      z-index: 1;
+    }
 
     .suelo{
     display: flex;
     width: 100vw;
-    background-color: #e09600;
-    height: 24vh;
+    background-color: #292929;
+    height: 3vh;
   }
 }
-
 
 /******  Animacion personajes   *******/
  .element-1 {
@@ -726,9 +742,17 @@ html, body{
             }
   }
 
+  @keyframes float1 {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+  }
 
   .letreros p{
-    width:70%;
+    width: 70%;
     font-family: "Poppins", sans-serif;
     font-size: 1.1rem;
     font-weight: 600;
@@ -781,7 +805,6 @@ html, body{
 
 
 
-
   /*** footer sozoria  ***/
 
 .footer-sozoria {
@@ -806,7 +829,11 @@ html, body{
 
 .footer-left {
   font-size: 1rem;
-  font-weight: 400;
+  font-weight: 600;
+}
+
+.footer-left p{
+  margin: 0;
 }
 
 .footer-right a {
@@ -1023,10 +1050,9 @@ html, body{
 
 /* Móviles: apartado más pequeño ******************************************************************/
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .hero-bg{
       height: 100vh;
-      background-color: #640300;
       padding: 0%;
       margin: 0%;
       display: flex;
@@ -1034,24 +1060,31 @@ html, body{
       align-items: center;
       justify-content: center;
       text-align: center;
+      padding-top: 5rem;
   }
 
-  .imagen-movil{
-    display: block;
-    height: 30vh;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: center;
+  #hero.hero-bg{
+    height: auto;
   }
 
-  .imagen-movil img{
-    width: 23rem;
+  /* Hero section: ocultar imagen grande, mostrar centrado */
+  .imagenintro {
+    display: flex;
+    height: 35vh;
+    justify-content: center;
+    align-items: flex-end;
+  }
+
+  .imagenintro img {
+    width: 90%;
+    max-width: 320px;
+
   }
 
   .intro{
-    height: 60vh;
+    height: auto;
     padding: 2rem;
-    margin:  0;
+    margin: 0;
     justify-content: center;
     flex-direction: column;
     align-items: center;
@@ -1072,13 +1105,20 @@ html, body{
     font-size: 1rem;
     margin-right: 1rem;
     border-radius: 0.5rem;
-  
   }
-  .seccionplecas-mobile{
+
+  .seccionplecas {
     display: flex;
-    align-items: center;
-    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.4rem;
   }
+
+  #characters {
+    padding-top: 2rem;
+    padding-bottom: 5rem;
+  }
+
   .personajescorriendo{
     display: flex;
     width: 100%;
@@ -1087,9 +1127,14 @@ html, body{
     justify-content: end;
     align-items: end;
   }
+
+  #hero2.hero-bg2{
+    height: 70vh;
+  }
+
   .hero-bg2{
-      height: 70vh;
-      background-color: #640300;
+    width: auto;
+      height: 50vh;
       padding: 0%;
       margin: 0%;
       display: flex;
@@ -1097,36 +1142,337 @@ html, body{
       justify-content: center;
       text-align: center;
   }
-    .suelo{
-    display: block;
-    width: 200%;
-    height: 5vh;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: center;
+  .suelo{
+    display: flex;
+    background-color: #292929;
+    height: 4vh;
+  }
+}
+
+@media (max-width: 400px) {
+    .hero-bg{
+      height: 100vh;
+      padding: 0%;
+      margin: 0%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: end;
+      text-align: center;
+  }
+
+  #hero.hero-bg{
+    height: 115vh;
+  }
+
+  .imagenintro {
+    display: flex;
+    height: 37vh;
+    justify-content: center;
+    align-items: flex-end;
+  }
+
+  .imagenintro img {
+    width: 80%;
+
+  }
+  
+  #hero2.hero-bg2{
+    height: 80vh;
+  }
+
+  .hero-bg2{
+    width: auto;
+      height: 50vh;
+      padding: 0%;
+      margin: 0%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+  }
+  .suelo{
+    display: flex;
+    background-color: #292929;
+    height: 4vh;
   }
 }
 
 /* Estilo para la instrucción de tocar imágenes */
 .instruccion-imagenes {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 80%;
+  display: block;
+  width: 100%;
+  max-width: 70%;
+  margin: 0 auto 2rem auto;
   font-family: 'Poppins', sans-serif;
-  font-size: 0.5rem;
-  color: #f4b43f;
+  font-size: 1rem;
+  color: #fff;
   text-align: center;
-  margin-top: 30px;
   font-weight: 500;
   border: 2px solid white;
   border-radius: 15px;
-  padding: 8px;
+  padding: 10px 18px;
   animation: borderGlow 3s infinite ease-in-out;
 }
-
+ 
+@media (max-width: 767px) {
+  .instruccion-imagenes {
+    font-size: 0.8rem;
+    max-width: 90%;
+    padding: 8px 14px;
+    margin-bottom: 1.5rem;
+  }
+}
+ 
 @keyframes borderGlow {
   0% { box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); }
   50% { box-shadow: 0 0 20px rgba(255, 255, 255, 0.8); }
   100% { box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); }
+}
+
+/* Estilo para la instrucción para visitar sozoria archives */
+.instruccion-sozoria {
+  display: block;
+  align-content: center;
+  width: 100%;
+  max-width: 70%;
+  margin: 0 auto 2rem auto;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  color: #fff;
+  text-align: center;
+  font-weight: 500;
+  border: 2px solid white;
+  border-radius: 15px;
+  padding: 10px 18px;
+  animation: borderGlow 3s infinite ease-in-out;
+}
+ 
+@media (max-width: 767px) {
+  .instruccion-sozoria {
+    font-size: 0.8rem;
+    max-width: 90%;
+    padding: 8px 14px;
+    margin-bottom: 1.5rem;
+  }
+}
+ 
+@keyframes borderGlow {
+  0% { box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); }
+  50% { box-shadow: 0 0 20px rgba(255, 255, 255, 0.8); }
+  100% { box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); }
+}
+
+.sozoria-archives{
+  padding-top: 5rem;
+}
+
+/* ========== BOTÓN CÓSMICO ========== */
+.cosmic-btn {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 50px;
+  margin: 0 auto;
+  width: 120%;           /* ← Aumenta este valor para más ancho relativo */
+  max-width: 700px;      /* ← Aumenta este valor para permitir más ancho máximo */
+  background: linear-gradient(135deg, #270a0a 0%, #3e1616 50%, #600f0f 100%);
+  border: 2px solid #fd4d4d;
+  border-radius: 20px;
+  color: white;
+  font-family: "Poppins", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  box-shadow: 0 0 30px rgba(247, 39, 39, 0.3),
+              inset 0 0 30px rgba(247, 39, 39, 0.1);
+  text-decoration: none;
+}
+
+.cosmic-btn::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(247, 39, 39, 0.2) 0%, transparent 70%);
+  animation: cosmicGlow 4s ease-in-out infinite;
+  z-index: 0;
+}
+
+.cosmic-btn::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, 
+    transparent 0%, 
+    rgba(247, 39, 39, 0.3) 50%, 
+    transparent 100%);
+  animation: cosmicShine 3s ease-in-out infinite;
+  z-index: 1;
+}
+
+.cosmic-text {
+  position: relative;
+  z-index: 2;
+  display: block;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #ff6565;
+  text-shadow: 0 0 10px rgba(247, 39, 39, 0.8);
+  margin-bottom: 8px;
+}
+
+.cosmic-subtext {
+  position: relative;
+  z-index: 2;
+  display: block;
+  font-size: 0.95rem;
+  font-weight: 400;
+  color: #e8e8e8;
+  text-shadow: 0 0 5px rgba(247, 43, 39, 0.5);
+}
+
+.cosmic-stars {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  border-radius: 18px;
+  z-index: 1;
+}
+
+.cosmic-stars::before,
+.cosmic-stars::after {
+  content: '';
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: white;
+  border-radius: 50%;
+  box-shadow: 
+    50px 50px 0 0 white,
+    100px 20px 0 0 #ff6969,
+    30px 80px 0 0 white,
+    150px 100px 0 0 #ff6969,
+    80px 10px 0 0 white,
+    200px 50px 0 0 white,
+    120px 150px 0 0 #ff6969;
+  animation: twinklingFloat 4s ease-in-out infinite, floatStars 6s ease-in-out infinite;
+}
+
+.cosmic-stars::after {
+  box-shadow: 
+    60px 30px 0 0 #ff6969,
+    110px 90px 0 0 white,
+    40px 120px 0 0 white,
+    160px 70px 0 0 #ff6969,
+    90px 140px 0 0 white,
+    210px 20px 0 0 #ff6969,
+    130px 60px 0 0 white;
+  animation: twinklingFloat 5s ease-in-out infinite reverse, floatStars 8s ease-in-out infinite reverse;
+}
+
+.cosmic-btn:hover {
+  background: linear-gradient(135deg, #600f0f 0%, #3e1616 50%, #270a0a 100%);
+  border-color: #fff;
+  box-shadow: 0 0 50px rgba(247, 39, 39, 0.6),
+              inset 0 0 50px rgba(247, 39, 39, 0.2);
+  transform: scale(1.05);
+}
+
+.cosmic-btn:hover .cosmic-text {
+  color: #fff;
+  text-shadow: 0 0 20px rgb(255, 255, 255);
+}
+
+.cosmic-btn:hover::before {
+  animation: cosmicGlow 2s ease-in-out infinite;
+}
+
+.cosmic-btn:active {
+  transform: scale(0.98);
+}
+
+/* Animaciones cósmicas */
+@keyframes cosmicGlow {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translate(30px, -30px) scale(1.2);
+    opacity: 0.8;
+  }
+}
+
+@keyframes cosmicShine {
+  0% {
+    left: -100%;
+  }
+  50% {
+    left: 100%;
+  }
+  100% {
+    left: -100%;
+  }
+}
+
+@keyframes twinkling {
+  0%, 100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes twinklingFloat {
+  0%, 100% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 0.9;
+  }
+}
+
+@keyframes floatStars {
+  0%, 100% {
+    transform: translateY(0px) translateX(0px);
+  }
+  25% {
+    transform: translateY(-8px) translateX(3px);
+  }
+  50% {
+    transform: translateY(-5px) translateX(-3px);
+  }
+  75% {
+    transform: translateY(-10px) translateX(2px);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .cosmic-btn {
+    padding: 20px 30px;
+    max-width: 90%;
+  }
+
+  .cosmic-text {
+    font-size: 1.1rem;
+  }
+
+  .cosmic-subtext {
+    font-size: 0.85rem;
+  }
 }

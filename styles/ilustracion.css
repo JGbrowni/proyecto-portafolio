@@ -1237,8 +1237,8 @@ html, body{
   margin: 0 auto;
   width: 120%;           /* ← Aumenta este valor para más ancho relativo */
   max-width: 700px;      /* ← Aumenta este valor para permitir más ancho máximo */
-  background: linear-gradient(135deg, #0a0e27 0%, #16213e 50%, #0f3460 100%);
-  border: 2px solid #f7b127;
+  background: linear-gradient(135deg, #271f0a 0%, #3e3116 50%, #44350b 100%);
+  border: 2px solid #f8c45b;
   border-radius: 20px;
   color: white;
   font-family: "Poppins", sans-serif;
@@ -1273,7 +1273,7 @@ html, body{
   height: 100%;
   background: linear-gradient(90deg, 
     transparent 0%, 
-    rgba(247, 177, 39, 0.3) 50%, 
+    rgba(250, 212, 137, 0.3) 50%, 
     transparent 100%);
   animation: cosmicShine 3s ease-in-out infinite;
   z-index: 1;
@@ -1285,7 +1285,7 @@ html, body{
   display: block;
   font-size: 1.3rem;
   font-weight: 700;
-  color: #f7b127;
+  color: #fdcb68;
   text-shadow: 0 0 10px rgba(247, 177, 39, 0.8);
   margin-bottom: 8px;
 }
@@ -1321,29 +1321,29 @@ html, body{
   border-radius: 50%;
   box-shadow: 
     50px 50px 0 0 white,
-    100px 20px 0 0 #f7b127,
+    100px 20px 0 0 #ffce6b,
     30px 80px 0 0 white,
-    150px 100px 0 0 #f7b127,
+    150px 100px 0 0 #ffce6b,
     80px 10px 0 0 white,
     200px 50px 0 0 white,
-    120px 150px 0 0 #f7b127;
+    120px 150px 0 0 #ffce6b;
   animation: twinklingFloat 4s ease-in-out infinite, floatStars 6s ease-in-out infinite;
 }
 
 .cosmic-stars::after {
   box-shadow: 
-    60px 30px 0 0 #f7b127,
+    60px 30px 0 0 #ffce6b,
     110px 90px 0 0 white,
     40px 120px 0 0 white,
-    160px 70px 0 0 #f7b127,
+    160px 70px 0 0 #ffce6b,
     90px 140px 0 0 white,
-    210px 20px 0 0 #f7b127,
+    210px 20px 0 0 #ffce6b,
     130px 60px 0 0 white;
   animation: twinklingFloat 5s ease-in-out infinite reverse, floatStars 8s ease-in-out infinite reverse;
 }
 
 .cosmic-btn:hover {
-  background: linear-gradient(135deg, #0f3460 0%, #16213e 50%, #0a0e27 100%);
+  background: linear-gradient(135deg, #44350b 0%, #3e3116 50%, #271f0a 100%);
   border-color: #fff;
   box-shadow: 0 0 50px rgba(247, 177, 39, 0.6),
               inset 0 0 50px rgba(247, 177, 39, 0.2);

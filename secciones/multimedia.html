@@ -18,9 +18,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <!-- Tus estilos -->
 <link rel="stylesheet" href="../styles/multimedia.css">
-<link rel="preload" href="../styles/multimedia.css">
 <link rel="stylesheet" href="../video-lightbox.css" />
-
 <!------- font ---------->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -93,45 +91,47 @@
 
 <div class="desktop-design">
 
-    <div id="background-silhouette" class="fondo1 absolute inset-0 -z-10 parallax-bg">
+    <div id="background-silhouette" class="parallax-bg">
       <img src="../imgs/ciudad-3.png" class="w-full h-full object-cover" alt="">
     </div>
-  <!-- Contenedor principal con scroll horizontal -->
+  <!-- Contenedor principal con scroll vertical -->
   <div id="main-container">
     <!-- Hero Section -->
     <section id="hero" class="hero-bg container-fluid">
       <div class="row">
-        <div class="intro col-12 col-md-12 col-xl-6">
+        <div class="intro col-12 col-xl-6">
           <h1>Multimedia</h1>
-                    <p class="">
-                        Proyectos audiovisuales que combinan animación, video y edición para dar vida a ideas en movimiento y emoción.
-                    </p>
-                    <div class="seccionplecas">
-                        <span class="plecas">ADOBE PREMIERE</span>
-                        <span class="plecas">ADOBE AFTER EFFECTS</span>
-                        <span class="plecas">VIDEOS</span>
-                        <span class="plecas">ANIMACIONES</span>
-                        <span class="plecas">MOTION GRAPHICS</span>
-                        <span class="plecas">ADOBE ANIMATE</span>
-                </div>
-                <p class="instruccion-imagenes">Toca las imágenes para expandir el contenido</p>
+          <p class="">
+            Proyectos audiovisuales que combinan animación, video y edición para dar vida a ideas en movimiento y emoción.
+          </p>
+          <div class="seccionplecas">
+            <span class="plecas">ADOBE PREMIERE</span>
+            <span class="plecas">ADOBE AFTER EFFECTS</span>
+            <span class="plecas">VIDEOS</span>
+            <span class="plecas">ANIMACIONES</span>
+            <span class="plecas">MOTION GRAPHICS</span>
+            <span class="plecas">ADOBE ANIMATE</span>
+          </div>
+
         </div>
-        <div class="imagenintro col-12 col-md-12 col-xl-6">
+        <div class="imagenintro col-12 col-xl-6">
           <img src="../imgs/skatletanimated.webp" alt="Mi animación" width="850">
         </div>
       </div>
     </section>
-    <!-- Characters Section -->
-    <section id="characters" class="py-5 d-flex flex-column justify-content-center">
-      <div class="container">
+    <!-- Characters Section - unificada -->
+    <section id="characters" class="py-5">
+      <div class="container-lg px-3 px-md-4">
+        <p class="instruccion-imagenes">Toca las imágenes para expandir el contenido</p>
         <div class="row g-4">
+
           <div class="col-12 col-md-4">
             <div class="character-card">
-              <a href="#" data-video="../imgs/videos/3d.mp4" class="video-trigger">
+             <a href="#" data-video="../imgs/videos/3d.mp4" class="video-trigger">
                 <img src="../imgs/videos/3dd.png" alt="Preview del video" class="img-fluid" />
               </a>
 
-              <div class="p-3">
+              <div class="p-2">
                 <h3 class="h4 fw-bold">Inicio de un mundo 3D</h3>
                 <p>Improvisación del modelado 3D y la animación de cámara del programa "Blender"</p>
                 <a href="https://www.instagram.com/reel/DMsy63-xZWU/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA" class="linkb">
@@ -140,13 +140,14 @@
               </div>
             </div>
           </div>
+
           <div class="col-12 col-md-4">
             <div class="character-card">
               <a href="#" data-video="../imgs/videos/ankha.mp4" class="video-trigger">
                 <img src="../imgs/videos/ankhap.jpg" alt="Preview del video" class="img-fluid" />
               </a>
 
-              <div class="p-3">
+              <div class="p-2">
                 <h3 class="h4 fw-bold">Parodia de gata bailando</h3>
                 <p>Animación de uno de mis personajes haciendo un baile parodia del 2021 considerado "la animación con más visitas de mis animaciones" </p>
                 <a href="https://youtu.be/dYI-oW4GeME" class="linkb">
@@ -155,12 +156,13 @@
               </div>
             </div>
           </div>
+
           <div class="col-12 col-md-4">
             <div class="character-card">
               <a href="#" data-video="../imgs/videos/baddest.mp4" class="video-trigger">
                 <img src="../imgs/videos/kpop.jpg" alt="Preview del video" class="img-fluid" />
               </a>
-              <div class="p-3">
+              <div class="p-2">
                 <h3 class="h4 fw-bold">THE BADDEST fan animation</h3>
                 <p>Animación de dos de mis personajes interpretando la canción "THE BADDEST" con la voz de Lollia (Cancion original de League of Legends)</p>
                 <a href="https://www.instagram.com/reel/Cr1oIFdpdZC/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA" class="linkb">
@@ -169,16 +171,10 @@
               </div>
             </div>
           </div>
-        </div>
-      </div>
-    </section>
 
-    <section id="characters2" class="py-5 d-flex flex-column justify-content-center">
-      <div class="container">
-        <div class="row g-4">
           <div class="col-12 col-md-4">
             <div class="character-card">
-              <a href="#" data-video="../imgs/videos/intro1.mp4" class="video-trigger">
+             <a href="#" data-video="../imgs/videos/intro1.mp4" class="video-trigger">
                 <img src="../imgs/videos/intro1p.png" alt="Preview del video" class="img-fluid" />
               </a>
               <div class="p-3">
@@ -190,20 +186,22 @@
               </div>
             </div>
           </div>
+
           <div class="col-12 col-md-4">
             <div class="character-card">
-              <a href="#" data-video="../imgs/videos/intro2.mp4" class="video-trigger">
+               <a href="#" data-video="../imgs/videos/intro2.mp4" class="video-trigger">
                 <img src="../imgs/videos/intro2p.png" alt="Preview del video" class="img-fluid" />
               </a>
               <div class="p-3">
                 <h3 class="h4 fw-bold">Logo animado Hablando con un oso con boina</h3>
-                <p>Animación para nombre del podcast de la marca osobrowni</p>
+                <p>Animación del logo original osobrowni para redes sociales</p>
                 <a href="https://www.youtube.com/watch?v=b3dLLjVrueI" class="linkb">
                   <p>Ver en YouTube</p>
                 </a>
               </div>
             </div>
           </div>
+
           <div class="col-12 col-md-4">
             <div class="character-card">
               <a href="#" data-video="../imgs/videos/intro3.mp4" class="video-trigger">
@@ -218,13 +216,7 @@
               </div>
             </div>
           </div>
-        </div>
-      </div>
-      
-    </section>
-    <section id="characters2" class="py-5 d-flex flex-column justify-content-center">
-      <div class="container">
-        <div class="row g-4">
+
           <div class="col-12 col-md-4">
             <div class="character-card">
               <a href="#" data-video="https://www.youtube.com/watch?v=hLKZ5wb8Kss" class="video-trigger">
@@ -239,6 +231,7 @@
               </div>
             </div>
           </div>
+
           <div class="col-12 col-md-4">
             <div class="character-card">
               <a href="#" data-video="https://www.youtube.com/watch?v=RQjqsYl_g-U&t=25s" class="video-trigger">
@@ -253,6 +246,7 @@
               </div>
             </div>
           </div>
+
           <div class="col-12 col-md-4">
             <div class="character-card">
               <a href="#" data-video="https://www.youtube.com/watch?v=AEk2mFpO2qw" class="video-trigger">
@@ -267,25 +261,7 @@
               </div>
             </div>
           </div>
-        </div>
-      </div>
-      
-    </section>
 
-    <section id="characters" class="py-5 d-flex flex-column justify-content-center">
-      <div class="container">
-        <div class="row g-4">
-          <div class="col-12 col-md-4">
-            <div class="character-card">
-              <a href="#" data-video="../imgs/trabajos_imgs/gastrovideo.mp4" class="video-trigger">
-                <img src="../imgs/trabajos_imgs/video1.png" alt="Preview del video" class="img-fluid" />
-              </a>
-              <div class="p-3">
-                <h3 class="h4 fw-bold">Video publicitario Gastrocenter</h3>
-                <p>Video informativo elaborado para Gastrocenter sobre un tema y promoviendo sus servicios</p>
-              </div>
-            </div>
-          </div>
           <div class="col-12 col-md-4">
             <div class="character-card">
               <a href="#" data-video="../imgs/trabajos_imgs/marroquinvideo.mp4" class="video-trigger">
@@ -297,6 +273,7 @@
               </div>
             </div>
           </div>
+
           <div class="col-12 col-md-4">
             <div class="character-card">
               <a href="#" data-video="../imgs/trabajos_imgs/gabrielavideo.mp4" class="video-trigger">
@@ -308,13 +285,35 @@
               </div>
             </div>
           </div>
+
+          <div class="col-12 col-md-4">
+            <div class="character-card">
+              <a href="#" data-video="../imgs/trabajos_imgs/gastrovideo.mp4" class="video-trigger">
+                <img src="../imgs/trabajos_imgs/video1.png" alt="Preview del video" class="img-fluid" />
+              </a>
+              <div class="p-3">
+                <h3 class="h4 fw-bold">Video publicitario Gastrocenter</h3>
+                <p>Video informativo elaborado para Gastrocenter sobre un tema y promoviendo sus servicios</p>
+              </div>
+            </div>
+          </div>
+
         </div>
+
+        <div class="sozoria-archives">
+          <button class="cosmic-btn" id="sozoriaBtn">
+            <span class="cosmic-text">¿Quieres ver más?</span>
+            <span class="cosmic-subtext">Explora los Archivos de Sozoria</span>
+            <div class="cosmic-stars"></div>
+          </button>
+        </div>
+
+
       </div>
     </section>
 
-    
 
-    <section id="hero" class="hero-bg container-fluid">
+    <section id="hero2" class="hero-bg2 container-fluid">
       <div class="row">
         <div class="personajescorriendo col-12">
           <div class="element-4">
@@ -335,6 +334,7 @@
               <img src="../imgs/letreromadelina.webp" alt="" width="350">
             </a>
           </div>
+          
         </div>
         <div class="suelo col-12">
           <span></span>
@@ -343,265 +343,16 @@
     </section>
   </div>
 
-  <!-- Botones de navegación Tailwind (Izquierda y Derecha) -->
-  <button id="prevBtn" class="fixed left-5 top-1/2 -translate-y-1/2 z-20 bg-white bg-opacity-20 rounded-full p-3 hover:bg-opacity-40 transition-colors">
-      <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 256 256"><path d="M165.66,202.34a8,8,0,0,1-11.32,11.32l-80-80a8,8,0,0,1,0-11.32l80-80a8,8,0,0,1,11.32,11.32L91.31,128Z"></path></svg>
-  </button>
-  <button id="nextBtn" class="fixed right-5 top-1/2 -translate-y-1/2 z-20 bg-white bg-opacity-20 rounded-full p-3 hover:bg-opacity-40 transition-colors">
-      <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 256 256"><path d="M181.66,133.66l-80,80a8,8,0,0,1-11.32-11.32L164.69,128,90.34,53.66a8,8,0,0,1,11.32-11.32l80,80A8,8,0,0,1,181.66,133.66Z"></path></svg>
-  </button>
 </div>
-
-
-
-  <!-- Version para pantallas pequeñas  ---------------------------------------------->
-
-<div class="mobile-responsive">
-  <section class="hero-bg container-fluid">
-      <div class="row">
-        
-        <div class="intro col-12 intro-movil">
-          <h1>Multimedia</h1>
-            <p class="">
-              Proyectos audiovisuales que combinan animación, video y edición para dar vida a ideas en movimiento y emoción.
-            </p>
-            <div class="seccionplecas-mobile">
-                <span class="plecas">ADOBE PREMIERE</span>
-                <span class="plecas">ADOBE AFTER EFFECTS</span>
-                <span class="plecas">VIDEOS</span>
-                <span class="plecas">ANIMACIONES</span>
-                <span class="plecas">MOTION GRAPHICS</span>
-                <span class="plecas">ADOBE ANIMATE</span>
-            </div>
-        </div>  
-      </div>
-      <div class="imagen-movil">
-          <img src="../imgs/skatletanimated.webp" alt="Mi animación">
-      </div>
-  </section>
-
-          <div class="container contenido container-fluid pt-4">
-            <div class="row">
-
-              <div class="col-12 col-md-6 p-4">
-            <div class="character-card">
-              <a href="#" data-video="../imgs/videos/3d.mp4" class="video-trigger">
-                <img src="../imgs/videos/3dd.png" alt="Preview del video" class="img-fluid" />
-              </a>
-
-              <div class="p-3">
-                <h3 class="h4 fw-bold">Inicio de un mundo 3D</h3>
-                <p>Improvisación del modelado 3D y la animación de cámara del programa "Blender"</p>
-                <a href="https://www.instagram.com/reel/DMsy63-xZWU/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA" class="linkb">
-                  <p>Abrir en Instagram</p>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-12 col-md-6 p-4">
-            <div class="character-card">
-              <a href="#" data-video="../imgs/videos/ankha.mp4" class="video-trigger">
-                <img src="../imgs/videos/ankhap.jpg" alt="Preview del video" class="img-fluid" />
-              </a>
-
-              <div class="p-3">
-                <h3 class="h4 fw-bold">Parodia de gata bailando</h3>
-                <p>Animación de uno de mis personajes haciendo un baile parodia del 2021 considerado "la animación con más visitas de mis animaciones" </p>
-                <a href="https://youtu.be/dYI-oW4GeME" class="linkb">
-                  <p>Ver en YouTube</p>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-12 col-md-6 p-4">
-            <div class="character-card">
-              <a href="#" data-video="../imgs/videos/baddest.mp4" class="video-trigger">
-                <img src="../imgs/videos/kpop.jpg" alt="Preview del video" class="img-fluid" />
-              </a>
-              <div class="p-3">
-                <h3 class="h4 fw-bold">THE BADDEST fan animation</h3>
-                <p>Animación de dos de mis personajes interpretando la canción "THE BADDEST" con la voz de Lollia (Cancion original de League of Legends)</p>
-                <a href="https://www.instagram.com/reel/Cr1oIFdpdZC/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA" class="linkb">
-                  <p>Abrir en Instagram</p>
-                </a>
-              </div>
-            </div>
-          </div>
-          
-          <div class="col-12 col-md-6 p-4">
-            <div class="character-card">
-              <a href="#" data-video="../imgs/videos/intro1.mp4" class="video-trigger">
-                <img src="../imgs/videos/intro1p.png" alt="Preview del video" class="img-fluid" />
-              </a>
-              <div class="p-3">
-                <h3 class="h4 fw-bold">Logo animado Osobrowni</h3>
-                <p>Animación del logo original osobrowni para redes sociales</p>
-                <a href="https://www.youtube.com/watch?v=vgbtFcqYtJI" class="linkb">
-                  <p>Ver en YouTube</p>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-12 col-md-6 p-4">
-            <div class="character-card">
-              <a href="#" data-video="../imgs/videos/intro2.mp4" class="video-trigger">
-                <img src="../imgs/videos/intro2p.png" alt="Preview del video" class="img-fluid" />
-              </a>
-              <div class="p-3">
-                <h3 class="h4 fw-bold">Logo animado Hablando con un oso con boina</h3>
-                <p>Animación del logo original osobrowni para redes sociales</p>
-                <a href="https://www.youtube.com/watch?v=b3dLLjVrueI" class="linkb">
-                  <p>Ver en YouTube</p>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-12 col-md-6 p-4">
-            <div class="character-card">
-              <a href="#" data-video="../imgs/videos/intro3.mp4" class="video-trigger">
-                <img src="../imgs/videos/intro3p.png" alt="Preview del video" class="img-fluid" />
-              </a>
-              <div class="p-3">
-                <h3 class="h4 fw-bold">Logo animado Beto Luna</h3>
-                <p>Animación del logo "entre hilos" de Beto Luna para YouTube</p>
-                <a href="https://youtu.be/MCJA4du14TI" class="linkb">
-                  <p>Ver en YouTube</p>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-12 col-md-6 p-4">
-            <div class="character-card">
-              <a href="#" data-video="https://www.youtube.com/watch?v=hLKZ5wb8Kss" class="video-trigger">
-                <img src="../imgs/videos/aki.jpg" alt="Preview del video" class="img-fluid" />
-              </a>
-              <div class="p-3">
-                <h3 class="h4 fw-bold">Restaurante manga café japonés</h3>
-                <p>Un blog sobre un restaurante manga café japonés, poniendo a prueba mis habilidades de grabación y edición de video</p>
-                <a href="https://www.youtube.com/watch?v=hLKZ5wb8Kss" class="linkb">
-                  <p>Ver en YouTube</p>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-12 col-md-6 p-4">
-            <div class="character-card">
-              <a href="#" data-video="https://www.youtube.com/watch?v=RQjqsYl_g-U&t=25s" class="video-trigger">
-                <img src="../imgs/videos/valdez.png" alt="Preview del video" class="img-fluid" />
-              </a>
-              <div class="p-3">
-                <h3 class="h4 fw-bold">Caso de las Valdez</h3>
-                <p>Un largometraje de media hora sobre un caso de asesinato de una familia particular y este es considerado "El largometraje más visto en YouTube de mi canal"</p>
-                <a href="https://www.youtube.com/watch?v=RQjqsYl_g-U&t=25s" class="linkb">
-                  <p>Ver en YouTube</p>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-12 col-md-6 p-4">
-            <div class="character-card">
-              <a href="#" data-video="https://www.youtube.com/watch?v=AEk2mFpO2qw" class="video-trigger">
-                <img src="../imgs/videos/podcast.png" alt="Preview del video" class="img-fluid" />
-              </a>
-              <div class="p-3">
-                <h3 class="h4 fw-bold">Pódcast con Luciana Martínez</h3>
-                <p>Un video pódcast realizado para Beto Luna mientras habla con Luciana Martínez (ex Reina de Belleza)</p>
-                <a href="https://www.youtube.com/watch?v=AEk2mFpO2qw" class="linkb">
-                  <p>Ver en YouTube</p>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-12 col-md-6 p-4">
-            <div class="character-card">
-              <a href="#" data-video="../imgs/trabajos_imgs/marroquinvideo.mp4" class="video-trigger">
-                <img src="../imgs/trabajos_imgs/video2.png" alt="Preview del video" class="img-fluid" />
-              </a>
-              <div class="p-3">
-                <h3 class="h4 fw-bold">Video publicitario Dr. Marroquín</h3>
-                <p>Video informativo elaborado para el Dr. Marroquín sobre un tema y promoviendo sus servicios</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-12 col-md-6 p-4">
-             <div class="character-card">
-              <a href="#" data-video="../imgs/trabajos_imgs/gabrielavideo.mp4" class="video-trigger">
-                <img src="../imgs/trabajos_imgs/video3.png" alt="Preview del video" class="img-fluid" />
-              </a>
-              <div class="p-3">
-                <h3 class="h4 fw-bold">Video publicitario Dra. Gabriela Cruz</h3>
-                <p>Video informativo elaborado para la Dra. Gabriela Cruz sobre un tema y promoviendo sus servicios</p>
-              </div>
-          </div>
-          </div>
-
-          <div class="col-12 col-md-6 p-4">
-             <div class="character-card">
-              <a href="#" data-video="../imgs/trabajos_imgs/gastrovideo.mp4" class="video-trigger">
-                <img src="../imgs/trabajos_imgs/video1.png" alt="Preview del video" class="img-fluid" />
-              </a>
-              <div class="p-3">
-                <h3 class="h4 fw-bold">Video publicitario Gastrocenter</h3>
-                <p>Video informativo elaborado para Gastrocenter sobre un tema y promoviendo sus servicios</p>
-              </div>
-            </div>
-          </div>
-          </div>
-        </div>
-
-
-      <div class="hero-bg2 container-fluid">
-      <div class="row">
-        <div class="personajescorriendo col-12">
-          <div class="element-4">
-            <img src="../imgs/skatlet corriendo.webp" alt="" width="200">
-          </div>
-          <div class="element-3">
-            <img src="../imgs/browni corriendo.webp" alt="" width="200">
-          </div>
-          <div class="element-1">
-            <img src="../imgs/fancy corriendo.webp" alt="" width="200">
-          </div>
-          <div class="element-2">
-            <img src="../imgs/oso corriendo.webp" alt="" width="150">
-          </div>
-          <div class="letreros">
-            <p>Presiona para avanzar</p>
-            <a href="ciudaddigital.html">
-              <img src="../imgs/letreromadelina.webp" alt="" width="350">
-            </a>
-          </div>
-        </div>
-
-        <div class="suelo col-12">
-        </div>
-
-      </div>
-    </div>
-</div>
-
-
-
-
-
 
   <!-- Footer -->
 <footer class="footer-sozoria">
   <div class="footer-content">
     <div class="footer-left">
-      <span>©2025 Osobrowni & Browni. Marca, personajes y contenidos creados por Oscar Flores.
-</span>
+      <p>&copy; 2025 - <span id="current-year">2026</span> Osobrowni &amp; Browni. Marca, personajes y contenidos creados por Oscar Flores</p>
     </div>
     <div class="footer-right">
+      
       <a href="https://instagram.com/osobrowni" target="_blank" aria-label="Instagram"><i class="fa fa-instagram"></i></a>
       <a href="https://x.com/osobrowni" target="_blank" aria-label="X"><i class="fa fa-twitter"></i></a>
       <a href="https://www.youtube.com/@Osobrowni" target="_blank" aria-label="YouTube"><i class="fa fa-youtube-play"></i></a>
