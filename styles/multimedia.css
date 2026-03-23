@@ -1279,7 +1279,7 @@ html, body{
   width: 120%;           /* ← Aumenta este valor para más ancho relativo */
   max-width: 700px;      /* ← Aumenta este valor para permitir más ancho máximo */
   background: linear-gradient(135deg, #270a0a 0%, #3e1616 50%, #600f0f 100%);
-  border: 2px solid #fd4d4d;
+  border: 2px solid #ff8181;
   border-radius: 20px;
   color: white;
   font-family: "Poppins", sans-serif;
@@ -1326,7 +1326,7 @@ html, body{
   display: block;
   font-size: 1.3rem;
   font-weight: 700;
-  color: #ff6565;
+  color: #ff8989;
   text-shadow: 0 0 10px rgba(247, 39, 39, 0.8);
   margin-bottom: 8px;
 }

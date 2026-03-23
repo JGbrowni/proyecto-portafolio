@@ -4,40 +4,6 @@
     const sections = container.querySelectorAll('section');
     let currentIndex = 0;
 
-    // Función para navegar a la siguiente sección
-    function goToNextSection() {
-      currentIndex++;
-      if (currentIndex >= sections.length) {
-        currentIndex = 0; // Vuelve al inicio si pasa la última sección
-      }
-      sections[currentIndex].scrollIntoView({ behavior: 'smooth', inline: 'start' });
-    }
-
-    // Función para navegar a la sección anterior
-    function goToPrevSection() {
-      currentIndex--;
-      if (currentIndex < 0) {
-        currentIndex = sections.length - 1; // Va a la última sección si está en la primera
-      }
-      sections[currentIndex].scrollIntoView({ behavior: 'smooth', inline: 'start' });
-    }
-
-    // Botones Tailwind con funcionalidad completa
-    const nextBtn = document.getElementById('nextBtn');
-    const prevBtn = document.getElementById('prevBtn');
-
-    nextBtn.addEventListener('click', goToNextSection);
-    prevBtn.addEventListener('click', goToPrevSection);
-
-    // Modal trigger (si existe el botón)
-    const openModalBtn = document.getElementById('openModal');
-    if (openModalBtn) {
-      const aboutModal = new bootstrap.Modal(document.getElementById('aboutModal'));
-      openModalBtn.addEventListener('click', () => {
-        aboutModal.show();
-      });
-    }
-
 
     //Icono de menu
     // Funcionalidad del menú hamburguesa
@@ -135,3 +101,14 @@ function handleOrientationChange() {
 
         // Ejecutar al cargar la página
         document.addEventListener('DOMContentLoaded', handleOrientationChange);
+
+ // ─── Botón Cósmico - Redirección a Archivos de Sozoria ───────────────────
+    const sozoriaBtn = document.getElementById('sozoriaBtn');
+    if (sozoriaBtn) {
+        sozoriaBtn.addEventListener('click', () => {
+            // Redirige a la página de Archivos de Sozoria
+            window.location.href = '../secciones/sozoria-archives.html';
+        });
+    }
+
+document.getElementById("current-year").textContent = new Date().getFullYear();
