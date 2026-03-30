@@ -1,7 +1,39 @@
 // ─── Inicialización principal ────────────────────────────────────────────────
 document.addEventListener('DOMContentLoaded', () => {
 
-    // --- Parallax sobre el fondo ---
+    // ─── Intro del Cohete (4 segundos) ───────────────────────────────────────
+    const rocketIntro = document.getElementById('rocketIntro');
+    const introFlash  = document.getElementById('introFlash');
+    const mainContent = document.getElementById('content');
+    const INTRO_MS    = 4000; // duración total del intro
+    const FLASH_START = 3400; // cuándo lanza el destello (ms desde inicio)
+
+    if (rocketIntro && mainContent) {
+        // Lanzar el destello justo antes de terminar
+        setTimeout(() => {
+            if (introFlash) introFlash.classList.add('flash-active');
+        }, FLASH_START);
+
+        // Fade-out del intro
+        setTimeout(() => {
+            rocketIntro.classList.add('fade-out');
+        }, INTRO_MS - 100);
+
+        // Ocultar el div completamente y revelar el contenido
+        setTimeout(() => {
+            rocketIntro.classList.add('hidden');
+            mainContent.classList.remove('content--hidden');
+            mainContent.classList.add('content--visible');
+
+            // Stagger letra por letra en todos los dispositivos
+            const letters = document.querySelectorAll('.title-animated .letter');
+            letters.forEach((letter, i) => {
+                letter.style.animationDelay = `${0.5 + i * 0.06}s`;
+            });
+        }, INTRO_MS + 500);
+    }
+
+
     const background = document.getElementById('background-silhouette');
     if (background) {
         document.body.addEventListener('mousemove', (e) => {
@@ -21,14 +53,12 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!confirmLightbox) return;
         confirmLightbox.classList.add('active');
         confirmLightbox.setAttribute('aria-hidden', 'false');
-        document.body.style.overflow = 'hidden';
     }
 
     function closeConfirmLightbox() {
         if (!confirmLightbox) return;
         confirmLightbox.classList.remove('active');
         confirmLightbox.setAttribute('aria-hidden', 'true');
-        document.body.style.overflow = 'auto';
     }
 
     if (backButton)      backButton.addEventListener('click', openConfirmLightbox);
@@ -85,11 +115,9 @@ function handleOrientationChange() {
     if (isMobile && isLandscape) {
         overlay.style.display = 'flex';
         if (mainContent) mainContent.style.display = 'none';
-        document.body.style.overflow = 'hidden';
     } else {
         overlay.style.display = 'none';
         if (mainContent) mainContent.style.display = 'block';
-        document.body.style.overflow = 'auto';
     }
 }
 

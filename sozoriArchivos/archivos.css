@@ -113,12 +113,12 @@
 
 html, body{
       margin: 0; padding: 0;
-      overflow-x: hidden;
-      overflow-y: auto;
-      scroll-behavior: smooth;
+      overflow: hidden;
       font-family: "Poppins", sans-serif;
       color: white;
       background-color: #060512;
+      width: 100%;
+      height: 100%;
     }
 
 /* Cuando el dispositivo esté en horizontal */
@@ -141,14 +141,72 @@ html, body{
 .desktop-design {
     position: relative;
     z-index: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Contenedor de contenido — centrado total en pantalla, sin scrollbars */
+.content {
+    position: fixed;
+    inset: 0;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow-y: auto;
+    padding: 80px 16px;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.content::-webkit-scrollbar {
+    display: none;
+}
+
+.container1 {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Espaciado entre los bloques del layout */
+.container1 .row {
+    row-gap: 0;
+}
+
+.logos {
+    margin-bottom: 1.2rem;
+}
+
+.welcome-text {
+    margin-bottom: 0.6rem;
+}
+
+#TitleStatic {
+    margin-bottom: 1.4rem;
+}
+
+/* Espacio entre el bloque de títulos animados y el botón */
+#sozoria:last-of-type,
+.title-animated:last-of-type {
+    margin-bottom: 1.6rem;
+}
+
+#botonComenzar {
+    margin-bottom: 1.4rem;
+}
+
+#astroContainer {
+    margin-top: 0;
 }
 
 
 
-/* Móviles: scroll vertical habilitado */
+/* Móviles: scroll vertical habilitado solo dentro del .content */
 @media (max-width: 768px) {
 html, body{
-  overflow-y: auto;
+  overflow: hidden;
 }
 }
 
@@ -387,160 +445,7 @@ html, body{
   }
 
 
-  /* Overlay oscuro */
-  .menu-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.7);
-    z-index: 999;
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.3s ease;
-  }
-
-  .menu-overlay.active {
-    opacity: 1;
-    visibility: visible;
-  }
-
-  /* Menú lateral - DESKTOP (laptops y pantallas grandes) */
-  .side-menu {
-    position: fixed;
-    top: 0;
-    right: -450px;
-    width: 450px;
-    height: 100vh;
-    background: linear-gradient(135deg, #292929 0%, #1a1a1a 100%);
-    z-index: 1000;
-    transition: right 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    padding: 100px 0 20px 0;
-    box-shadow: -5px 0 25px rgba(0, 0, 0, 0.4);
-    transform: translateX(100%);
-  }
-
-  .side-menu.active {
-    right: 0;
-    transform: translateX(0);
-  }
-
-  .menu-item {
-    display: block;
-    padding: 25px 50px;
-    color: white;
-    text-decoration: none;
-    font-family: "Poppins", sans-serif;
-    font-size: 1.3rem;
-    font-weight: 500;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    transition: all 0.3s ease;
-    transform: translateX(100px);
-    opacity: 0;
-  }
-
-  .menu-item:hover {
-    background: rgba(247, 177, 39, 0.1);
-    color: #f7b127;
-    padding-left: 60px;
-    text-decoration: none;
-  }
-
-  /* Animación de entrada de los items del menú */
-  .side-menu.active .menu-item {
-    transform: translateX(0);
-    opacity: 1;
-    transition: all 0.4s cubic-bezier(0.25);
-  }
-
-  .side-menu.active .menu-item:nth-child(1) { transition-delay: 0.1s; }
-  .side-menu.active .menu-item:nth-child(2) { transition-delay: 0.15s; }
-  .side-menu.active .menu-item:nth-child(3) { transition-delay: 0.2s; }
-  .side-menu.active .menu-item:nth-child(4) { transition-delay: 0.25s; }
-  .side-menu.active .menu-item:nth-child(5) { transition-delay: 0.3s; }
-  .side-menu.active .menu-item:nth-child(6) { transition-delay: 0.35s; }
-  .side-menu.active .menu-item:nth-child(7) { transition-delay: 0.4s; }
-
-  /* TABLET (768px - 1024px) */
-  @media (max-width: 1024px) and (min-width: 769px) {
-    .side-menu {
-      width: 380px;
-      right: -380px;
-      padding: 90px 0 20px 0;
-    }
-    
-    .menu-item {
-      padding: 22px 40px;
-      font-size: 1.2rem;
-    }
-
-    .menu-item:hover {
-      padding-left: 50px;
-    }
-  }
-
-  /* MOBILE (hasta 768px) - Menú desde arriba */
-  @media (max-width: 768px) {
-    .side-menu {
-      top: -100vh;
-      right: 0;
-      width: 100vw;
-      height: 100vh;
-      padding: 120px 0 20px 0;
-      transition: top 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-      transform: translateY(-100%);
-      box-shadow: 0 5px 25px rgba(0, 0, 0, 0.4);
-      background: linear-gradient(180deg, #292929 0%, #1a1a1a 100%);
-    }
-    
-    .side-menu.active {
-      top: 0;
-      right: 0;
-      transform: translateY(0);
-    }
-
-    .menu-item {
-      padding: 20px 30px;
-      font-size: 1.4rem;
-      text-align: center;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-      transform: translateY(-50px);
-    }
-
-    .menu-item:hover {
-      padding-left: 30px;
-      background: rgba(247, 177, 39, 0.15);
-    }
-
-    .side-menu.active .menu-item {
-      transform: translateY(0);
-    }
-  }
-
-  /* MOBILE PEQUEÑO (hasta 480px) */
-  @media (max-width: 480px) {
-    .menu-toggle {
-      width: 55px;
-      height: 55px;
-      top: 15px;
-      right: 15px;
-    }
-
-    .hamburger {
-      width: 22px;
-      height: 18px;
-    }
-
-    .menu-item {
-      padding: 18px 25px;
-      font-size: 1.3rem;
-    }
-
-    .side-menu {
-      padding: 100px 0 20px 0;
-    }
-  }
+ 
 /**************************** contenido central *********************************/
 
 .full-wh {
@@ -766,6 +671,104 @@ html, body{
     75%        { opacity: 0.15; }
 }
 
+
+/* ══════════════════════════════════════════════════════════════════════════════
+   🔤 TIPOGRAFÍA AUDIOWIDE — Título principal "Archivos de Sozoria"
+   ══════════════════════════════════════════════════════════════════════════════ */
+
+.audiowide-regular {
+  font-family: "Audiowide", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Título animado (PC/laptop/tablet) — letras individuales */
+.title-animated {
+  font-family: "Audiowide", sans-serif;
+  font-weight: 400;
+  /* ✏️ TAMAÑO DEL TÍTULO — modifica este valor para ajustar el tamaño */
+  font-size: clamp(3rem, 5vw, 4rem);
+  letter-spacing: 0.08em;
+  line-height: 1.2;
+  text-transform: uppercase;
+  color: #fff;
+  text-shadow:
+    0 0 20px rgba(109, 60, 231, 0.7),
+    0 0 50px rgba(26, 98, 255, 0.4);
+  flex-wrap: nowrap;
+  gap: 0;
+}
+
+.title-animated .letter {
+  display: inline-block;
+}
+
+/* Espacio visible entre palabras del título animado */
+.title-animated .letter-space {
+  display: inline-block;
+  width: 0.4em; /* ✏️ ajusta este valor para más o menos separación */
+}
+
+/* Título estático (móvil) — línea "SOZORIA" */
+.title-static {
+  font-family: "Audiowide", sans-serif;
+  font-weight: 400;
+  /* ✏️ TAMAÑO DEL TÍTULO MÓVIL — modifica este valor */
+  font-size: clamp(3.8rem, 8vw, 2.4rem);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #fff;
+  text-shadow:
+    0 0 18px rgba(109, 60, 231, 0.6),
+    0 0 40px rgba(26, 98, 255, 0.3);
+  margin: 0 0 0.5rem;
+}
+
+/* Línea "Archivos de" encima del título estático móvil */
+.title-static-line {
+  font-family: "Audiowide", sans-serif;
+  font-weight: 400;
+  /* ✏️ TAMAÑO DE "Archivos de" EN MÓVIL — modifica este valor */
+  font-size: clamp(2.5rem, 5vw, 1.5rem);
+  letter-spacing: 0.06em;
+  color: #fff;
+  text-shadow:
+    0 0 14px rgba(109, 60, 231, 0.5),
+    0 0 30px rgba(26, 98, 255, 0.25);
+  margin: 0 0 0.15rem;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+
+.welcome-text{
+  font-size: 1.5rem;
+}
+
+@media (max-width: 399px){
+  .title-animated{
+    font-size: clamp(2.4rem, 5vw, 1.2rem);
+  }
+}
+
+@media (min-width: 400px) and (max-width: 767px) {
+  .title-animated{
+    font-size: clamp(2.7rem, 5vw, 2.5rem);
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1440px) {
+  .title-animated{
+    font-size: clamp(4rem, 5vw, 3.5rem);
+  }
+}
+
+
+/****************************************** Inicio de la pagina ****************************************************/
+
+  
+
+
 /*********************************** fin de contenido ***************************************/
 
   /* Estilos responsivos */
@@ -778,6 +781,294 @@ html, body{
   }
 
 
+/* ══════════════════════════════════════════════════════════════════════════════
+   🚀 PANTALLA DE INTRO — COHETE
+   ══════════════════════════════════════════════════════════════════════════════ */
+
+/* Contenedor principal del intro */
+.rocket-intro {
+  position: fixed;
+  inset: 0;
+  z-index: 99998;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Sin background propio: usa el fondo de estrellas/nebulosa de la página */
+  background: transparent;
+  /* Capa de difuminado suave sobre el fondo existente */
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  overflow: hidden;
+  opacity: 1;
+  transition: opacity 0.6s ease;
+}
+
+.rocket-intro.fade-out {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.rocket-intro.hidden {
+  display: none;
+}
+
+/* ── Imagen del cohete ───────────────────────────────────────────────────── */
+.rocket-img {
+  position: relative;
+  z-index: 1;
+  animation: rocketIntroFloat 4s ease-in-out forwards;
+  filter: drop-shadow(0 0 40px rgba(109, 60, 231, 0.6))
+          drop-shadow(0 0 80px rgba(26, 98, 255, 0.35));
+  will-change: transform, opacity;
+  transform: translateZ(0);
+}
+
+/* Desktop / Tablet (≥ 1024px, incluye iPad Pro 1024px) */
+.rocket-img--desktop {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 110vw;
+  max-height: 110vh;
+  object-fit: contain;
+}
+
+/* Móvil (< 1024px) */
+.rocket-img--mobile {
+  display: none;
+  width: auto;
+  height: auto;
+  max-width: 130vw;
+  max-height: 130vh;
+  object-fit: contain;
+}
+
+/* Responsive: en pantallas < 1024px usamos la imagen móvil */
+@media (max-width: 1024px) {
+  .rocket-img--desktop { display: none;  }
+  .rocket-img--mobile  { display: block; }
+}
+
+/* iPad Pro 1024 × 1366 — considerado "desktop" */
+@media (min-width: 1025px) {
+  .rocket-img--desktop { display: block; }
+  .rocket-img--mobile  { display: none;  }
+}
+
+/* Animación del cohete: sube suavemente y tiene pequeño pulso de glow */
+@keyframes rocketIntroFloat {
+  0%   { opacity: 0; transform: translateY(40px) scale(0.92); }
+  15%  { opacity: 1; transform: translateY(0px)  scale(1);    }
+  80%  { opacity: 1; transform: translateY(-12px) scale(1.01);}
+  100% { opacity: 1; transform: translateY(-12px) scale(1.01);}
+}
+
+/* ══════════════════════════════════════════════════════════════════════════════
+   ✨ REVELADO DEL CONTENIDO TRAS EL INTRO
+   ══════════════════════════════════════════════════════════════════════════════ */
+
+/* Estado inicial: oculto */
+.content--hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Estado visible: se anima con clases específicas por dispositivo */
+.content--visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* ── Animación de entrada para todos los dispositivos ─────────── */
+/* Se aplica en todos los dispositivos */
+
+/* Texto "Bienvenidos a los:" */
+.content--visible .fade-in-welcome {
+  animation: cosmicRevealFade 0.9s cubic-bezier(0.23, 1, 0.32, 1) 0.2s both;
+}
+
+/* Letras del título animado — cada letra tiene stagger en JS,
+   pero el keyframe base lo definimos aquí */
+.content--visible .letter {
+  animation: cosmicLetterDrop 0.7s cubic-bezier(0.23, 1, 0.32, 1) both;
+}
+
+/* Botón */
+.content--visible #botonComenzar {
+  animation: cosmicRevealBtn 1s cubic-bezier(0.23, 1, 0.32, 1) 1.4s both;
+}
+
+@keyframes cosmicRevealFade {
+  from { opacity: 0; transform: translateY(16px); letter-spacing: 0.3em; }
+  to   { opacity: 1; transform: translateY(0);    letter-spacing: normal; }
+}
+
+@keyframes cosmicLetterDrop {
+  from {
+    opacity: 0;
+    transform: translateY(-40px) rotateX(90deg);
+    filter: blur(4px);
+    text-shadow: 0 0 30px rgba(100, 160, 255, 1);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) rotateX(0deg);
+    filter: blur(0);
+  }
+}
+
+@keyframes cosmicRevealBtn {
+  from { opacity: 0; transform: translateY(24px) scale(0.9); filter: blur(6px); }
+  to   { opacity: 1; transform: translateY(0)    scale(1);   filter: blur(0);   }
+}
+
+
+/* ══════════════════════════════════════════════════════════════════════════════
+   🚀 BOTÓN CON TEMÁTICA CÓSMICA
+   ══════════════════════════════════════════════════════════════════════════════ */
+.boton {
+  position: relative;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.75rem 2rem;
+  background: linear-gradient(135deg, #6d3ce7 0%, #1a62ff 60%, #0fa8d2 100%);
+  border: 1px solid rgba(255,255,255,0.25);
+  border-radius: 50px;
+  color: #fff;
+  font-weight: 700;
+  font-size: clamp(0.95rem, 2.5vw, 1.1rem);
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  box-shadow:
+    0 0 20px rgba(109, 60, 231, 0.55),
+    0 0 50px rgba(26, 98, 255, 0.25),
+    inset 0 1px 0 rgba(255,255,255,0.2);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.boton::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.12) 50%, transparent 100%);
+  transform: translateX(-100%);
+  transition: transform 0.5s ease;
+}
+
+.boton:hover::before {
+  transform: translateX(100%);
+}
+
+.boton:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow:
+    0 0 30px rgba(109, 60, 231, 0.75),
+    0 0 70px rgba(26, 98, 255, 0.4),
+    inset 0 1px 0 rgba(255,255,255,0.25);
+}
+
+.boton:active {
+  transform: translateY(0) scale(0.98);
+}
+
+/* Icono del cohete dentro del botón */
+.boton-rocket {
+  display: inline-block;
+  font-size: 1.2em;
+  animation: btnRocketBounce 2.2s ease-in-out infinite;
+  filter: drop-shadow(0 0 6px rgba(100,180,255,0.8));
+}
+
+@keyframes btnRocketBounce {
+  0%,  100% { transform: translateY(0)   rotate(-30deg); }
+  50%        { transform: translateY(-4px) rotate(-30deg); }
+}
+
+.boton-text {
+  position: relative;
+  z-index: 1;
+}
+
+
+/* ══════════════════════════════════════════════════════════════════════════════
+   🧑‍🚀 ASTRONAUTA (astro.webp) — debajo del botón, responsivo
+   Imagen 1000×1000 px — la mostramos cuadrada adaptada a cada breakpoint
+   ══════════════════════════════════════════════════════════════════════════════ */
+
+#astroContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 8px;
+}
+
+.astro-img {
+  display: block;
+  width: 320px;   /* tamaño base desktop */
+  height: 320px;
+  object-fit: contain;
+}
+
+/* ── Responsivo ─────────────────────────────────────────────────────────── */
+
+/* Móviles pequeños (< 400px) */
+@media (max-width: 399px) {
+  .astro-img {
+    width: 260px;
+    height: 260px;
+  }
+}
+
+/* Móviles (400px – 575px) */
+@media (min-width: 400px) and (max-width: 575px) {
+  .astro-img {
+    width: 300px;
+    height: 300px;
+  }
+}
+
+/* Móviles grandes / tablets pequeñas (576px – 767px) */
+@media (min-width: 576px) and (max-width: 767px) {
+  .astro-img {
+    width: 290px;
+    height: 290px;
+  }
+}
+
+/* Tablets (768px – 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .astro-img {
+    width: 370px;
+    height: 370px;
+  }
+}
+
+/* Desktop / iPad Pro / Laptop (≥ 1024px) */
+@media (min-width: 1024px) {
+  .astro-img {
+    width: 560px;
+    height: 560px;
+  }
+}
+
+/* Pantallas grandes (≥ 1440px) */
+@media (min-width: 1440px) {
+  .astro-img {
+    width: 380px;
+    height: 380px;
+  }
+}
+
+/* Animación de reveal junto al contenido (pantallas grandes) */
+@media (min-width: 1024px) {
+  .content--visible #astroContainer {
+    animation: cosmicRevealBtn 1s cubic-bezier(0.23, 1, 0.32, 1) 1.7s both;
+  }
+}
+
+
   /*** footer sozoria  ***/
 
 .footer-sozoria {
@@ -786,7 +1077,7 @@ html, body{
   bottom: 0;
   width: 100vw;
   color: #fff;
-  z-index: 9999;
+  z-index: 999;
   font-family: "Poppins", sans-serif;
 }
 
