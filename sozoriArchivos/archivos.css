@@ -1320,3 +1320,402 @@ html, body{
 @media (max-width: 400px) {
 
 }
+
+
+/* ══════════════════════════════════════════════════════════════════════════════
+   🗂️  SECCIÓN ARCHIVOS DE SOZORIA — 4 cartas con hover espacial
+   ══════════════════════════════════════════════════════════════════════════════ */
+
+/* ── Contenedor principal ──────────────────────────────────────────────────── */
+.archivos-section {
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 24px 80px;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(60px) scale(0.97);
+  transition: none;
+  overflow-y: auto;
+  scrollbar-width: none;
+}
+.archivos-section::-webkit-scrollbar { display: none; }
+
+/* Estado visible: animado */
+.archivos-section.archivos--visible {
+  animation: archivosReveal 0.85s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+  pointer-events: auto;
+}
+
+@keyframes archivosReveal {
+  from { opacity: 0; transform: translateY(60px) scale(0.97); }
+  to   { opacity: 1; transform: translateY(0)    scale(1);    }
+}
+
+/* ── Título de sección ─────────────────────────────────────────────────────── */
+.archivos-titulo {
+  text-align: center;
+  margin-bottom: clamp(1.5rem, 4vh, 2.5rem);
+  animation: cosmicRevealFade 0.9s cubic-bezier(0.23, 1, 0.32, 1) 0.15s both;
+}
+
+.archivos-titulo h2 {
+  font-family: 'Audiowide', sans-serif;
+  font-size: clamp(1rem, 2.8vw, 1.7rem);
+  letter-spacing: 0.18em;
+  color: #fff;
+  text-shadow:
+    0 0 18px rgba(109, 200, 255, 0.7),
+    0 0 40px rgba(109, 60, 231, 0.4);
+  margin-bottom: 0.4rem;
+}
+
+.archivos-subtitulo {
+  font-size: clamp(0.75rem, 1.8vw, 0.95rem);
+  color: rgba(180, 200, 255, 0.65);
+  letter-spacing: 0.08em;
+  margin: 0;
+}
+
+/* ── Grid de tarjetas ──────────────────────────────────────────────────────── */
+.archivos-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: clamp(14px, 2.5vw, 28px);
+  width: 100%;
+  max-width: 1100px;
+  animation: cosmicRevealBtn 0.9s cubic-bezier(0.23, 1, 0.32, 1) 0.4s both;
+}
+
+/* ── Cada tarjeta ──────────────────────────────────────────────────────────── */
+.archivo-card {
+  position: relative;
+  aspect-ratio: 1 / 1.35;
+  cursor: pointer;
+  border-radius: 20px;
+  overflow: hidden;
+  /* Entrada escalonada */
+  opacity: 0;
+  transform: translateY(40px);
+  transition:
+    opacity 0.6s cubic-bezier(0.23, 1, 0.32, 1),
+    transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+/* stagger por JS con --card-i */
+.archivo-card.card--visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Cara frontal (estado reposo) ──────────────────────────────────────────── */
+.archivo-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.archivo-front {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background:
+    radial-gradient(ellipse 80% 80% at 50% 60%, rgba(20,15,60,0.92) 0%, rgba(6,5,18,0.98) 100%);
+  border: 1px solid rgba(100, 150, 255, 0.18);
+  border-radius: 20px;
+  transition: opacity 0.45s ease, transform 0.45s ease;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.archivo-card:hover .archivo-front {
+  opacity: 0;
+  transform: scale(0.88);
+  pointer-events: none;
+}
+
+/* Colores distintos para cada archivo */
+.archivo-card:nth-child(1) .archivo-front {
+  background:
+    radial-gradient(ellipse 80% 80% at 50% 60%, rgba(40, 20, 00.92) 0%, rgba(6,5,18,0.98) 100%);
+}
+
+.archivo-card:nth-child(2) .archivo-front {
+  background:
+    radial-gradient(ellipse 80% 80% at 50% 60%, rgba(40, 25, 20,0.92) 0%, rgba(6,5,18,0.98) 100%);
+}
+
+.archivo-card:nth-child(3) .archivo-front {
+  background:
+    radial-gradient(ellipse 80% 80% at 50% 60%, rgba(50, 0, 0,0.92) 0%, rgba(6,5,18,0.98) 100%);
+}
+
+.archivo-card:nth-child(4) .archivo-front {
+  background:
+    radial-gradient(ellipse 80% 80% at 50% 60%, rgba(10, 25, 10,0.92) 0%, rgba(6,5,18,0.98) 100%);
+}
+
+.archivo-icon {
+  width: 62%;
+  height: 62%;
+  object-fit: contain;
+  filter: drop-shadow(0 0 14px rgba(120,180,255,0.55));
+  transition: transform 0.4s ease, filter 0.4s ease;
+  animation: archIconFloat 3.5s ease-in-out infinite;
+}
+
+@keyframes archIconFloat {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-7px); }
+}
+
+/* ── Glow de fondo por card ────────────────────────────────────────────────── */
+.archivo-glow {
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  pointer-events: none;
+  opacity: 0.35;
+}
+.archivo-glow--fancy   { background: radial-gradient(circle at 50% 70%, rgba(255, 195, 80,0.45), transparent 65%); }
+.archivo-glow--brown   { background: radial-gradient(circle at 50% 70%, rgba(225, 160, 105,0.45), transparent 65%); }
+.archivo-glow--skatlet { background: radial-gradient(circle at 50% 70%, rgba(100,0,0,0.45), transparent 65%); }
+.archivo-glow--madelina{ background: radial-gradient(circle at 50% 70%, rgba(0,255,0,0.45), transparent 65%); }
+
+/* ── Cara hover ──────────────────────────────────────────────────────────────  */
+.archivo-hover {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  border-radius: 20px;
+  overflow: hidden;
+  opacity: 0;
+  transform: scale(1.06);
+  transition: opacity 0.45s ease, transform 0.45s ease;
+  z-index: 2;
+  background: radial-gradient(ellipse at 50% 30%, rgba(20,15,60,0.85) 0%, rgba(6,5,18,0.97) 100%);
+}
+
+.archivo-card:nth-child(1) .archivo-hover {
+  background:
+    radial-gradient(ellipse 80% 80% at 50% 60%, rgba(40, 20, 00.92) 0%, rgba(6,5,18,0.98) 100%);
+}
+
+.archivo-card:nth-child(2) .archivo-hover {
+  background:
+    radial-gradient(ellipse 80% 80% at 50% 60%, rgba(40, 25, 20,0.92) 0%, rgba(6,5,18,0.98) 100%);
+}
+
+.archivo-card:nth-child(3) .archivo-hover {
+  background:
+    radial-gradient(ellipse 80% 80% at 50% 60%, rgba(35, 0, 0,0.92) 0%, rgba(6,5,18,0.98) 100%);
+}
+
+.archivo-card:nth-child(4) .archivo-hover {
+  background:
+    radial-gradient(ellipse 80% 80% at 50% 60%, rgba(10, 25, 10,0.92) 0%, rgba(6,5,18,0.98) 100%);
+}
+
+.archivo-card:hover .archivo-hover {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Imagen del personaje (1000×1000) — completa, centrada, arriba del texto */
+.archivo-char {
+  /* No absolute — fluye en el flex-column */
+  display: block;
+  /* Ocupa todo el espacio disponible sobre el texto */
+  flex: 1 1 0;
+  width: 100%;
+  min-height: 0;           /* necesario para que flex no se desborde */
+  object-fit: contain;     /* muestra la imagen completa sin recortar */
+  object-position: bottom center;
+  /* Zoom suave de entrada */
+  transform: scale(1.06) translateY(4px);
+  transition: transform 0.55s cubic-bezier(0.23, 1, 0.32, 1);
+  z-index: 0;
+  padding: 6px 4px 0;
+}
+
+.archivo-card:hover .archivo-char {
+  transform: scale(1.0) translateY(0);
+}
+
+/* Texto e info sobre la imagen */
+.archivo-hover-info {
+  flex: 0 0 auto;
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  padding: clamp(6px, 2%, 12px) clamp(8px, 3%, 16px) clamp(10px, 3%, 16px);
+  width: 100%;
+  background: linear-gradient(0deg, rgba(6,5,18,0.98) 60%, transparent 100%);
+}
+
+.archivo-hover-info h3 {
+  font-family: 'Audiowide', sans-serif;
+  font-size: clamp(0.7rem, 1.4vw, 0.95rem);
+  letter-spacing: 0.06em;
+  color: #fff;
+  margin-bottom: 0.2rem;
+  text-shadow: 0 0 12px rgba(100,180,255,0.8);
+}
+
+.archivo-hover-info p {
+  font-size: clamp(0.65rem, 1.1vw, 0.78rem);
+  color: rgba(180,210,255,0.8);
+  margin-bottom: 0.6rem;
+}
+
+.archivo-hover-info p span {
+  color: #f7c948;
+  font-weight: 600;
+}
+
+/* Botón pequeño sobre la carta */
+.archivo-btn {
+  display: inline-block;
+  padding: 0.38rem 1.1rem;
+  border-radius: 50px;
+  border: none;
+  background: linear-gradient(135deg, #6d3ce7, #1a62ff);
+  color: #fff;
+  font-size: clamp(0.6rem, 1vw, 0.72rem);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  box-shadow: 0 0 14px rgba(26,98,255,0.55);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.archivo-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 22px rgba(26,98,255,0.75);
+}
+
+/* ── Ring orbital decorativo alrededor de la tarjeta ──────────────────────── */
+.archivo-card::after {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: 22px;
+  border: 1.5px solid transparent;
+  background: linear-gradient(135deg, rgba(109,60,231,0.6), rgba(26,98,255,0.6), rgba(15,168,210,0.5), transparent) border-box;
+  -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: destination-out;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.archivo-card:hover::after {
+  opacity: 1;
+}
+
+/* ── Partículas de fondo por tarjeta ─────────────────────────────────────────*/
+.archivo-particles {
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  pointer-events: none;
+  overflow: hidden;
+}
+.archivo-particles::before,
+.archivo-particles::after {
+  content: '';
+  position: absolute;
+  width: 2px; height: 2px;
+  border-radius: 50%;
+  background: rgba(200,220,255,0.6);
+  box-shadow:
+    15px 20px 0 rgba(200,220,255,0.5),
+    40px 60px 0 rgba(180,200,255,0.4),
+    70px 30px 0 rgba(255,255,255,0.5),
+    90px 80px 0 rgba(200,220,255,0.3),
+    20px 90px 0 rgba(255,255,255,0.4),
+    60px 10px 0 rgba(180,200,255,0.5);
+  animation: particlesTwinkle 4s ease-in-out infinite alternate;
+}
+.archivo-particles::after {
+  left: 50%;
+  top: 40%;
+  box-shadow:
+    10px 15px 0 rgba(200,220,255,0.4),
+    35px 55px 0 rgba(255,255,255,0.3),
+    55px 25px 0 rgba(200,220,255,0.5),
+    80px 70px 0 rgba(180,200,255,0.4);
+  animation-delay: 2s;
+}
+@keyframes particlesTwinkle {
+  from { opacity: 0.4; }
+  to   { opacity: 1;   }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   Animación de salida del intro ("Comenzar exploración")
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* El #content sale disparado hacia arriba + fade */
+.content--exit {
+  animation: contentExitUp 0.75s cubic-bezier(0.55, 0, 1, 0.45) forwards !important;
+  pointer-events: none !important;
+}
+
+@keyframes contentExitUp {
+  0%   { opacity: 1; transform: translateY(0)     scale(1);    filter: blur(0);   }
+  60%  { opacity: 0; transform: translateY(-55px) scale(0.93); filter: blur(4px); }
+  100% { opacity: 0; transform: translateY(-80px) scale(0.9);  filter: blur(8px); }
+}
+
+/* ─── Responsive ──────────────────────────────────────────────────────────── */
+
+/* Tablet: 2×2 */
+@media (max-width: 900px) {
+  .archivos-grid {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 600px;
+  }
+  .archivo-card {
+    aspect-ratio: 1 / 1.3;
+  }
+}
+
+/* Móvil: 2×2 compacto */
+@media (max-width: 575px) {
+  .archivos-titulo h2 {
+    font-size: 0.82rem;
+    letter-spacing: 0.1em;
+  }
+  .archivos-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    max-width: 380px;
+  }
+  .archivo-card {
+    aspect-ratio: 1 / 1.25;
+  }
+  /* En móvil: tap muestra el hover (no necesitamos hover real) */
+  .archivo-hover {
+    /* siempre visible al 25% para dar pista */
+  }
+}
+
+/* Móvil muy pequeño */
+@media (max-width: 360px) {
+  .archivos-grid {
+    gap: 8px;
+    max-width: 320px;
+  }
+}

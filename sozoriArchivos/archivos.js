@@ -89,6 +89,49 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // ─── Botón "Comenzar exploración" → mostrar 4 archivos ───────────────────
+    const btnComenzar    = document.getElementById('btnComenzar');
+    const introContent   = document.getElementById('content');
+    const archivosSection = document.getElementById('archivosSection');
+
+    if (btnComenzar && introContent && archivosSection) {
+        btnComenzar.addEventListener('click', () => {
+            // 1. Animar salida del intro
+            introContent.classList.add('content--exit');
+
+            // 2. Tras la animación de salida, revelar la sección
+            setTimeout(() => {
+                introContent.style.display = 'none';
+                archivosSection.classList.add('archivos--visible');
+
+                // 3. Stagger de cada tarjeta
+                const cards = archivosSection.querySelectorAll('.archivo-card');
+                cards.forEach((card, i) => {
+                    setTimeout(() => {
+                        card.classList.add('card--visible');
+                    }, 200 + i * 120);
+                });
+            }, 650);
+        });
+
+        // Clic en tarjeta → ir a la página
+        archivosSection.querySelectorAll('.archivo-card').forEach(card => {
+            card.addEventListener('click', () => {
+                const url = card.dataset.url;
+                if (url) window.location.href = url;
+            });
+            // Evitar que el botón interno dispare doble evento
+            const btn = card.querySelector('.archivo-btn');
+            if (btn) {
+                btn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    const url = card.dataset.url;
+                    if (url) window.location.href = url;
+                });
+            }
+        });
+    }
+
     // ─── Control de secciones (sólo si existe #main-container) ───────────────
     const container = document.getElementById('main-container');
     if (container) {
