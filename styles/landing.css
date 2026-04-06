@@ -130,6 +130,10 @@
 }
 
 
+:root {
+  --marron: #3b2008;
+}
+
 * {
     margin: 0; padding: 0; box-sizing: border-box;
   }
@@ -522,15 +526,16 @@
   .roww { gap: 14px; }
   .cardd { width: 170px; height: 210px; }
   .card__side { width: 170px; height: 170px; }
-  .card1 img, .card2 img { width: 13rem; height: 13rem; }
+  .card1 img, .card2 img { width: 170px; height: 170px; }
 }
 
 /* ---- tablet landscape (768px – 991px): 4 en fila, más pequeñas ---- */
 @media (min-width: 768px) and (max-width: 991px) {
-  .roww { gap: 10px; }
+  .roww { gap: 10px; flex-wrap: nowrap; justify-content: center; }
   .cardd { width: 148px; height: 185px; }
   .card__side { width: 148px; height: 148px; }
-  .card1 img, .card2 img { width: 11rem; height: 11rem; }
+  .card1 img, .card2 img { width: 148px; height: 148px; }
+  .seccion { width: 148px; flex: 0 0 auto; }
 }
 
 /* ---- tablet portrait (576px – 767px): 2x2 centrado ---- */
@@ -586,16 +591,16 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 15rem;
-  height: 15rem;
+  width: 200px;
+  height: 200px;
 }
   
 .card2 img{
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 15rem;
-  height: 15rem;
+  width: 200px;
+  height: 200px;
 }
   
 .card2 a img{
@@ -1060,13 +1065,13 @@
 }
 .mobile-bar:hover::after { left: 125%; }
 
-/* Mostrar barras, ocultar cards */
-@media (max-width: 999px) {
+/* Mostrar barras, ocultar cards — solo en móviles reales (<768px) */
+@media (max-width: 767px) {
   .mobile-bars { display: flex !important; }
   .secciones   { display: none !important; }
 }
-/* Ocultar barras, mostrar cards */
-@media (min-width: 1000px) {
+/* Ocultar barras, mostrar cards — tablets y escritorio (≥768px) */
+@media (min-width: 768px) {
   .mobile-bars { display: none !important; }
   .secciones   { display: block !important; }
 }
