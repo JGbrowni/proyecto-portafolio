@@ -79,6 +79,8 @@
     document.addEventListener('DOMContentLoaded', handleOrientationChange);
 
     // ─── Botón Cósmico - Redirección a Archivos de Sozoria ───────────────────
+    // DESHABILITADO TEMPORALMENTE: Para activar, descomenta el código abajo
+    /*
     const sozoriaBtn = document.getElementById('sozoriaBtn');
     if (sozoriaBtn) {
         sozoriaBtn.addEventListener('click', () => {
@@ -86,5 +88,6 @@
             window.location.href = '../sozoriArchivos/archivos-inicio.html';
         });
     }
+    */
 
     document.getElementById("current-year").textContent = new Date().getFullYear();
