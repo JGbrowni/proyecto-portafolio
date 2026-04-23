@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sozoria | Ilustracion</title>
+  <link rel="shortcut icon" href="../imgs/boina1.png" type="image/x-icon">
+
+    <!-- Incluyendo Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Incluyendo una fuente de Google Fonts similar a la de la imagen -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!-- Tus estilos -->
+<link rel="stylesheet" href="../styles/ilustracion.css">
+<link rel="preload" href="../styles/ilustracion.css">
+<link rel="stylesheet" href="../lightbox.css">
+<!------- font ---------->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+</head>
+<body>
+<div class="orientation-overlay" id="orientationOverlay">
+        <div class="device-icon">
+            <div class="phone-container">
+                <div class="phone"></div>
+            </div>
+        </div>
+        
+        <div class="orientation-message pulse">
+            Para tener una mejor experiencia es recomendable verla en vertical por el dispositivo en que se encuentra.
+        </div>
+        
+        <div class="rotate-indicator">
+            Gira tu dispositivo
+            <span class="arrow-rotate">↻</span>
+        </div>
+  </div>
+
+<div class="container-fluid menu">
+<!-- Botón del menú hamburguesa -->
+  <button class="menu-toggle" id="menuToggle">
+    <div class="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </button>
+
+  <!-- Overlay oscuro -->
+  <div class="menu-overlay" id="menuOverlay"></div>
+
+  <!-- Menú lateral -->
+  <nav class="side-menu" id="sideMenu">
+    <a href="../index.html" class="menu-item">
+      <i class="fa fa-home" style="margin-right: 10px;"></i>
+      Inicio
+    </a>
+    <a href="ilustracion.html" class="menu-item">
+      <i class="fa fa-paint-brush" style="margin-right: 10px;"></i>
+      Ciudad Ilustraciones
+    </a>
+    <a href="branding.html" class="menu-item">
+      <i class="fa fa-book" style="margin-right: 10px;"></i>
+      Ciudad Branding
+    </a>
+    <a href="multimedia.html" class="menu-item">
+      <i class="fa fa-headphones" style="margin-right: 10px;"></i>
+      Ciudad Multimedia
+    </a>
+    <a href="ciudaddigital.html" class="menu-item">
+      <i class="fa fa-desktop" style="margin-right: 10px;"></i>
+      Ciudad Digital
+    </a>
+    <a href="sobremi.html" class="menu-item">
+      <i class="fa fa-user" style="margin-right: 10px;"></i>
+      Sobre Mi
+    </a>
+    <a href="personajes.html" class="menu-item">
+      <i class="fa fa-users" style="margin-right: 10px;"></i>
+      Personajes
+    </a>
+  </nav>
+</div>
+
+<div class="desktop-design">
+
+    <div id="background-silhouette" class="parallax-bg">
+      <img src="../imgs/fondo-1.jpg" class="w-full h-full object-cover" alt="">
+    </div>
+  <!-- Contenedor principal con scroll vertical -->
+  <div id="main-container">
+    <!-- Hero Section -->
+    <section id="hero" class="hero-bg container-fluid">
+      <div class="row">
+        <div class="intro col-12 col-xl-6">
+          <h1>Ilustración</h1>
+          <p class="">
+            Una colección de mis trabajos de ilustración digital, diseño de personajes y creaciones inspiradas en la cultura pop.
+          </p>
+          <div class="seccionplecas">
+            <span class="plecas">CLIPSTUDIOPAINT</span>
+            <span class="plecas">IBISPAINT X</span>
+            <span class="plecas">DISEÑO DE PERSONAJE</span>
+            <span class="plecas">FANARTS</span>
+            <span class="plecas">REDES SOCIALES</span>
+          </div>
+
+        </div>
+        <div class="imagenintro col-12 col-xl-6">
+          <img src="../imgs/fancyanimated.webp" alt="Mi animación" width="850">
+        </div>
+      </div>
+    </section>
+    <!-- Characters Section - unificada -->
+    <section id="characters" class="py-5">
+      <div class="container-lg px-3 px-md-4">
+        <p class="instruccion-imagenes">Toca las imágenes para expandir el contenido</p>
+        <div class="row g-4">
+
+          <div class="col-12 col-md-4">
+            <div class="character-card">
+              <a href="../imgs/trabajos_imgs/i3.png" data-lightbox="models" data-title="Ilustrado en 2025 en ClipStudioPaint">
+                <img src="../imgs/trabajos_imgs/p3.png" alt="" class="img-fluid" />
+              </a>
+              <div class="p-3">
+                <h3 class="h4 fw-bold">Stich salvadoreño</h3>
+                <p>Ilustrado para el estreno de la película life action</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-4">
+            <div class="character-card">
+              <a href="../imgs/trabajos_imgs/i5.png" data-lightbox="models" data-title="Ilustrado en 2024 en colaboracion con @ilucy_c en IbispaintX">
+                <img src="../imgs/trabajos_imgs/i5.png" alt="" class="img-fluid" />
+              </a>
+              <div class="p-3">
+                <h3 class="h4 fw-bold">Nevadas terroríficas</h3>
+                <p>Ilustrado para emprendimiento propio de nevadas, tematizado con personajes de Halloween 2024</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-4">
+            <div class="character-card">
+              <a href="../imgs/trabajos_imgs/i9.png" data-lightbox="models" data-title="Ilustrado en 2024 en colaboracion con @ilucy_c en IbispaintX">
+                <img src="../imgs/trabajos_imgs/i9.png" alt="" class="img-fluid" />
+              </a>
+              <div class="p-3">
+                <h3 class="h4 fw-bold">Nevadas navideñas</h3>
+                <p>Ilustrado para emprendimiento propio de nevadas, tematizado con personajes de Navidad 2024</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-4">
+            <div class="character-card">
+              <a href="../imgs/trabajos_imgs/i12.png" data-lightbox="models" data-title="Ilustrado en 2024 en ClipStudioPaint">
+                <img src="../imgs/trabajos_imgs/p12.png" alt="" class="img-fluid" />
+              </a>
+              <div class="p-3">
+                <h3 class="h4 fw-bold">Fantasma color</h3>
+                <p>Ilustrado para promocionar mi participación y el estreno de la música "Color" de la banda Inflorescencia</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-4">
+            <div class="character-card">
+              <a href="../imgs/trabajos_imgs/smile.png" data-lightbox="models" data-title="Ilustrado en 2024 en ClipStudioPaint">
+                <img src="../imgs/trabajos_imgs/smile.png" alt="" class="img-fluid" />
+              </a>
+              <div class="p-3">
+                <h3 class="h4 fw-bold">No te preocupes, sé feliz</h3>
+                <p>Ilustrado para promocionar la película "Intensamente 2" utilizando mi frase favorita</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-4">
+            <div class="character-card">
+              <a href="../imgs/trabajos_imgs/i1.png" data-lightbox="models" data-title="Ilustrado en 2024 en ClipStudioPaint">
+                <img src="../imgs/trabajos_imgs/p1.png" alt="" class="img-fluid" />
+              </a>
+              <div class="p-3">
+                <h3 class="h4 fw-bold">Lady Deadpool</h3>
+                <p>Ilustrado como un fanart para la pelicula "Deadpool 3" del personaje de Lady Deadpool</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-4">
+            <div class="character-card">
+              <a href="../imgs/trabajos_imgs/i11.png" data-lightbox="models" data-title="Ilustrado en 2025 en ClipStudioPaint">
+                <img src="../imgs/trabajos_imgs/p11.png" alt="" class="img-fluid" />
+              </a>
+              <div class="p-3">
+                <h3 class="h4 fw-bold">Demon b days</h3>
+                <p>Ilustración inspirada en el álbum "Demon Days" de Gorillaz aplicada en mis personajes</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-4">
+            <div class="character-card">
+              <a href="../imgs/trabajos_imgs/caesars.png" data-lightbox="models" data-title="Ilustrado en 2026 en IbispaintX">
+                <img src="../imgs/trabajos_imgs/p9.png" alt="" class="img-fluid" />
+              </a>
+              <div class="p-3">
+                <h3 class="h4 fw-bold">Pizza Pizza!</h3>
+                <p>Ilustración inspirada en la tendencia de Little Caesars y mis personajes</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-4">
+            <div class="character-card">
+              <a href="../imgs/trabajos_imgs/i7.png" data-lightbox="models" data-title="Ilustrado en 2024 en ClipStudioPaint">
+                <img src="../imgs/trabajos_imgs/i7.png" alt="" class="img-fluid" />
+              </a>
+              <div class="p-3">
+                <h3 class="h4 fw-bold">Brown Kujo</h3>
+                <p>Ilustración inspirada en el personaje "Jotaro Kujo / JJBA" usado como una JoJo referencia</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-4">
+            <div class="character-card">
+              <a href="../imgs/trabajos_imgs/ghost.png" data-lightbox="models" data-title="Ilustrado en 2025 en ClipStudioPaint">
+                <img src="../imgs/trabajos_imgs/ghostp1.png" alt="" class="img-fluid" />
+              </a>
+              <div class="p-3">
+                <h3 class="h4 fw-bold">GhostBrown y Boinstor</h3>
+                <p>Ilustración utilizada para halloween 2025, Brown y Boinet haciendo cosplay de Ghostface y Alastor</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-4">
+            <div class="character-card">
+              <a href="../imgs/trabajos_imgs/alastor.png" data-lightbox="models" data-title="Ilustrado en 2024 en ClipStudioPaint">
+                <img src="../imgs/trabajos_imgs/alastor.png" alt="" class="img-fluid" />
+              </a>
+              <div class="p-3">
+                <h3 class="h4 fw-bold">Alastor y Niffty</h3>
+                <p>Ilustrado como un fan art de los personajes Alastor y Niffty de la serie Hazbin Hotel</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-4">
+            <div class="character-card">
+              <a href="../imgs/trabajos_imgs/colorchallenge.png" data-lightbox="models" data-title="Ilustrado en 2023 en ClipStudioPaint">
+                <img src="../imgs/trabajos_imgs/colorchallenge.png" alt="" class="img-fluid" />
+              </a>
+              <div class="p-3">
+                <h3 class="h4 fw-bold">Círculo cromático challenge</h3>
+                <p>Ilustración para un reto de dibujar personajes con los colores del círculo cromático</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-4">
+            <div class="character-card">
+              <a href="../imgs/trabajos_imgs/goldship.png" data-lightbox="models" data-title="Ilustrado en 2026 en ClipStudioPaint">
+                <img src="../imgs/trabajos_imgs/p10.png" alt="" class="img-fluid" />
+              </a>
+              <div class="p-3">
+                <h3 class="h4 fw-bold">Año de goldship</h3>
+                <p>Ilustrado para la celebración del año del caballo chino 2026</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-4">
+            <div class="character-card">
+              <a href="../imgs/trabajos_imgs/goodbunny.png" data-lightbox="models" data-title="Ilustrado en 2026 en ClipStudioPaint">
+                <img src="../imgs/trabajos_imgs/p14.png" alt="" class="img-fluid" />
+              </a>
+              <div class="p-3">
+                <h3 class="h4 fw-bold">DeBi CoMpRaR MaS SeMiTa</h3>
+                <p>Ilustración fan art inspirado en uno de los álbumes de Bad Bunny y el evento del Super Bowl 2026</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-4">
+            <div class="character-card">
+              <a href="../imgs/trabajos_imgs/scarlet brown2.png" data-lightbox="models" data-title="Ilustrado en 2026 en ClipStudioPaint">
+                <img src="../imgs/trabajos_imgs/sacr.png" alt="" class="img-fluid" />
+              </a>
+              <div class="p-3">
+                <h3 class="h4 fw-bold">Scarlett Brown</h3>
+                <p>Ilustración como parte de un reto de dibujo semanal</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="sozoria-archives">
+          <button class="cosmic-btn" id="sozoriaBtn">
+            <span class="cosmic-text">¿Quieres ver más?</span>
+            <span class="cosmic-subtext">Explora los Archivos de Sozoria</span>
+            <div class="cosmic-stars"></div>
+          </button>
+        </div>
+
+
+      </div>
+    </section>
+
+
+    <section id="hero2" class="hero-bg2 container-fluid">
+      <div class="row">
+        <div class="personajescorriendo col-12">
+          <div class="element-1">
+            <img src="../imgs/fancy corriendo.webp" alt="" width="200">
+          </div>
+          <div class="element-2">
+            <img src="../imgs/oso corriendo.webp" alt="" width="150">
+          </div>
+          <div class="letreros">
+            <p>Presiona para avanzar</p>
+            <a href="branding.html">
+              <img src="../imgs/letrero browni.webp" alt="" width="350">
+            </a>
+          </div>
+          
+        </div>
+        <div class="suelo col-12">
+          <span></span>
+        </div>
+      </div>
+    </section>
+  </div>
+
+</div>
+
+  <!-- Footer -->
+<footer class="footer-sozoria">
+  <div class="footer-content">
+    <div class="footer-left">
+      <p>&copy; 2025 - <span id="current-year">2026</span> Osobrowni &amp; Browni. Marca, personajes y contenidos creados por Oscar Flores</p>
+    </div>
+    <div class="footer-right">
+      
+      <a href="https://instagram.com/osobrowni" target="_blank" aria-label="Instagram"><i class="fa fa-instagram"></i></a>
+      <a href="https://x.com/osobrowni" target="_blank" aria-label="X"><i class="fa fa-twitter"></i></a>
+      <a href="https://www.youtube.com/@Osobrowni" target="_blank" aria-label="YouTube"><i class="fa fa-youtube-play"></i></a>
+      <a href="https://www.behance.net/browni_designer" target="_blank" aria-label="Behance"><i class="fa fa-behance"></i></a>
+    </div>
+  </div>
+</footer>
+
+  <!-- Bootstrap JS Bundle (includes Popper) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../js/ilustracion.js"></script>
+  <script src="../lightbox-plus-jquery.js"></script>
+</body>
+</html>

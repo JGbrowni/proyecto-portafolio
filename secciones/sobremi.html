@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sozoria | Sobre mi</title>
+    <link rel="shortcut icon" href="../imgs/logo2.png" type="image/x-icon">
+
+    <!-- Incluyendo Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <!-- Tus estilos -->
+    <link rel="stylesheet" href="../styles/sobremi.css">
+    
+    <!-- Font Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Overlay de orientación -->
+    <div class="orientation-overlay" id="orientationOverlay">
+        <div class="device-icon">
+            <div class="phone-container">
+                <div class="phone"></div>
+            </div>
+        </div>
+        
+        <div class="orientation-message pulse">
+            Para tener una mejor experiencia es recomendable verla en vertical por el dispositivo en que se encuentra.
+        </div>
+        
+        <div class="rotate-indicator">
+            Gira tu dispositivo
+            <span class="arrow-rotate">↻</span>
+        </div>
+    </div>
+
+    <!-- Menú -->
+    <div class="container-fluid menu">
+        <!-- Botón del menú hamburguesa -->
+        <button class="menu-toggle" id="menuToggle">
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </button>
+
+        <!-- Overlay oscuro -->
+        <div class="menu-overlay" id="menuOverlay"></div>
+
+        <!-- Menú lateral -->
+        <nav class="side-menu" id="sideMenu">
+            <a href="../index.html" class="menu-item">
+                <i class="fa fa-home" style="margin-right: 10px;"></i>
+                Inicio
+            </a>
+            <a href="ilustracion.html" class="menu-item">
+                <i class="fa fa-paint-brush" style="margin-right: 10px;"></i>
+                Ciudad Ilustraciones
+            </a>
+            <a href="branding.html" class="menu-item">
+                <i class="fa fa-book" style="margin-right: 10px;"></i>
+                Ciudad Branding
+            </a>
+            <a href="multimedia.html" class="menu-item">
+                <i class="fa fa-headphones" style="margin-right: 10px;"></i>
+                Ciudad Multimedia
+            </a>
+            <a href="ciudaddigital.html" class="menu-item">
+                <i class="fa fa-desktop" style="margin-right: 10px;"></i>
+                Ciudad Digital
+            </a>
+            <a href="sobremi.html" class="menu-item">
+                <i class="fa fa-user" style="margin-right: 10px;"></i>
+                Sobre Mi
+            </a>
+            <a href="personajes.html" class="menu-item">
+                <i class="fa fa-users" style="margin-right: 10px;"></i>
+                Personajes
+            </a>
+        </nav>
+    </div>
+
+    <!-- Contenido principal -->
+    <div class="sobremi-section container-fluid">
+        <div class="sobremi-wrapper">
+            <div class="sobremi-layout">
+                <!-- Área de foto -->
+                <div class="sobremi-photo-area">
+                    <div class="sobremi-circle">
+                        <img src="../imgs/fotoseccion.png" alt="Oscar José Flores Guerrero">
+                    </div>
+                </div>
+                
+                <!-- Área de información -->
+                <div class="sobremi-info-area">
+                    <div class="sobremi-carousel-box">
+                        <button class="sobremi-arrow sobremi-arrow-prev" onclick="moveSlide(-1)">‹</button>
+                        
+                        <div class="sobremi-slides-wrapper">
+                            <!-- Slide 1: Sobre mi -->
+                            <div class="sobremi-slide sobremi-slide-active">
+                                <h2>ACERCA DE MÍ</h2>
+                                <p>¡Hola a todos! Mi nombre es Oscar José Flores Guerrero, aunque muchos me conocen como “Browni”… y yo soy:</p>
+                                <div class="quiensoy2">
+                                    <div class="dropping-texts">
+                                        <div>Diseñador UX/UI</div>
+                                        <div>Ilustrador y animador</div>
+                                        <div>Fotógrafo y editor</div>
+                                        <div>Diseñador gráfico web multimedia</div>
+                                    </div>
+                                </div>
+                                <p>Siempre aprendo algo nuevo cada día sin tener miedo al éxito.</p>
+                            </div>
+                            
+                            <!-- Slide 2: educacion -->
+                            <div class="sobremi-slide">
+                                <h2>EDUCACIÓN</h2>
+                                    <ul class="educacion">
+                                        <li>(2018 – 2020) <span>Colegio Don Bosco</span>
+                                            Bachillerato técnico vocacional industrial 
+                                            opción Diseño gráfico.</li>
+                                        <hr>
+                                        <li>(2022 - 2023) <span>Academia Europea</span>
+                                            Certificación en idioma inglés nivel 
+                                            intermedio</li>
+                                        <hr>
+                                        <li>(2021 - Actual) <span>Universidad Francisco 
+                                            Gavidia</span>Licenciatura en Diseño gráfico 
+                                            web multimedia.</li>
+                                    </ul>
+                            </div>
+                            
+                            <!-- Slide 3: experiencia -->
+                            <div class="sobremi-slide">
+                                <h2>EXPERIENCIA LABORAL</h2>
+                                <ul class="experiencia">
+                                        <li>(Nov | Dic 2019) <span>Inversiones Lovo Bonilla</span>Pasante base de datos</li>
+                                        <hr>
+                                        <li>(Mar | Jul 2025) <span>CONAMYPE</span>Diseñador gráfico y asistente 
+                                        técnico de imagen comercial</li>
+                                        <hr>
+                                        <li>(Aug | Dic 2025) <span>STUDIO 8</span>Diseñador gráfico, asistente de producciones y editor de videos y animaciones</li>
+                                        <hr>
+                                        <li>(May 2024 | Actual 2025) <span>Emprendedor</span>Sublimación de estampados DTF</li>
+
+                                    </ul>
+                            </div>
+                            
+                            <!-- Slide 4: software -->
+                            <div class="sobremi-slide">
+                                <h2>SOFTWARE</h2>
+                                
+                                <!-- Adobe Illustrator -->
+                                <div class="bar-main-container">
+                                    <div class="wrap">
+                                        <span class="software-name">Illustrator</span>
+                                        <div class="bar-percentage" data-percentage="75">0%</div>
+                                        <div class="bar-container">
+                                            <div class="bar" data-bar="75"></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Adobe Photoshop -->
+                                <div class="bar-main-container">
+                                    <div class="wrap">
+                                        <span class="software-name">Photoshop</span>
+                                        <div class="bar-percentage" data-percentage="65">0%</div>
+                                        <div class="bar-container">
+                                            <div class="bar" data-bar="65"></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Adobe Premiere -->
+                                <div class="bar-main-container">
+                                    <div class="wrap">
+                                        <span class="software-name">Premiere</span>
+                                        <div class="bar-percentage" data-percentage="50">0%</div>
+                                        <div class="bar-container">
+                                            <div class="bar" data-bar="50"></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Adobe After Effects -->
+                                <div class="bar-main-container">
+                                    <div class="wrap">
+                                        <span class="software-name">After Effects</span>
+                                        <div class="bar-percentage" data-percentage="30">0%</div>
+                                        <div class="bar-container">
+                                            <div class="bar" data-bar="30"></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Figma -->
+                                <div class="bar-main-container">
+                                    <div class="wrap">
+                                        <span class="software-name">ClipStudioPaint</span>
+                                        <div class="bar-percentage" data-percentage="50">0%</div>
+                                        <div class="bar-container">
+                                            <div class="bar" data-bar="50"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Slide 5: habilidad programacion -->
+                            <div class="sobremi-slide">
+                                <h2>HABILIDADES EN PROGRAMACIÓN</h2>
+                                
+                                <!-- HTML -->
+                                <div class="skill-item">
+                                    <div class="skill-header">
+                                        <span class="skill-name">HTML5</span>
+                                        <span class="skill-level">Intermedio</span>
+                                    </div>
+                                </div>
+
+                                <!-- CSS -->
+                                <div class="skill-item">
+                                    <div class="skill-header">
+                                        <span class="skill-name">CSS</span>
+                                        <span class="skill-level">Básico</span>
+                                    </div>
+                                </div>
+
+                                <!-- JavaScript -->
+                                <div class="skill-item">
+                                    <div class="skill-header">
+                                        <span class="skill-name">JavaScript</span>
+                                        <span class="skill-level">Básico</span>
+                                    </div>
+                                </div>
+
+                                <!-- WordPress -->
+                                <div class="skill-item">
+                                    <div class="skill-header">
+                                        <span class="skill-name">WordPress</span>
+                                        <span class="skill-level">Básico</span>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <!-- Slide 6: contacto -->
+                            <div class="sobremi-slide">
+                                <h2>SERVICIOS Y CONTACTO</h2>
+                                <div class="contact-services">
+                                    <div class="service-item">
+                                        <h3>Sublimación de Camisas</h3>
+                                        <p>Diseños personalizados en camisas DTF de alta calidad</p>
+                                    </div>
+                                    <div class="service-item">
+                                        <h3>Comisiones de Dibujo</h3>
+                                        <p>Ilustraciones personalizadas según tus necesidades</p>
+                                    </div>
+                                    <div class="service-item">
+                                        <h3>Diseño Gráfico</h3>
+                                        <p>Branding, logos, publicidad y diseños para tu marca</p>
+                                    </div>
+                                </div>
+                                <div class="contact-info">
+                                    <div class="contact-item">
+                                        <i class="fa fa-phone"></i>
+                                        <span>+503 7063-9534</span>
+                                    </div>
+                                    <div class="contact-item">
+                                        <i class="fa fa-envelope"></i>
+                                        <span>elkuma2k@gmail.com</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <button class="sobremi-arrow sobremi-arrow-next" onclick="moveSlide(1)">›</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer-sozoria">
+        <div class="footer-content">
+            <div class="footer-left">
+      <p>&copy; 2025 - <span id="current-year">2026</span> Osobrowni &amp; Browni. Marca, personajes y contenidos creados por Oscar Flores</p>
+    </div>
+            <div class="footer-right">
+                <a href="https://instagram.com/osobrowni" target="_blank" aria-label="Instagram"><i class="fa fa-instagram"></i></a>
+                <a href="https://x.com/osobrowni" target="_blank" aria-label="X"><i class="fa fa-twitter"></i></a>
+                <a href="https://www.youtube.com/@Osobrowni" target="_blank" aria-label="YouTube"><i class="fa fa-youtube-play"></i></a>
+                <a href="https://www.behance.net/browni_designer" target="_blank" aria-label="Behance"><i class="fa fa-behance"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../js/sobremi.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

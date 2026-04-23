@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sozoria | Multimedia</title>
+  <link rel="shortcut icon" href="../imgs/boina4.png" type="image/x-icon">
+
+    <!-- Incluyendo Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Incluyendo una fuente de Google Fonts similar a la de la imagen -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!-- Tus estilos -->
+<link rel="stylesheet" href="../styles/multimedia.css">
+<link rel="stylesheet" href="../video-lightbox.css" />
+<!------- font ---------->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+</head>
+<body>
+<div class="orientation-overlay" id="orientationOverlay">
+        <div class="device-icon">
+            <div class="phone-container">
+                <div class="phone"></div>
+            </div>
+        </div>
+        
+        <div class="orientation-message pulse">
+            Para tener una mejor experiencia es recomendable verla en vertical por el dispositivo en que se encuentra.
+        </div>
+        
+        <div class="rotate-indicator">
+            Gira tu dispositivo
+            <span class="arrow-rotate">↻</span>
+        </div>
+  </div>
+
+<div class="container-fluid menu">
+<!-- Botón del menú hamburguesa -->
+  <button class="menu-toggle" id="menuToggle">
+    <div class="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </button>
+
+  <!-- Overlay oscuro -->
+  <div class="menu-overlay" id="menuOverlay"></div>
+
+  <!-- Menú lateral -->
+  <nav class="side-menu" id="sideMenu">
+    <a href="../index.html" class="menu-item">
+      <i class="fa fa-home" style="margin-right: 10px;"></i>
+      Inicio
+    </a>
+    <a href="ilustracion.html" class="menu-item">
+      <i class="fa fa-paint-brush" style="margin-right: 10px;"></i>
+      Ciudad Ilustraciones
+    </a>
+    <a href="branding.html" class="menu-item">
+      <i class="fa fa-book" style="margin-right: 10px;"></i>
+      Ciudad Branding
+    </a>
+    <a href="multimedia.html" class="menu-item">
+      <i class="fa fa-headphones" style="margin-right: 10px;"></i>
+      Ciudad Multimedia
+    </a>
+    <a href="ciudaddigital.html" class="menu-item">
+      <i class="fa fa-desktop" style="margin-right: 10px;"></i>
+      Ciudad Digital
+    </a>
+    <a href="sobremi.html" class="menu-item">
+      <i class="fa fa-user" style="margin-right: 10px;"></i>
+      Sobre Mi
+    </a>
+    <a href="personajes.html" class="menu-item">
+      <i class="fa fa-users" style="margin-right: 10px;"></i>
+      Personajes
+    </a>
+  </nav>
+</div>
+
+<div class="desktop-design">
+
+    <div id="background-silhouette" class="parallax-bg">
+      <img src="../imgs/ciudad-3.png" class="w-full h-full object-cover" alt="">
+    </div>
+  <!-- Contenedor principal con scroll vertical -->
+  <div id="main-container">
+    <!-- Hero Section -->
+    <section id="hero" class="hero-bg container-fluid">
+      <div class="row">
+        <div class="intro col-12 col-xl-6">
+          <h1>Multimedia</h1>
+          <p class="">
+            Proyectos audiovisuales que combinan animación, video y edición para dar vida a ideas en movimiento y emoción.
+          </p>
+          <div class="seccionplecas">
+            <span class="plecas">ADOBE PREMIERE</span>
+            <span class="plecas">ADOBE AFTER EFFECTS</span>
+            <span class="plecas">VIDEOS</span>
+            <span class="plecas">ANIMACIONES</span>
+            <span class="plecas">MOTION GRAPHICS</span>
+            <span class="plecas">ADOBE ANIMATE</span>
+          </div>
+
+        </div>
+        <div class="imagenintro col-12 col-xl-6">
+          <img src="../imgs/skatletanimated.webp" alt="Mi animación" width="850">
+        </div>
+      </div>
+    </section>
+    <!-- Characters Section - unificada -->
+    <section id="characters" class="py-5">
+      <div class="container-lg px-3 px-md-4">
+        <p class="instruccion-imagenes">Toca las imágenes para expandir el contenido</p>
+        <div class="row g-4">
+
+          <div class="col-12 col-md-4">
+            <div class="character-card">
+             <a href="#" data-video="../imgs/videos/tripia.mp4" class="video-trigger">
+                <img src="../imgs/videos/triv.png" alt="Preview del video" class="img-fluid" />
+              </a>
+
+              <div class="p-2">
+                <h3 class="h4 fw-bold">Publicidad Tripiazone</h3>
+                <p>Video publicitario para una página web de sorteos, se utilizaron videos con IA y mucha creatividad</p>
+              </div>
+            </div>
+          </div>
+
+
+                    <div class="col-12 col-md-4">
+            <div class="character-card">
+              <a href="#" data-video="../imgs/trabajos_imgs/marroquinvideo.mp4" class="video-trigger">
+                <img src="../imgs/trabajos_imgs/video2.png" alt="Preview del video" class="img-fluid" />
+              </a>
+              <div class="p-3">
+                <h3 class="h4 fw-bold">Video publicitario Dr. Marroquín</h3>
+                <p>Video informativo elaborado para el Dr. Marroquín sobre un tema y promoviendo sus servicios</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-4">
+            <div class="character-card">
+              <a href="#" data-video="../imgs/trabajos_imgs/gabrielavideo.mp4" class="video-trigger">
+                <img src="../imgs/trabajos_imgs/video3.png" alt="Preview del video" class="img-fluid" />
+              </a>
+              <div class="p-3">
+                <h3 class="h4 fw-bold">Video publicitario Dra. Gabriela Cruz</h3>
+                <p>Video informativo elaborado para la Dra. Gabriela Cruz sobre un tema y promoviendo sus servicios</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-4">
+            <div class="character-card">
+              <a href="#" data-video="../imgs/trabajos_imgs/gastrovideo.mp4" class="video-trigger">
+                <img src="../imgs/trabajos_imgs/video1.png" alt="Preview del video" class="img-fluid" />
+              </a>
+              <div class="p-3">
+                <h3 class="h4 fw-bold">Video publicitario Gastrocenter</h3>
+                <p>Video informativo elaborado para Gastrocenter sobre un tema y promoviendo sus servicios</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-4">
+            <div class="character-card">
+             <a href="#" data-video="../imgs/videos/intro1.mp4" class="video-trigger">
+                <img src="../imgs/videos/intro1p.png" alt="Preview del video" class="img-fluid" />
+              </a>
+              <div class="p-3">
+                <h3 class="h4 fw-bold">Logo animado Osobrowni</h3>
+                <p>Animación del logo original osobrowni para redes sociales</p>
+                <a href="https://www.youtube.com/watch?v=vgbtFcqYtJI" class="linkb">
+                  <p>Ver en YouTube</p>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-4">
+            <div class="character-card">
+               <a href="#" data-video="../imgs/videos/aurealogo.mp4" class="video-trigger">
+                <img src="../imgs/videos/aurea2.png" alt="Preview del video" class="img-fluid" />
+              </a>
+              <div class="p-3">
+                <h3 class="h4 fw-bold">Logo animado Doctora Aurea</h3>
+                <p>Animación de logo de Doctora Aurea para redes sociales, formato vertical</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-4">
+            <div class="character-card">
+              <a href="#" data-video="../imgs/videos/intro3.mp4" class="video-trigger">
+                <img src="../imgs/videos/intro3p.png" alt="Preview del video" class="img-fluid" />
+              </a>
+              <div class="p-3">
+                <h3 class="h4 fw-bold">Logo animado Beto Luna</h3>
+                <p>Animación del logo "entre hilos" de Beto Luna para YouTube</p>
+                <a href="https://youtu.be/MCJA4du14TI" class="linkb">
+                  <p>Ver en YouTube</p>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-4">
+            <div class="character-card">
+              <a href="#" data-video="https://www.youtube.com/watch?v=hLKZ5wb8Kss" class="video-trigger">
+                <img src="../imgs/videos/aki.jpg" alt="Preview del video" class="img-fluid" />
+              </a>
+              <div class="p-3">
+                <h3 class="h4 fw-bold">Restaurante manga café japonés</h3>
+                <p>Un blog sobre un restaurante manga café japonés, poniendo a prueba mis habilidades de grabación y edición de video</p>
+                <a href="https://www.youtube.com/watch?v=hLKZ5wb8Kss" class="linkb">
+                  <p>Ver en YouTube</p>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-4">
+            <div class="character-card">
+              <a href="#" data-video="https://www.youtube.com/watch?v=9e4BJ1hDxtE&t=344s" class="video-trigger">
+                <img src="../imgs/videos/DAD.png" alt="Preview del video" class="img-fluid" />
+              </a>
+              <div class="p-3">
+                <h3 class="h4 fw-bold">Habitación 7</h3>
+                <p>Un cortometraje de 8 mins sobre una extraña habitación en un motel donde el tiempo es incierto y han ocurrido tragedias "El cortometraje más visto en YouTube de mi canal"</p>
+                <a href="https://www.youtube.com/watch?v=9e4BJ1hDxtE&t=344s" class="linkb">
+                  <p>Ver en YouTube</p>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-4">
+            <div class="character-card">
+              <a href="#" data-video="https://www.youtube.com/watch?v=AEk2mFpO2qw" class="video-trigger">
+                <img src="../imgs/videos/podcast.png" alt="Preview del video" class="img-fluid" />
+              </a>
+              <div class="p-3">
+                <h3 class="h4 fw-bold">Pódcast con Luciana Martínez</h3>
+                <p>Un video pódcast realizado para Beto Luna mientras habla con Luciana Martínez (ex Reina de Belleza)</p>
+                <a href="https://www.youtube.com/watch?v=AEk2mFpO2qw" class="linkb">
+                  <p>Ver en YouTube</p>
+                </a>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="col-12 col-md-4">
+            <div class="character-card">
+              <a href="#" data-video="../imgs/videos/ankha.mp4" class="video-trigger">
+                <img src="../imgs/videos/ankhap.jpg" alt="Preview del video" class="img-fluid" />
+              </a>
+
+              <div class="p-2">
+                <h3 class="h4 fw-bold">Parodia de gata bailando</h3>
+                <p>Animación de uno de mis personajes haciendo un baile parodia del 2021 considerado "la animación con más visitas de mis animaciones" </p>
+                <a href="https://youtu.be/dYI-oW4GeME" class="linkb">
+                  <p>Ver en YouTube</p>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-4">
+            <div class="character-card">
+              <a href="#" data-video="../imgs/videos/cumple24-2.mp4" class="video-trigger">
+                <img src="../imgs/videos/cumple.png" alt="Preview del video" class="img-fluid" />
+              </a>
+              <div class="p-2">
+                <h3 class="h4 fw-bold">Felices 24</h3>
+                <p>Animación hecha para mi cumpleaños número 24, utilizando la rotoscopia e inspirándome en el ending de JJK</p>
+                <a href="https://www.instagram.com/reel/DV6c7jOkX5o/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" class="linkb">
+                  <p>Abrir en Instagram</p>
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="sozoria-archives">
+          <button class="cosmic-btn" id="sozoriaBtn">
+            <span class="cosmic-text">¿Quieres ver más?</span>
+            <span class="cosmic-subtext">Explora los Archivos de Sozoria</span>
+            <div class="cosmic-stars"></div>
+          </button>
+        </div>
+
+
+      </div>
+    </section>
+
+
+    <section id="hero2" class="hero-bg2 container-fluid">
+      <div class="row">
+        <div class="personajescorriendo col-12">
+          <div class="element-4">
+            <img src="../imgs/skatlet corriendo.webp" alt="" width="200">
+          </div>
+          <div class="element-3">
+            <img src="../imgs/browni corriendo.webp" alt="" width="200">
+          </div>
+          <div class="element-1">
+            <img src="../imgs/fancy corriendo.webp" alt="" width="200">
+          </div>
+          <div class="element-2">
+            <img src="../imgs/oso corriendo.webp" alt="" width="150">
+          </div>
+          <div class="letreros">
+            <p>Presiona para avanzar</p>
+            <a href="ciudaddigital.html">
+              <img src="../imgs/letreromadelina.webp" alt="" width="350">
+            </a>
+          </div>
+          
+        </div>
+        <div class="suelo col-12">
+          <span></span>
+        </div>
+      </div>
+    </section>
+  </div>
+
+</div>
+
+  <!-- Footer -->
+<footer class="footer-sozoria">
+  <div class="footer-content">
+    <div class="footer-left">
+      <p>&copy; 2025 - <span id="current-year">2026</span> Osobrowni &amp; Browni. Marca, personajes y contenidos creados por Oscar Flores</p>
+    </div>
+    <div class="footer-right">
+      
+      <a href="https://instagram.com/osobrowni" target="_blank" aria-label="Instagram"><i class="fa fa-instagram"></i></a>
+      <a href="https://x.com/osobrowni" target="_blank" aria-label="X"><i class="fa fa-twitter"></i></a>
+      <a href="https://www.youtube.com/@Osobrowni" target="_blank" aria-label="YouTube"><i class="fa fa-youtube-play"></i></a>
+      <a href="https://www.behance.net/browni_designer" target="_blank" aria-label="Behance"><i class="fa fa-behance"></i></a>
+    </div>
+  </div>
+</footer>
+
+  <!-- Bootstrap JS Bundle (includes Popper) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../js/multimedia.js"></script>
+  <script src="../video-lightbox.js"></script>
+</body>
+</html>
