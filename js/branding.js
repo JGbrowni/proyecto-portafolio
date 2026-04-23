@@ -107,7 +107,7 @@ function handleOrientationChange() {
     if (sozoriaBtn) {
         sozoriaBtn.addEventListener('click', () => {
             // Redirige a la página de Archivos de Sozoria
-            window.location.href = '../sozoriArchivos/archivos-inicio.html';
+            window.location.href = 'https://archivos-sozoria.netlify.app/';
         });
     }
 
